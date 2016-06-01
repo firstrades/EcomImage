@@ -120,7 +120,7 @@ var application = angular.module('ProductDetailsApplication', []);
 /********************** AdminPanel.js *********************************/
 application.controller('ProductDetailsController', function($scope, $http, $window) {   	
 	
-	$scope.setSize = function(size) {
+	$scope.setSize = function(size) { 
 		//$window.alert(size);
 		$scope.size = size;
 	};

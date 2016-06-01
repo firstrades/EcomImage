@@ -21,7 +21,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="First Trades Online Shoppin" />
 	
-	<script src="<%=FrequentUse.jQuery %>" type="text/javascript"></script>				
+	<script src="<%=FrequentUse.jQuery %>" type="text/javascript"></script>	
+	<script src="<%=FrequentUse.angular %>" type="text/javascript"></script>			
 	<script type="text/javascript" src="js/megamenu.js"></script>
 	<script>
 		$(document).ready(function(){$(".megamenu").megamenu();});
@@ -30,6 +31,7 @@
 	<script src="js/simpleCart.min.js"> </script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js_Buyer/ProductDetails.js" type="text/javascript"></script>
+	
 	
 	<style>
 		.details{
