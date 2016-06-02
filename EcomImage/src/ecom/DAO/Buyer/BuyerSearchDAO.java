@@ -1403,5 +1403,7 @@ public class BuyerSearchDAO {
 		}	
 		
 		return null;
-	}
+	} //getFirstPageProducts
+	
+	
 }

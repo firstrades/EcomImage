@@ -1,3 +1,5 @@
+<%@page import="ecom.DAO.Buyer.BuyerSearchDAO"%>
+<%@page import="ecom.model.WholeSaleOffer"%>
 <%@page import="ecom.model.CartWishlist"%>
 <%@page import="java.math.BigDecimal"%>
 <%@page import="ecom.beans.TransientData"%>
@@ -112,35 +114,46 @@ float: left;
 				
 					for (TwoObjects<Product, CartWishlist> productBeanAndQty : productBeanAndCW) { 
 				
-						UserDAO userDAO = UserDAO.getInstance();
-						String sellerCompany = userDAO.getSellerCompany(productBeanAndQty.getObj1().getSellerId());
-						int    stock         = TransientData.getStock(productBeanAndQty.getObj1().getProductId());    
-						double subtotal      = productBeanAndQty.getObj1().getPrice().getSalePriceCustomer() * productBeanAndQty.getObj2().getQty();    
+						long productId = productBeanAndQty.getObj1().getProductId();
+						double salePriceCustomer = productBeanAndQty.getObj1().getPrice().getSalePriceCustomer();
+						long sellerId = productBeanAndQty.getObj1().getSellerId();
+						int qty = productBeanAndQty.getObj2().getQty();						
 						
+						String sellerCompany = UserDAO.getInstance().getSellerCompany(sellerId);
+						int    stock         = TransientData.getStock(productId);    
+						double subtotal      = salePriceCustomer * qty;    
+						WholeSaleOffer wholeSaleOffer = WholeSaleOffer.getWholeSaleOffer(productId);
 						TwoObjects<BigDecimal, String> apiData = apiDataList.get(i);
 						
 				%>
  					<tr class="item-row">
  						<td colspan="2" class="product-info" style="width: 45%;">
  							<div class="carty-image">
- 								<a href="CompleteProductDetails?subCategory=<%=productBeanAndQty.getObj1().getSubCategory() %>&productId=<%=productBeanAndQty.getObj1().getProductId() %>">
+ 								<a href="CompleteProductDetails?subCategory=<%=productBeanAndQty.getObj1().getSubCategory() %>&productId=<%=productId %>">
 									<img src="IconImageFromProduct?productId=<%=productBeanAndQty.getObj1().getProductId() %>" alt="Face Cream"/>
 								</a>
  							</div>
- 							<a href="CompleteProductDetails?subCategory=<%=productBeanAndQty.getObj1().getSubCategory() %>&productId=<%=productBeanAndQty.getObj1().getProductId() %>">
+ 							<a href="CompleteProductDetails?subCategory=<%=productBeanAndQty.getObj1().getSubCategory() %>&productId=<%=productId %>">
  								<span class="fk-bold"><%=productBeanAndQty.getObj1().getProductName() %>(<%=productBeanAndQty.getObj1().getCompanyName() %>)</span> <br>
  								
  							</a>
  							<span class="fk-bold"><%=sellerCompany %></span><br>
- 							<span class="fk-bold">Product ID: <%=productBeanAndQty.getObj1().getProductId() %></span>
- 							<% if (!productBeanAndQty.getObj2().getSize().equals("0")) { %>
+ 							<span class="fk-bold">Product ID: <%=productId %></span>
+ 							<!-- ---- Size------- -->
+ 							<% if (!productBeanAndQty.getObj2().getSize().equals("")) { %>
  							<br><span class="fk-bold">Item Size: <%=productBeanAndQty.getObj2().getSize() %></span>
  							<% } %>
+ 							<!-- WholeSale Qty and Discount -->
+ 							<% if (wholeSaleOffer != null) { %>
+ 							<br><span class="fk-bold">WholeSale Discount <%=wholeSaleOffer.getDiscount() %>% on Qty  <%=wholeSaleOffer.getQty() %> or more.</span>
+ 							<% } %>
+ 							<!-- ---- Stock------- -->
  							<% if (stock == 0) { %>
  								<span class="stock" style="position: relative;top: 47px;right: 207px;color: red; font-size: 12px; margin-top: -13px;">OUT OF STOCK </span>
  							<% } else {%>
  								<span class="stock" style="position: relative;top: 47px;right: 207px;color: red; font-size: 12px; margin-top: -13px;"> </span>
  							<% } %>
+ 							
 							<a href="#" class="remove cart <%=productBeanAndQty.getObj1().getProductId() %>"  
 									title="Remove Item" style="float: right; margin-top:47px; color: #FF6978;"> Remove </a>							
  						</td>

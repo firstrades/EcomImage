@@ -581,19 +581,12 @@
 							<img src="IconImageFromProduct?productId=<%=productBeanList.get(k+j).getProductId() %>" class="img-responsive" alt="">
 						</a>
 						<div class="special-info grid_1 simpleCart_shelfItem">
+						
 							<div class="all_pannel">
+								<p>ProductId: <%=productBeanList.get(k+j).getProductId() %></p>
 								<h5>
 									<a href="CompleteProductDetails?subCategory=<%=productBeanList.get(k+j).getSubCategory() %>&productId=<%=productBeanList.get(k+j).getProductId() %>"> <%=productBeanList.get(k+j).getProductName() %>  (<%=productBeanList.get(k+j).getCompanyName() %>) </a>
-								</h5>
-                    				<%-- <div class="div_key_feature">
-                     					<ul>
-				                    		<li> <%=productBeanList.get(k+j).getKeyFeatures().getKf1() %> </li>
-				                    		<li> <%=productBeanList.get(k+j).getKeyFeatures().getKf2() %> </li>
-				                    		<li> <%=productBeanList.get(k+j).getKeyFeatures().getKf3() %> </li>
-				                    		<li> <%=productBeanList.get(k+j).getKeyFeatures().getKf4() %> </li>
-                   						</ul>
-                   					</div> --%>
-                   				
+								</h5>                    				
 								<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBeanList.get(k+j).getPrice().getListPrice() %> </small> &nbsp; <small class="item_price"> (<%=productBeanList.get(k+j).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBeanList.get(k+j).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
@@ -601,6 +594,7 @@
 									</span>
 								</div>
 							</div>
+							
 						</div>
 						
 					</li>

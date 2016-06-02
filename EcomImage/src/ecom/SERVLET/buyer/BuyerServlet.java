@@ -25,9 +25,9 @@ import org.xml.sax.SAXException;
 
 import ecom.DAO.Buyer.BuyerSearchDAO;
 import ecom.DAO.User.UserDAO;
-import ecom.Implementation.Courier.SOAP.EstimatedRateAndDeliveryBean;
 import ecom.Implementation.Courier.SOAP.SearchLocationByPostal;
 import ecom.Implementation.Project.MultiShippingDelivery;
+import ecom.Implementation.Project.ShippingDelivery;
 import ecom.Interface.Courier.EstimatedRateAndDelivery;
 import ecom.Interface.Courier.SearchLocationByPostalInterface;
 import ecom.beans.BuyerServletHelper;
@@ -409,8 +409,7 @@ public class BuyerServlet extends HttpServlet {
 				
 				
 				
-				/*************** Database *****************/			
-				
+				/*************** Database *****************/				
 				int qty1 = buyerSearchDAO.insertQtyOfRow(user.getUserInfo().getId(), qty, productId, cartWishlistID);
 				
 				CartAttributesBean cartAttributesBean = CartAttributesBean.getInstance();
@@ -419,7 +418,8 @@ public class BuyerServlet extends HttpServlet {
 				
 				/***************** API ********************/
 				EstimatedRateAndDelivery estimatedRateAndDelivery = null;
-				try {
+				estimatedRateAndDelivery = new ShippingDelivery(productId);
+				/*try {
 					estimatedRateAndDelivery = EstimatedRateAndDeliveryBean.getNewInstance(productId, user, qty1);
 				} catch (SOAPException e) {
 					System.out.println("SOAPException" + e);
@@ -433,7 +433,7 @@ public class BuyerServlet extends HttpServlet {
 				} catch (ParseException e) {
 					System.out.println("ParseException");
 					e.printStackTrace();
-				}
+				}*/
 				
 				BigDecimal rate = estimatedRateAndDelivery.getRate();    
 				String delivery = estimatedRateAndDelivery.getDelivery();  System.out.println(rate + " " + delivery);

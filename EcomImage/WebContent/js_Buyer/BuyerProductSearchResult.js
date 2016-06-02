@@ -43,15 +43,8 @@ $(function() {
 								"<a href='CompleteProductDetails?subCategory=" + object.list[k+j].subCategory + "&productId=" + object.list[k+j].productId + "'><img src='IconImageFromProduct?productId="+ object.list[k+j].productId +"' class='img-responsive' alt=''></a>"+
 								"<div class='sp clecial-info grid_1 simpleCart_shelfItem'>"+
 									"<div class='all_pannel'>"+
-										"<h5><a href='CompleteProductDetails?subCategory=" + object.list[k+j].subCategory + "&productId=" + object.list[k+j].productId + "'> "+ object.list[k+j].productName +" </a> (<a href='#'>"+ object.list[k+j].companyName +"</a>) </h5>"+
-											"<div class='div_key_feature'>"+
-												"<ul>"+
-													"<li> "+ object.list[k+j].kf1 +" </li>"+
-													"<li> "+ object.list[k+j].kf2 +" </li>"+
-													"<li> "+ object.list[k+j].kf3 +" </li>"+
-													"<li> "+ object.list[k+j].kf4 +" </li>"+
-												"</ul>"+
-											"</div>"+
+										"<p>ProductId: "+object.list[k+j].productId+"</p>"+
+										"<h5><a href='CompleteProductDetails?subCategory=" + object.list[k+j].subCategory + "&productId=" + object.list[k+j].productId + "'> "+ object.list[k+j].productName +" </a> (<a href='#'>"+ object.list[k+j].companyName +"</a>) </h5>"+											
 										"<div class='item_add'><h6><span class='item_price'> <small class='over_flow'> Rs."+ object.list[k+j].listPrice +" </small> &nbsp; <small class='item_price'> ("+ object.list[k+j].discount +"% Off) </small> <br> <strong class='main_value'>Rs "+ object.list[k+j].salePriceCustomer +"</strong> </span></h6></div>"+
 										"<div class='item_add'><span class='item_price'><a href='CompleteProductDetails?subCategory=" + object.list[k+j].subCategory + "&productId=" + object.list[k+j].productId + "'>More Details</a></span></div>"+
 									"</div>"+
