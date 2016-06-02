@@ -39,6 +39,7 @@ import ecom.model.DeliveryAddress;
 import ecom.model.Product;
 import ecom.model.TwoObjects;
 import ecom.model.User;
+import ecom.model.WholeSaleOffer;
 
 public class BuyerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -398,7 +399,7 @@ public class BuyerServlet extends HttpServlet {
 				@SuppressWarnings("unchecked")
 				List<TwoObjects<BigDecimal, String>> apiDataList = (List<TwoObjects<BigDecimal, String>>) session.getAttribute("apiDataList");
 			
-				/*************** Process ******************/
+				/*************** Process 1 ******************/
 			
 				Long productId = Long.parseLong(productId111);        
 				int qty        = Integer.parseInt(qty111);
@@ -412,9 +413,22 @@ public class BuyerServlet extends HttpServlet {
 				/*************** Database *****************/				
 				int qty1 = buyerSearchDAO.insertQtyOfRow(user.getUserInfo().getId(), qty, productId, cartWishlistID);
 				
+				WholeSaleOffer wholeSaleOffer = WholeSaleOffer.getWholeSaleOffer(productId);
+				int wholeSaleQty = 0;
+				if (wholeSaleOffer != null)
+					wholeSaleQty = wholeSaleOffer.getQty();
+				
+				
 				CartAttributesBean cartAttributesBean = CartAttributesBean.getInstance();
 				int                totalQty           = cartAttributesBean.getTotalQty   (user.getUserInfo().getId());
 				double             totalSum           = cartAttributesBean.getTotalAmount(user.getUserInfo().getId());
+				
+				/*************** Process 2 ******************/
+				//Check wholesale qty for discount
+				double wholeSaleDiscount = 0;
+				if (wholeSaleQty != 0 && qty1 >= wholeSaleQty) {
+					wholeSaleDiscount = wholeSaleOffer.getDiscount();
+				}
 				
 				/***************** API ********************/
 				EstimatedRateAndDelivery estimatedRateAndDelivery = null;
@@ -466,6 +480,10 @@ public class BuyerServlet extends HttpServlet {
 					if (rate.doubleValue() != 0)
 						jsonObject.put("rate",     rate);
 					jsonObject.put("delivery", delivery);
+					if (wholeSaleQty != 0 && wholeSaleDiscount != 0) {
+						jsonObject.put("wholeSaleQty",      wholeSaleQty);
+						jsonObject.put("wholeSaleDiscount", wholeSaleDiscount);
+					}
 				} catch (JSONException e) {							
 					e.printStackTrace();
 				}

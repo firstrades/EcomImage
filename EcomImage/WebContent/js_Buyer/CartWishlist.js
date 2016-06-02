@@ -41,6 +41,7 @@ $(function() {
 				var productId  = tr.find('.remove').attr('class').split(' ')[2];  
 				
 				tr.find('span.stock').html('');
+				tr.find('div.wholeSale').html('');
 				var itemNo = tr.find('input[name=itemNo]').val();  
 				
 				var cartWishlistID = tr.find('input[name=id]').val();    
@@ -62,6 +63,13 @@ $(function() {
 						if (object.qty == 0) {							
 							tr.find('span.stock').html('OUT OF STOCK');
 						}
+						
+						if (object.wholeSaleQty && object.wholeSaleDiscount) { 
+							tr.find('div.wholeSale').css('display', 'block').css('color', 'red');
+							tr.find('div.wholeSale').html('You are qualified for discount ' + object.wholeSaleDiscount + '%');
+						}
+						
+						
 						td.find('.save').hide();
 						$('#amount').html('CART INR ' + object.totalSum);
 						$('#qty').html(object.totalQty);
