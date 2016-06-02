@@ -456,7 +456,8 @@ public class Controller extends HttpServlet {
 				customerMinimumRegistration.setUserId(userId);
 				customerMinimumRegistration.setPassword(password);			
 				nextPage = customerMinimumRegistration.execute(session, request);
-			}
+			}			
+			
 			
 			/**** Clean Up ****/
 			customerMinimumRegistration = null;

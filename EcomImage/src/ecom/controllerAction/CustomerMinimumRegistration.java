@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import ecom.DAO.User.CreateUserDAO;
 import ecom.DAO.User.UserDAO;
 import ecom.model.User;
+import ecom.sms.email.SMS;
 
 public class CustomerMinimumRegistration {
 	//External
@@ -40,9 +41,20 @@ public class CustomerMinimumRegistration {
 				throw new Exception();
 			
 			/*********** setSession **************/
-			session.setAttribute("user", user);
-			
+			session.setAttribute("user", user);			
 			nextPage = "jsp_Buyer/BuyerMainPanel.jsp";
+			
+			
+			//-----------------------------------------------------------------------SMS
+			//In case you want to check error, u can use same catch block for sms errors.
+			String smsMessage = "Dear customer, your userId: "+userId+" and password: "+password+ " is created";
+			final String senderId = "SUACPL";            //"RECHRG";
+			final String smsUserId = "ysk-suraksha";     //"ysk-yaduvanshi";
+			final String smsPassword = "000000";         //"000000";
+			SMS.sendSMS(userId/*mobile*/, smsMessage, senderId, smsUserId, smsPassword);
+			//-----------------------------------------------------------------------SMS
+			
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();

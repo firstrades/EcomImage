@@ -1,4 +1,4 @@
-package test;
+package ecom.sms.email;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -14,7 +14,7 @@ public class SMS {
 	final static String baseUrl = "http://103.16.101.52:8080/bulksms/bulksms?";
 
 	@SuppressWarnings("deprecation")
-	public static void sendSMS(String phone, String message, String senderId, String smsUserId, String smsPassword) {
+	public static void sendSMS(String mobile, String message, String senderId, String smsUserId, String smsPassword) {
 		
 		try {	
 	        
@@ -25,7 +25,7 @@ public class SMS {
 	        DataOutputStream writer = new DataOutputStream(conn.getOutputStream());
 	
 	        String content = "username=" + URLEncoder.encode(smsUserId) + "&password=" 
-	        		+ URLEncoder.encode(smsPassword)+ "&type=0"+ "&dlr=1" + "&destination="+phone
+	        		+ URLEncoder.encode(smsPassword)+ "&type=0"+ "&dlr=1" + "&destination="+mobile
 	        		+  "&source="+senderId + "&message=" + URLEncoder.encode (message);
 	        
 	        System.out.println(content);
