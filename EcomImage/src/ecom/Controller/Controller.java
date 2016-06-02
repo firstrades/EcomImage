@@ -15,6 +15,8 @@ import ecom.DAO.User.UserDAO;
 import ecom.common.UserType;
 import ecom.controllerAction.CustomerMinimumRegistration;
 import ecom.model.User;
+import ecom.validations.CustomerRegistrationValidation;
+import ecom.validations.Validation;
 
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -432,16 +434,33 @@ public class Controller extends HttpServlet {
 		 }			
 		
 		else if (servletPath.equals("/customerMinimumRegistration")) {	
+			
 			/**** Controller ****/
 			System.out.println("Controller customerMinimumRegistration");			
 			String nextPage = null;
+			
+			/****** getRequest *****/
+			String userId = request.getParameter("userId").trim();
+			String password = request.getParameter("password").trim();
+			
+			/********* Validation **********/
+			String[] requestParameters = new String[] { userId, password };  System.out.println("String: "+requestParameters[0]);
+			Validation validation = new CustomerRegistrationValidation();
+			validation.setRequestParameters(requestParameters);
+			nextPage = validation.validate(request);
+			
 			/**** Model ****/
-			CustomerMinimumRegistration customerMinimumRegistration = new CustomerMinimumRegistration();
-			customerMinimumRegistration.setUserId(request.getParameter("userId").trim());
-			customerMinimumRegistration.setPassword(request.getParameter("password").trim());			
-			nextPage = customerMinimumRegistration.execute(session, request);
+			CustomerMinimumRegistration customerMinimumRegistration = null;
+			if (nextPage == null) {	// No Validation Error		
+				customerMinimumRegistration = new CustomerMinimumRegistration();
+				customerMinimumRegistration.setUserId(userId);
+				customerMinimumRegistration.setPassword(password);			
+				nextPage = customerMinimumRegistration.execute(session, request);
+			}
+			
 			/**** Clean Up ****/
 			customerMinimumRegistration = null;
+			
 			/**** View Resolver ****/
 			request.getRequestDispatcher(nextPage).forward(request, response);
 			
