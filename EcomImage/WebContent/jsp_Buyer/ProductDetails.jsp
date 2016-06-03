@@ -34,6 +34,14 @@
 	
 	
 	<style>
+	.reg2
+	{
+	font-size: 140%;font-weight: bold;background: #2A702A;color: white;border-radius: 20px;text-decoration:none;
+	}
+	.reg2:hover{
+	background:#F57D51;
+	text-decoration:none;
+	}
 		.details{
 			font-size:12px;
 			color: #999;
@@ -261,12 +269,40 @@ float: left;
 	                     	<div class="btn_form" >
 								<a href="AddToCartOrWishlist?productId=<%=productBean.getProductId() %>&cartOrWishlist=wishlist&size={{size}}" style="background-color:#3c763d;" class="checkBeforeSubmit">ADD TO WISHLIST</a>
 							</div>		
-							<% } else { %>	
-								<div style="font-size: 140%;font-weight: bold;">Please Login Or Register As User</div>
+							<% } else { %>							
+								<div class="reg2"><a href="#" data-target="#myModal3" data-toggle="modal" style="text-decoration:none;"> Please Login Or Register As User</a></div>
+																
 							<% } %>			
 				   	 	</div>
 	          	    	<div class="clearfix"></div>
 	          	    	
+	          	    	<div class="modal fade" id="myModal3">
+    	<div class="modal-dialog" style="width:360px;">    
+      		<!-- Modal content-->
+      		<div class="modal-content" style="width:330px;">
+      		<h4 style="font-size: 21px;color: #7B3F28; text-decoration: underline;">Register Panel</h4>
+        		<div class="modal-header">
+          			<button type="button" class="close" data-dismiss="modal">&times;</button>               
+								        <form id="loginForm" action="customerMinimumRegistration" method="post">
+								                <fieldset id="body">
+								                	<fieldset>
+								                          <label for="email">Mobile/Email Address</label>
+								                          <input type="text" name="userId" id="email" placeholder="Enter Mobile/Email"  />
+								                    </fieldset>
+								                    <fieldset>
+								                            <label for="password">Password</label>
+								                            <input type="password" name="password" id="password" placeholder="Enter Password"  />
+								                     </fieldset>
+								                    <input type="submit" id="login" value="Register" style="background:green;margin-left: 33%;">
+								                	
+								            	</fieldset>
+								            
+										</form>
+									</div>
+									
+								</div>
+							</div>
+						</div> 
 	          	    	
 	          	    	
 	      			</div>
