@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import ecom.Implementation.Project.ShippingDelivery;
+import ecom.Interface.Courier.EstimatedRateAndDelivery;
 import ecom.common.ConnectionFactory;
 import ecom.model.TwoObjects;
 
@@ -78,6 +80,7 @@ public class CartAttributesBean {
 			ResultSet resultSet   = null;
 			
 			List<TwoObjects<Long,Integer>> list = new ArrayList<>();
+			EstimatedRateAndDelivery estimatedRateAndDelivery = null;
 			
 			try (Connection connection = ConnectionFactory.getNewConnection()) {					
 					
@@ -90,7 +93,9 @@ public class CartAttributesBean {
 						
 						TwoObjects<Long, Integer> twoObjects = new TwoObjects<>();
 						
+						//productId
 						twoObjects.setObj1 ( resultSet.getLong(1) );
+						//Qty
 						twoObjects.setObj2 ( resultSet.getInt (2) );
 						
 						list.add(twoObjects);
@@ -105,11 +110,16 @@ public class CartAttributesBean {
 						
 						sql = "SELECT salePriceCustomer FROM product WHERE id = ? ";
 						preparedStatement = connection.prepareStatement(sql);
-						preparedStatement.setLong(1, twoObjects.getObj1());
+						preparedStatement.setLong(1, twoObjects.getObj1()/*productId*/);
 						resultSet         = preparedStatement.executeQuery();
 						
+						/**** Shipping Cost Call ****/
+						estimatedRateAndDelivery = new ShippingDelivery(twoObjects.getObj1()/*productId*/);
+						double shipping = estimatedRateAndDelivery.getRate().doubleValue();
+						/**** End Shipping Cost Call ****/
+						
 						if (resultSet.next()) {
-							this.totalAmount += resultSet.getDouble(1) * twoObjects.getObj2();
+							this.totalAmount += (resultSet.getDouble(1) * twoObjects.getObj2()/*Qty*/) + shipping;
 						}
 						
 						resultSet.close();

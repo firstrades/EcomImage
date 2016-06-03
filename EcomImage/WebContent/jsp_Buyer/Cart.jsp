@@ -1,3 +1,4 @@
+<%@page import="ecom.common.Conversions"%>
 <%@page import="ecom.DAO.Buyer.BuyerSearchDAO"%>
 <%@page import="ecom.model.WholeSaleOffer"%>
 <%@page import="ecom.model.CartWishlist"%>
@@ -114,6 +115,7 @@ float: left;
 				
 					for (TwoObjects<Product, CartWishlist> productBeanAndQty : productBeanAndCW) { 
 				
+						TwoObjects<BigDecimal, String> apiData = apiDataList.get(i);
 						long productId = productBeanAndQty.getObj1().getProductId();
 						double salePriceCustomer = productBeanAndQty.getObj1().getPrice().getSalePriceCustomer();
 						long sellerId = productBeanAndQty.getObj1().getSellerId();
@@ -121,9 +123,14 @@ float: left;
 						
 						String sellerCompany = UserDAO.getInstance().getSellerCompany(sellerId);
 						int    stock         = TransientData.getStock(productId);    
-						double subtotal      = salePriceCustomer * qty;    
+						
+						double subtotal      = salePriceCustomer * qty + apiData.getObj1().doubleValue(); 
+						
 						WholeSaleOffer wholeSaleOffer = WholeSaleOffer.getWholeSaleOffer(productId);
-						TwoObjects<BigDecimal, String> apiData = apiDataList.get(i);
+						
+						
+						
+						
 						
 				%>
  					<tr class="item-row">
