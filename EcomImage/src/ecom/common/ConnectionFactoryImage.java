@@ -9,9 +9,9 @@ public class ConnectionFactoryImage {
 	private final String PROTOCOL        = "jdbc:mysql://localhost:3306/";   
 	//private final String PROTOCOL        = "jdbc:mysql://104.254.98.163:3306/";
 	
-	private final String RemoteDATABASE  = "firstrad_test" + "?noAccessToProcedureBodies=true";
-	private final String RemoteUSER      = "firstrad_jewel";
-	private final String RemotePASSWORD  = "9Lk^@(HS&8,G";
+	private final String RemoteDATABASE  = "firstrad_firstdb" + "?noAccessToProcedureBodies=true";
+	private final String RemoteUSER      = "firstrad_fisroot";
+	private final String RemotePASSWORD  = "1Gx5rD~MsGb.";
 	
 	private final String LocalDATABASE   = "ecomimageentry?noAccessToProcedureBodies=true";
 	private final String LocalUSER       = "root";
