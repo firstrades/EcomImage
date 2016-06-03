@@ -674,7 +674,7 @@ public class BuyerSearchDAO {
 				connection.setAutoCommit(false);
 				
 				//----SQL----
-				sql = "SELECT product_id, qty, size FROM cart_wishlist WHERE user_id = ? AND cart_wishlist = ?";
+				sql = "SELECT id, product_id, qty, size FROM cart_wishlist WHERE user_id = ? AND cart_wishlist = ?";
 				preparedStatement = connection.prepareStatement(sql);				
 				preparedStatement.setLong  (1, userId);
 				preparedStatement.setString(2, cart);			
@@ -684,8 +684,8 @@ public class BuyerSearchDAO {
 					
 					CartWishlist cartWishlist = new CartWishlist();
 					
-					
-					cartWishlist.setProductId(resultSet.getLong("product_id"));
+					cartWishlist.setId       (resultSet.getLong  ("id"        ));
+					cartWishlist.setProductId(resultSet.getLong  ("product_id"));
 					cartWishlist.setQty      (resultSet.getInt   ("qty"       ));
 					cartWishlist.setSize     (resultSet.getString("size"      ));
 			

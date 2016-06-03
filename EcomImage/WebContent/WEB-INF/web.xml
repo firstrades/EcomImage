@@ -80,7 +80,8 @@
 		<url-pattern>/AddToCartOrWishlist</url-pattern>
 		<url-pattern>/DeleteFromCartWishlistTable</url-pattern>
 		<url-pattern>/InsertQtyToCart</url-pattern>
-		<url-pattern>/Account</url-pattern>
+		<url-pattern>/insertQtyInOrderReviewAndSubmit</url-pattern>
+		<!-- <url-pattern>/Account</url-pattern> -->
 		<url-pattern>/CallRegistrationPage</url-pattern>
 		<url-pattern>/Registration</url-pattern>
 		<url-pattern>/CheckUserId</url-pattern>

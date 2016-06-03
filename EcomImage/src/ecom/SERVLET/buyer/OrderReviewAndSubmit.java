@@ -230,7 +230,11 @@ public class OrderReviewAndSubmit extends HttpServlet {
 			
 			for (CartWishlist cartWishlist : cartWishlistList) {
 				
+				long cartWishlistId = cartWishlist.getId();
+				
 				BookedProduct bookedProduct = new BookedProduct();
+				
+						bookedProduct.setCartWishlistId(cartWishlistId);
 				
 				TwoObjects<BigDecimal, String> apiRateAndDelivery = apiDataList.get(i);
 				

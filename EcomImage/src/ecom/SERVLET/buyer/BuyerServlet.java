@@ -509,10 +509,44 @@ public class BuyerServlet extends HttpServlet {
 			
 		}  // InsertQtyToCart
 		
-		else if (servletPath.equals("/Account")) {
+		else if (servletPath.equals("/insertQtyInOrderReviewAndSubmit")) {
+			
+			System.out.println("Entered insertQtyInOrderReviewAndSubmit");
+			
+			/*************** Get Request **************/
+			
+			String productId111   = (String) request.getParameter("productId");
+			String qty111         = (String) request.getParameter("qty"); 
+			//int    itemNo         = Integer.parseInt(request.getParameter("itemNo"));
+			long   cartWishlistID = Integer.parseInt(request.getParameter("cartWishlistID"));
+	
+			/*************** Get Session **************/
+		
+			User user = (User) session.getAttribute("user");				
+			//@SuppressWarnings("unchecked")
+			//List<TwoObjects<BigDecimal, String>> apiDataList = (List<TwoObjects<BigDecimal, String>>) session.getAttribute("apiDataList");
+		
+			/*************** Process 1 ******************/
+		
+			Long productId = Long.parseLong(productId111);        
+			int qty        = Integer.parseInt(qty111);
+			int stock      = TransientData.getStock(productId);
+			int tempQty    = qty;
+			
+			qty = (qty > stock) ? stock : qty;   //if (qty > stock)  qty = stock;				
+			
+			/*************** Database *****************/				
+			int qty1 = buyerSearchDAO.insertQtyOfRow(user.getUserInfo().getId(), qty, productId, cartWishlistID);
+			
+			/********* Next Page ***********/
+			response.sendRedirect("OrderReview_Cart?cartOrWishlist=cart");
+			
+		}//insertQtyInOrderReviewAndSubmit
+		
+		/*else if (servletPath.equals("/Account")) {
 			
 			System.out.println("Entered Account");
-		}
+		}*/
 		
 		else if (servletPath.equals("/CallRegistrationPage")) {
 			

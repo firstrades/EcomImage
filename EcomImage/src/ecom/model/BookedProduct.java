@@ -6,13 +6,14 @@ import java.math.BigDecimal;
 public class BookedProduct implements Serializable {
 	private static final long serialVersionUID = -2055843779924333899L;
 
-	private long   productId;
-	private long   qty;
+	private long productId;
+	private long qty;
 	private double sellPrice;	
-	private int    stock;
+	private int stock;
 	private String warranty;
 	private Product productBean;
 	private GarmentOrder garmentOrder;
+	private long cartWishlistId;	
 	
 	//Api
 	private BigDecimal rate;
@@ -84,6 +85,20 @@ public class BookedProduct implements Serializable {
 	}
 	public void setGarmentOrder(GarmentOrder garmentOrder) {
 		this.garmentOrder = garmentOrder;
+	}
+
+
+
+
+	public long getCartWishlistId() {
+		return cartWishlistId;
+	}
+
+
+
+
+	public void setCartWishlistId(long cartWishlistId) {
+		this.cartWishlistId = cartWishlistId;
 	}
 
 	

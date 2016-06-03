@@ -148,11 +148,12 @@ float: left;
  								
  							</a>
  							<span class="fk-bold"><%=sellerCompany %></span><br>
+ 							<!-- --------------------------------------------------------------------------------- -->
  							<span class="fk-bold">Product ID: <%=productId %></span>
  							
  							<!-- ---- Size------- -->
  							<% if (!productBeanAndQty.getObj2().getSize().equals("")) { %>
- 								<br><span class="fk-bold">Item Size: <%=productBeanAndQty.getObj2().getSize() %></span>
+ 								<br><span class="fk-bold">Size: <%=productBeanAndQty.getObj2().getSize() %></span>
  							<% } %>
  							
  							<!-- WholeSale Qty and Discount -->
@@ -173,7 +174,7 @@ float: left;
  							<% } else {%>
  								<span class="stock" style="position: relative;top: 47px;right: 207px;color: red; font-size: 12px; margin-top: -13px;"> </span>
  							<% } %>
- 							
+ 							<!-- --------------------------------------------------------------------------------- -->
 							<a href="#" class="remove cart <%=productBeanAndQty.getObj1().getProductId() %>"  
 									title="Remove Item" style="float: right; margin-top:47px; color: #FF6978;"> Remove </a>							
  						</td>

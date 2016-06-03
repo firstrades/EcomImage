@@ -1,3 +1,4 @@
+<%@page import="ecom.model.WholeSaleOffer"%>
 <%@page import="ecom.common.Conversions"%>
 <%@page import="ecom.model.BookedProduct"%>
 <%@page import="java.util.List"%>
@@ -543,6 +544,8 @@ z-index: 101;
                   			for (BookedProduct bookedProduct : order.getBookedProductList()) {
                   				
                   				if (bookedProduct.getStock() == 0) continue;
+                  				
+                  				WholeSaleOffer wholeSaleOffer = WholeSaleOffer.getWholeSaleOffer(bookedProduct.getProductId());
                   		%>
 	                  	
 	                  		<tr  class="ng-scope">
@@ -555,27 +558,56 @@ z-index: 101;
 	                    								<img  src="IconImageFromProduct?productId=<%=bookedProduct.getProductId() %>" class="product-image ng-scope" alt=""  /> 
 	                    							</div> 
 	                    							<span class="gift-icon ng-hide" ></span>
-	                     							<!-- <div class="line tmargin15 font-color-medium fk-uppercase fk-font-11 ng-binding ng-hide" >Book</div>  -->
+	                     							
 	                    						</td>
 	                     						<td colspan="3" class="product-cell">
 	                      							<table width="100%" height="100%" cellspacing="0" cellpadding="0" class="product-table">
 	                       								<tbody>
 	                        								<tr> 
 	                        									<td class="cell item-cell">
-	                         										<!-- <div class="line bmargin5 font-color-medium fk-font-11 ng-binding fk-uppercase" > 
-	                         											<span class="book-icon ng-hide" ></span>Book
-	                         										</div> -->
+	                         										
 	                          										<span class="title ng-binding"><%=bookedProduct.getProductBean().getProductName() %> (<%=bookedProduct.getProductBean().getCompanyName() %>)</span><p class="tmargin5 fk-font-11 font-color-medium ng-scope ng-binding" ><%=bookedProduct.getProductBean().getSubCategory() %> - <%=bookedProduct.getProductBean().getCategory() %></p><p class="tmargin5 fk-font-11 font-color-medium ng-scope ng-binding" ></p> <span class="ff-icon tmargin5 ng-hide"  title="Flipkart First"></span> 
 	                          										<div class="tmargin10">
 	 																	Seller: <%=bookedProduct.getProductBean().getSellerCompany() %>  
 	 																	<div class="conditional-offer tmargin10 ng-hide" > <a class="conditional-offer-count ng-binding"  ><%=bookedProduct.getProductBean().getWarranty() %></a>  
 	 																	</div> 
 	 																</div>
+	 																
+	 																<!-- --------------------------------------------------------------------------------- -->
+										 							<span class="fk-bold">Product ID: <%=bookedProduct.getProductId() %></span>
+										 							
+										 							<!-- ---- Size------- -->
+										 							<% if (!bookedProduct.getGarmentOrder().getSize().equals("")) { %>
+										 								<br><span class="fk-bold">Size: <%=bookedProduct.getGarmentOrder().getSize() %></span>
+										 							<% } %>
+										 							
+										 							<!-- WholeSale Qty and Discount -->
+										 							<% if (wholeSaleOffer != null) { %>
+										 								<br><span class="fk-bold">WholeSale Discount <%=wholeSaleOffer.getDiscount() %>% on Qty  <%=wholeSaleOffer.getQty() %> or more.</span>
+										 							<% } %>
+										 							
+										 							<!-- Customer gets wholeSale Price -->
+										 							<% if (wholeSaleOffer != null && wholeSaleOffer.getQty() <= bookedProduct.getQty()) { %>
+										 								<div style="display: display;color:green;" class="wholeSale">You are qualified for discount <%=wholeSaleOffer.getDiscount() %> %</div>
+										 							<% } else { %>
+										 								<div style="color:green;" class="wholeSale"><!-- String from jQuery --></div>
+										 							<% } %> 
+										 							
+										 							<!-- ---- Stock------- -->
+										 							<% if (bookedProduct.getStock() == 0) { %>
+										 								<span class="stock" style="font-size: 12px; margin-top: -13px;">OUT OF STOCK </span>
+										 							<% } else {%>
+										 								<span class="stock" style="font-size: 12px; margin-top: -13px;">Stock: <%=bookedProduct.getStock() %> </span>
+										 							<% } %>
+										 							<!-- --------------------------------------------------------------------------------- -->
+	 																
 	 															</td> 
 	 															<td class="cell fk-text-center qty-cell carty-changeQuantity">
-	  																<form class="qtyForm ng-isolate-scope ng-pristine ng-valid" name="form_LSTBOK9789380280622FPLWQM:6660227E-3958-72C3-2A6B-1CE6FE262819:P:C-0012:U:SPCMS" method="get"  model="product" >
-	  																	<input type="text"   maxlength="3" value="<%=bookedProduct.getQty() %>"  class="qty-box fk-input ng-scope ng-pristine ng-valid ng-valid-pattern" select-on="qty_LSTBOK9789380280622FPLWQM:6660227E-3958-72C3-2A6B-1CE6FE262819:P:C-0012:U:SPCMS"  ><br>
-	  																	<input type="submit" class="qty-save fk-font-small ng-hide" value="Save" data-ng-show="showSave" bind-log="quantity update LSTBOK9789380280622FPLWQM:6660227E-3958-72C3-2A6B-1CE6FE262819:P:C-0012:U:SPCMS">
+	  																<form action="insertQtyInOrderReviewAndSubmit" method="post">
+	  																	<input type="hidden" name="productId" value="<%=bookedProduct.getProductId() %>" />
+	  																	<input type="hidden" name="cartWishlistID" value="<%=bookedProduct.getCartWishlistId() %>" />
+	  																	<input type="text" name="qty" maxlength="3" value="<%=bookedProduct.getQty() %>" class="qty-box fk-input ng-scope ng-pristine ng-valid ng-valid-pattern" ><br>
+	  																	<input type="submit" class="qty-save fk-font-small ng-hide" value="Save"><!-- data-ng-show="showSave" -->
 	  																</form> 
 	  															</td> 
 	  															<td class="cell price-cell"> 
@@ -740,7 +772,10 @@ z-index: 101;
 		                            			</tr>
 		                            			<tr> 	
 		                            				<td>&nbsp;</td> 
-		                            				<td class="tpadding15"> <input type="submit" class="btn btn-large btn-orange address_submit" value="Save &amp; Continue" style="margin-bottom: 20px;"> </td> 
+		                            				<td class="tpadding15"> 
+		                            					<input type="submit" class="btn btn-large btn-orange address_submit" 
+		                            						value="Save &amp; Continue" style="margin-bottom: 20px;"> 
+		                            				</td> 
 		                            			</tr> 
 		                            		</tbody>
 		                            	</table> 
