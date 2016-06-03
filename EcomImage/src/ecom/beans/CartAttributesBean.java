@@ -11,6 +11,7 @@ import ecom.Implementation.Project.ShippingDelivery;
 import ecom.Interface.Courier.EstimatedRateAndDelivery;
 import ecom.common.ConnectionFactory;
 import ecom.model.TwoObjects;
+import ecom.model.WholeSaleOffer;
 
 public class CartAttributesBean {
 
@@ -107,20 +108,36 @@ public class CartAttributesBean {
 					//---------- Get The Sum of Prices -----------------------
 					
 					for (TwoObjects<Long, Integer> twoObjects : list) {
+						long productId = twoObjects.getObj1();
+						int qty = twoObjects.getObj2();
 						
 						sql = "SELECT salePriceCustomer FROM product WHERE id = ? ";
 						preparedStatement = connection.prepareStatement(sql);
-						preparedStatement.setLong(1, twoObjects.getObj1()/*productId*/);
+						preparedStatement.setLong(1, productId);
 						resultSet         = preparedStatement.executeQuery();
 						
 						/**** Shipping Cost Call ****/
-						estimatedRateAndDelivery = new ShippingDelivery(twoObjects.getObj1()/*productId*/);
+						estimatedRateAndDelivery = new ShippingDelivery(productId);
 						double shipping = estimatedRateAndDelivery.getRate().doubleValue();
 						/**** End Shipping Cost Call ****/
 						
+						/**** WholeSaleOffer Call ****/
+						WholeSaleOffer wholeSaleOffer = WholeSaleOffer.getWholeSaleOffer(productId); 
+						/**** End WholeSaleOffer Call ****/
+						
 						if (resultSet.next()) {
-							this.totalAmount += (resultSet.getDouble(1) * twoObjects.getObj2()/*Qty*/) + shipping;
-						}
+							
+							double subTotal = 0;
+							if (wholeSaleOffer != null && wholeSaleOffer.getQty() <= qty) {
+								double wholeSaleDiscount = wholeSaleOffer.getDiscount();
+								subTotal = (resultSet.getDouble(1) * qty) * (1 - (wholeSaleDiscount / 100));
+							} else {							
+								subTotal = (resultSet.getDouble(1) * qty);
+							}
+							
+							this.totalAmount += subTotal + shipping;
+						}					
+						
 						
 						resultSet.close();
 						preparedStatement.close();

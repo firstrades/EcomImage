@@ -24,6 +24,7 @@ import org.json.JSONObject;
 import org.xml.sax.SAXException;
 
 import ecom.DAO.Buyer.BuyerSearchDAO;
+import ecom.DAO.Seller.ProductDAO;
 import ecom.DAO.User.UserDAO;
 import ecom.Implementation.Courier.SOAP.SearchLocationByPostal;
 import ecom.Implementation.Project.MultiShippingDelivery;
@@ -33,6 +34,7 @@ import ecom.Interface.Courier.SearchLocationByPostalInterface;
 import ecom.beans.BuyerServletHelper;
 import ecom.beans.CartAttributesBean;
 import ecom.beans.TransientData;
+import ecom.common.Conversions;
 import ecom.model.CartWishlist;
 import ecom.model.CustomerOrderHistroy;
 import ecom.model.DeliveryAddress;
@@ -413,6 +415,9 @@ public class BuyerServlet extends HttpServlet {
 				/*************** Database *****************/				
 				int qty1 = buyerSearchDAO.insertQtyOfRow(user.getUserInfo().getId(), qty, productId, cartWishlistID);
 				
+				ProductDAO productDAO = ProductDAO.getInstance();
+				Product product = productDAO.getProduct(productId);
+				
 				WholeSaleOffer wholeSaleOffer = WholeSaleOffer.getWholeSaleOffer(productId);
 				int wholeSaleQty = 0;
 				if (wholeSaleOffer != null)
@@ -462,6 +467,15 @@ public class BuyerServlet extends HttpServlet {
 					}
 				}
 				
+				/********* Subtotal Calculation **********/
+				double shipping = estimatedRateAndDelivery.getRate().doubleValue();
+				double subTotal = 0;
+				if (wholeSaleQty != 0 && qty1 >= wholeSaleQty) {
+					subTotal = (qty1 * product.getPrice().getSalePriceCustomer()) * (1 - (wholeSaleDiscount / 100)) + shipping;
+				} else {
+					subTotal = (qty1 * product.getPrice().getSalePriceCustomer()) + shipping;
+				}
+				subTotal = Conversions.round(subTotal, 2);
 				/************* Set Session *************/
 				session.setAttribute("apiDataList", apiDataList);
 				
@@ -484,6 +498,7 @@ public class BuyerServlet extends HttpServlet {
 						jsonObject.put("wholeSaleQty",      wholeSaleQty);
 						jsonObject.put("wholeSaleDiscount", wholeSaleDiscount);
 					}
+					jsonObject.put("subTotal", subTotal);
 				} catch (JSONException e) {							
 					e.printStackTrace();
 				}

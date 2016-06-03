@@ -123,13 +123,16 @@ float: left;
 						
 						String sellerCompany = UserDAO.getInstance().getSellerCompany(sellerId);
 						int    stock         = TransientData.getStock(productId);    
-						
-						double subtotal      = salePriceCustomer * qty + apiData.getObj1().doubleValue(); 
-						
+											
 						WholeSaleOffer wholeSaleOffer = WholeSaleOffer.getWholeSaleOffer(productId);
 						
-						
-						
+						double subtotal = 0;
+						if (wholeSaleOffer != null && wholeSaleOffer.getQty() <= qty) {
+							subtotal = ((salePriceCustomer * qty) * (1 - (wholeSaleOffer.getDiscount() / 100))) + apiData.getObj1().doubleValue(); 
+						} else {
+							subtotal = (salePriceCustomer * qty) + apiData.getObj1().doubleValue();
+						}
+						subtotal = Conversions.round(subtotal, 2);
 						
 						
 				%>
@@ -197,8 +200,8 @@ float: left;
  							
  						</td>
  						<td>
- 						<div class="bd">
- 							Rs. <%=subtotal %> 
+ 						<div class="bd"> 							
+ 							Rs. <%=subtotal %>  							
  						</div>
  						<br>
  							<div class="place_order" style="margin-top:39px;"> 

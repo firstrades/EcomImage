@@ -37,7 +37,7 @@ $(function() {
 				var salePrice = salePriceElement.val();                     // find value of sibling				
 				
 				var tr         = $(this).closest('.item-row');          // find parent with specific class	
-				var tdSubTotal = tr.find('.bd');
+				var tdSubTotal = tr.find('.bd');				
 				var productId  = tr.find('.remove').attr('class').split(' ')[2];  
 				
 				tr.find('span.stock').html('');
@@ -75,8 +75,8 @@ $(function() {
 						$('#qty').html(object.totalQty);
 						$('#totalsun').html('Rs. ' + object.totalSum);
 						
-						var subTotal = object.qty * parseFloat(salePrice); 
-						tdSubTotal.html('Rs. ' + subTotal);
+						//var subTotal = object.qty * parseFloat(salePrice);						
+						tdSubTotal.html('Rs. ' + object.subTotal);
 						
 						
 						
