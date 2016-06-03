@@ -139,16 +139,24 @@ float: left;
  							</a>
  							<span class="fk-bold"><%=sellerCompany %></span><br>
  							<span class="fk-bold">Product ID: <%=productId %></span>
+ 							
  							<!-- ---- Size------- -->
  							<% if (!productBeanAndQty.getObj2().getSize().equals("")) { %>
- 							<br><span class="fk-bold">Item Size: <%=productBeanAndQty.getObj2().getSize() %></span>
+ 								<br><span class="fk-bold">Item Size: <%=productBeanAndQty.getObj2().getSize() %></span>
  							<% } %>
+ 							
  							<!-- WholeSale Qty and Discount -->
  							<% if (wholeSaleOffer != null) { %>
- 							<br><span class="fk-bold">WholeSale Discount <%=wholeSaleOffer.getDiscount() %>% on Qty  <%=wholeSaleOffer.getQty() %> or more.</span>
+ 								<br><span class="fk-bold">WholeSale Discount <%=wholeSaleOffer.getDiscount() %>% on Qty  <%=wholeSaleOffer.getQty() %> or more.</span>
  							<% } %>
+ 							
  							<!-- Customer gets wholeSale Price -->
- 							<div style="display: none;" class="wholeSale"><!-- String from jQuery --></div>
+ 							<% if (wholeSaleOffer != null && wholeSaleOffer.getQty() <= qty) { %>
+ 								<div style="display: display;color:green;" class="wholeSale">You are qualified for discount <%=wholeSaleOffer.getDiscount() %> %</div>
+ 							<% } else { %>
+ 								<div style="color:green;" class="wholeSale"><!-- String from jQuery --></div>
+ 							<% } %> 
+ 							
  							<!-- ---- Stock------- -->
  							<% if (stock == 0) { %>
  								<span class="stock" style="position: relative;top: 47px;right: 207px;color: red; font-size: 12px; margin-top: -13px;">OUT OF STOCK </span>

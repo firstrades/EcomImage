@@ -25,6 +25,7 @@ import ecom.model.Order;
 import ecom.model.Product;
 import ecom.model.TwoObjects;
 import ecom.model.User;
+import ecom.model.WholeSaleOffer;
 
 @MultipartConfig
 public class OrderReviewAndSubmit extends HttpServlet {
@@ -225,6 +226,7 @@ public class OrderReviewAndSubmit extends HttpServlet {
 			List<BookedProduct> bookedProducts = new ArrayList<>();
 			double totalSellPrice = 0;
 			int i = 0;
+			double totalSavings = 0;
 			
 			for (CartWishlist cartWishlist : cartWishlistList) {
 				
@@ -240,8 +242,21 @@ public class OrderReviewAndSubmit extends HttpServlet {
 				//----------------------------------
 				long productId = cartWishlist.getProductId();
 				TwoObjects<Double, String> twoObjects = ProductDetailsDAO.getSellPriceAndWarranty( productId );
+				double sellPrice = twoObjects.getObj1();
 				
-						bookedProduct.setSellPrice(twoObjects.getObj1());  
+						/********* WholeSale Offer or not **********/
+						WholeSaleOffer wholeSaleOffer = WholeSaleOffer.getWholeSaleOffer(productId);
+						boolean isWholeSaleOfferValid = wholeSaleOffer != null && wholeSaleOffer.getQty() <= bookedProduct.getQty();
+						if (isWholeSaleOfferValid) {
+							double discountedPrice = sellPrice * (1 - (wholeSaleOffer.getDiscount() / 100)); //System.out.println(discountedPrice);
+							totalSavings += (sellPrice - discountedPrice) * bookedProduct.getQty();          //System.out.println(totalSavings);
+							bookedProduct.setSellPrice(discountedPrice); 	// discount added on each item
+						}
+						else {
+							//Normal Price
+							bookedProduct.setSellPrice(sellPrice); 
+						}
+						/********* End WholeSale Offer **********/
 				
 						bookedProduct.setWarranty (twoObjects.getObj2());
 				//----------------------------------
@@ -251,17 +266,21 @@ public class OrderReviewAndSubmit extends HttpServlet {
 						
 						bookedProduct.setProductBean(productBean);
 						
-				if(bookedProduct.getStock() != 0)  
+				if(bookedProduct.getStock() != 0)  {
 					totalSellPrice += (bookedProduct.getSellPrice() * bookedProduct.getQty()) + bookedProduct.getRate().doubleValue(); 
+				}
 				
 				totalSellPrice = Conversions.round(totalSellPrice, 2);
 				System.out.println(totalSellPrice);
 				
 				bookedProducts.add(bookedProduct);
+				
+				i++;
 			} // for close			
 			
 			order.setBookedProductList(bookedProducts);
 			order.setTotalSellPrice   (totalSellPrice);
+			order.setTotalSavings(totalSavings);
 			
 			
 			/********** Set Address To Ship ********/

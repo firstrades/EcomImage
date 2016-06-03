@@ -575,13 +575,13 @@ z-index: 101;
 	 															<td class="cell fk-text-center qty-cell carty-changeQuantity">
 	  																<form class="qtyForm ng-isolate-scope ng-pristine ng-valid" name="form_LSTBOK9789380280622FPLWQM:6660227E-3958-72C3-2A6B-1CE6FE262819:P:C-0012:U:SPCMS" method="get"  model="product" >
 	  																	<input type="text"   maxlength="3" value="<%=bookedProduct.getQty() %>"  class="qty-box fk-input ng-scope ng-pristine ng-valid ng-valid-pattern" select-on="qty_LSTBOK9789380280622FPLWQM:6660227E-3958-72C3-2A6B-1CE6FE262819:P:C-0012:U:SPCMS"  ><br>
-	  																	<input type="submit" class="qty-save fk-font-small ng-hide" value="Save" ng-show="showSave" bind-log="quantity update LSTBOK9789380280622FPLWQM:6660227E-3958-72C3-2A6B-1CE6FE262819:P:C-0012:U:SPCMS">
+	  																	<input type="submit" class="qty-save fk-font-small ng-hide" value="Save" data-ng-show="showSave" bind-log="quantity update LSTBOK9789380280622FPLWQM:6660227E-3958-72C3-2A6B-1CE6FE262819:P:C-0012:U:SPCMS">
 	  																</form> 
 	  															</td> 
 	  															<td class="cell price-cell"> 
 	  																<div class="carty-price text_right"> 
 	  																	<div class="fk-bold price ng-scope"> 	  																		
-	  																		<div class="tmargin20 fk-bold price ng-binding ng-hide" > Rs.<%=bookedProduct.getSellPrice() %></div> 
+	  																		<div class="tmargin20 fk-bold price ng-binding ng-hide" > Rs.<%=Conversions.round(bookedProduct.getSellPrice(), 2) %></div> 
 	  																	</div> 
 	  																</div>
 	  															</td> 
@@ -645,7 +645,7 @@ z-index: 101;
   						<div class="nav-bar ng-isolate-scope" >
    							<div class="pure-g-r"> 
    								<div class="pure-u-2-3 text_right"> 
-   									<span  class="rpadding20 ng-hide">Your Total Savings: <i class="offer-color fk-bold ng-binding">Rs.0</i></span> 
+   									<span  class="rpadding20 ng-hide">Your Total Savings: <i class="offer-color fk-bold ng-binding">Rs.<%=Conversions.round( order.getTotalSavings(), 2 ) %></i></span> 
    									<span class="total fk-font-15 rpadding10">Amount Payable: <i class="fk-font-26 ng-binding">Rs. <%=order.getTotalSellPrice() %></i></span> 
    								</div> 
    							</div> 

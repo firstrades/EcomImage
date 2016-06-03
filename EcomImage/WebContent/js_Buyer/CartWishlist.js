@@ -65,7 +65,7 @@ $(function() {
 						}
 						
 						if (object.wholeSaleQty && object.wholeSaleDiscount) { 
-							tr.find('div.wholeSale').css('display', 'block').css('color', 'red');
+							tr.find('div.wholeSale').css('display', 'block').css('color', 'green');
 							tr.find('div.wholeSale').html('You are qualified for discount ' + object.wholeSaleDiscount + '%');
 						}
 						

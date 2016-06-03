@@ -11,6 +11,7 @@ public class Order implements Serializable {
 	private List<BookedProduct> bookedProductList;		
 	
 	private double              totalSellPrice;
+	private double              totalSavings;
 	
 	public Order() {
 		deliveryAddress = new DeliveryAddress();				
@@ -51,5 +52,15 @@ public class Order implements Serializable {
 	public void setTotalSellPrice(double totalSellPrice) {
 		this.totalSellPrice = totalSellPrice;
 	}
+
+	public double getTotalSavings() {
+		return totalSavings;
+	}
+
+	public void setTotalSavings(double totalSavings) {
+		this.totalSavings = totalSavings;
+	}
+	
+	
 
 }
