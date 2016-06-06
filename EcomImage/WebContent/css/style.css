@@ -1462,8 +1462,7 @@ ul.grid_2 li {
   border: 1px solid #ccc;
 }
 ul.grid_2 li a img{
-	    height: 202px;
-    width: 202px;
+	   max-height:200px;
     padding-bottom: 13px;
     text-align: center;
         padding: 5px 7px;

@@ -288,10 +288,10 @@ public class SellerServlet extends HttpServlet {
 			InputStream inputStream1 = part1.getInputStream();
 			
 			Part part2 = request.getPart("image1"   );				
-			InputStream inputStream2 = part1.getInputStream();
+			InputStream inputStream2 = part2.getInputStream();
 			
 			Part part3 = request.getPart("image2"   );				
-			InputStream inputStream3 = part1.getInputStream();
+			InputStream inputStream3 = part3.getInputStream();
 			
 			/*****************  Get Session  **************************/
 			User user = (User) session.getAttribute("user");				

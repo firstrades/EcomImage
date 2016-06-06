@@ -531,11 +531,13 @@ public class BuyerServlet extends HttpServlet {
 			Long productId = Long.parseLong(productId111);        
 			int qty        = Integer.parseInt(qty111);
 			int stock      = TransientData.getStock(productId);
+			@SuppressWarnings("unused")
 			int tempQty    = qty;
 			
 			qty = (qty > stock) ? stock : qty;   //if (qty > stock)  qty = stock;				
 			
 			/*************** Database *****************/				
+			@SuppressWarnings("unused")
 			int qty1 = buyerSearchDAO.insertQtyOfRow(user.getUserInfo().getId(), qty, productId, cartWishlistID);
 			
 			/********* Next Page ***********/
