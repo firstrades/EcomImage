@@ -128,7 +128,7 @@
             //responsive code begin
             //you can remove responsive code if you don't want the slider scales while window resizing
             function ScaleSlider() {
-                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                var refSize = jssor_1_slider.$Elmt.parentNode.container;
                 if (refSize) {
                     refSize = Math.min(refSize, 809);
                     jssor_1_slider.$ScaleWidth(refSize);
@@ -171,7 +171,7 @@
             //responsive code begin
             //you can remove responsive code if you don't want the slider scales while window resizing
             function ScaleSlider() {
-                var refSize = jssor_2_slider.$Elmt.parentNode.clientWidth;
+                var refSize = jssor_2_slider.$Elmt.parentNode.container;
                 if (refSize) {
                     refSize = Math.min(refSize, 809);
                     jssor_2_slider.$ScaleWidth(refSize);
@@ -317,13 +317,13 @@
 
 <div class="col-md-8">
 
-<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0%; width: 1070px; height: 500px; overflow: hidden; visibility: hidden;">
+<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0%; width: 1188px; height: 500px; overflow: hidden; visibility: hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
-        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1000px; height: 500px; overflow: hidden;">
+        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 88px; width: 1013px; height: 500px; overflow: hidden;">
             <div style="display: none;">
                 <img src="images/offer.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
                <div style="height:200px">
@@ -1361,18 +1361,20 @@
 
 <%-- <%@ include file="SliderHot.jsp" %> --%>
 
-<div id="jssor_2" style="position: relative; margin: 0 auto; top: 0px; left: 0; width: 1070px; height: 500px; overflow: hidden; visibility: hidden;">
+<div id="jssor_2" style="position: relative; margin: 0 auto; top: 0px; left: 0%; width: 1188px; height: 500px; overflow: hidden; visibility: hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
-        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1000px; height: 500px; overflow: hidden;">
+        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 88px; width: 1013px; height: 500px; overflow: hidden;">
             <div style="display: none;">
                 <img src="images/hotdeal.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    			<div style="height:200px">
     			<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(0).getSubCategory() %>&productId=<%=offeredProducts.get(0).getProductId() %>">
-					<img src="IconImageFromProduct?productId=<%=offeredProducts.get(0).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+					<img src="IconImageFromProduct?productId=<%=offeredProducts.get(0).getProductId() %>" class="img-responsive center-block" alt="" />
 				</a>
+				</div>
 				<div class="special-info grid_1 simpleCart_shelfItem">
 					<h5 style="height: 65px;"> 
 						<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(0).getSubCategory() %>&productId=<%=offeredProducts.get(0).getProductId() %>"> <%=offeredProducts.get(0).getProductName() %>  (<%=offeredProducts.get(0).getCompanyName() %> )  </a> 
@@ -1389,9 +1391,11 @@
             </div>
             <div style="display: none;">
                <img src="images/hotdeal.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    			<div style="height:200px">
     			<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(1).getSubCategory() %>&productId=<%=offeredProducts.get(1).getProductId() %>">
-							<img src="IconImageFromProduct?productId=<%=offeredProducts.get(1).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+							<img src="IconImageFromProduct?productId=<%=offeredProducts.get(1).getProductId() %>" class="img-responsive center-block" alt="" />
 						</a>
+						</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5 style="height: 65px;"> 
 								<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(1).getSubCategory() %>&productId=<%=offeredProducts.get(1).getProductId() %>"> <%=offeredProducts.get(1).getProductName() %>  (<%=offeredProducts.get(1).getCompanyName() %> )  </a> 
@@ -1408,9 +1412,11 @@
             </div>
             <div style="display: none;">
                 <img src="images/hotdeal.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    						<div style="height:200px">
     						<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(2).getSubCategory() %>&productId=<%=offeredProducts.get(2).getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(2).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(2).getProductId() %>" class="img-responsive center-block" alt="" />
 							</a>
+							</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5 style="height: 65px;"> 
 								<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(2).getSubCategory() %>&productId=<%=offeredProducts.get(2).getProductId() %>"> <%=offeredProducts.get(2).getProductName() %>  (<%=offeredProducts.get(2).getCompanyName() %> )  </a> 
@@ -1427,9 +1433,11 @@
             </div>
             <div style="display: none;">
                 <img src="images/hotdeal.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    						<div style="height:200px">
     						<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(3).getSubCategory() %>&productId=<%=offeredProducts.get(3).getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(3).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(3).getProductId() %>" class="img-responsive center-block" alt=""/>
 							</a>
+							</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5 style="height: 65px;"> 
 								<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(3).getSubCategory() %>&productId=<%=offeredProducts.get(3).getProductId() %>"> <%=offeredProducts.get(3).getProductName() %>  (<%=offeredProducts.get(3).getCompanyName() %> )  </a> 
@@ -1446,9 +1454,11 @@
             </div>
             <div style="display: none;">
                 <img src="images/hotdeal.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    						<div style="height:200px">
     						<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(4).getSubCategory() %>&productId=<%=offeredProducts.get(4).getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(4).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(4).getProductId() %>" class="img-responsive center-block" alt="" />
 							</a>
+							</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5 style="height: 65px;"> 
 								<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(4).getSubCategory() %>&productId=<%=offeredProducts.get(4).getProductId() %>"> <%=offeredProducts.get(4).getProductName() %>  (<%=offeredProducts.get(4).getCompanyName() %> )  </a> 
@@ -1465,9 +1475,11 @@
             </div>
             <div style="display: none;">
                <img src="images/hotdeal.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    						<div style="height:200px">
     						<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(5).getSubCategory() %>&productId=<%=offeredProducts.get(5).getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(5).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(5).getProductId() %>" class="img-responsive center-block" alt="" />
 							</a>
+							</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5 style="height: 65px;"> 
 								<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(5).getSubCategory() %>&productId=<%=offeredProducts.get(5).getProductId() %>"> <%=offeredProducts.get(5).getProductName() %>  (<%=offeredProducts.get(5).getCompanyName() %> )  </a> 
