@@ -66,7 +66,7 @@
 							%>
 								<h3>
 									<a href="AddToCartOrWishlist?cartOrWishlist=cart">
-										<span id="amount">CART INR <%=totalAmount %></span> (<span id="qty" class=""><%=totalQty %></span> items)<img src="images/bag.png" alt="">
+										<span id="amount">CART INR <%=totalAmount %></span> <br>(<span id="qty" class=""><%=totalQty %></span> items)<img src="images/bag.png" alt="">
 									</a>
 								</h3>								
 								<div class="clearfix"> </div>

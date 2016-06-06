@@ -248,23 +248,31 @@
 
 <div class="row">
 	<div class="col-md-2">
-
-<div class="">
+    
+    <div class="">
+    
+    <div class="surakasha">
+ <a href="http://www.multisimrecharge.co.in/" target="_blank">   <img src="images/multisim.png" style="width: 100%;">  Multisim Recharge   </a>
+    
+    </div>
+     <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad12.jpg" style="width: 81%; margin-top: 4%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad12.jpg" style="width: 100%; margin-top: 17%;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
     
+    </div> 
+
+    
     </div>
     
-    
-</div>
+   </div>
     
     <!-- -------------------slider-------------------------------------------------- -->
     <div class="col-md-8">
@@ -273,11 +281,16 @@
        	<!-- Slider -->
 		<div class="block-slider block-slider4">
 			<ul class="" id="bxslider-home4">
-               <li>
-               <img src="images/banner.jpg">
-               </li>
-               <li>  <img src="images/banner2.jpg">  </li>
-               <li> <img src="images/banner3.jpg"> </li>
+			  <li><img src="images/baner5.jpg"></li>
+              
+               
+               <li> <img src="images/baner3.jpg"> </li>
+               <li> <img src="images/newbaner.jpg"> </li>
+               <li>  <img src="images/baner2.jpg">  </li>
+                <li> <img src="images/baner7.jpg"> </li>
+                 <li> <img src="images/baner9.jpg"> </li>
+                  <li> <img src="images/baner10.jpg"> </li>
+                   <li> <img src="images/baner11.jpg"> </li>
 				
 			</ul>
 		</div>
@@ -290,17 +303,17 @@
     <div class="">
     
     <div class="surakasha">
- <a href="http://www.surakshaecommerce.com/" target="_blank">   <img src="images/add_link.png" style="width: 100%;">  Suraksha travel portal   </a>
+ <a href="http://firstrades.com/a2z/" target="_blank">   <img src="images/add_link.png" style="width: 100%;">  Suraksha travel portal   </a>
     
     </div>
      <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad14.png" style="width: 81%; margin-top: 17%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad14.png" style="width: 100%; margin-top: 17%;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
@@ -323,22 +336,14 @@
 <div class="row">
 <div class="col-md-2">
 
-<div class="" style="height: 467px;">
+<div class="" >
     
     
- <a href="#" target="_blank">   <img src="images/ads2.png" style="width: 80%; margin-top:0px;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ads2.jpg" style="width: 100%; margin-top:50px;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- www.charge-it-up.com -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:200px;height:220px"
-     data-ad-client="ca-pub-3038271016444605"
-     data-ad-slot="9291379173"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
     
     </div>
   </div>
@@ -347,19 +352,24 @@
 <%-- <%@ include file="SliderOffer.jsp" %>  --%> 
 
 <div class="col-md-8">
+<div class="special">
+		<h3><a href="#" style="color: #FF8F00;">OFFER CATEGORY</a></h3>
+		</div>
 
-<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0%; width: 1070px; height: 500px; overflow: hidden; visibility: hidden;">
+<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0%; width: 1188px; height: 500px; overflow: hidden; visibility: hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
-        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1000px; height: 500px; overflow: hidden;">
+        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 88px; width: 1013px; height: 500px; overflow: hidden;">
             <div style="display: none;">
                 <img src="images/offer.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+               <div style="height:200px">
     			<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(0).getSubCategory() %>&productId=<%=offeredProducts.get(0).getProductId() %>">
-					<img src="IconImageFromProduct?productId=<%=offeredProducts.get(0).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+					<img src="IconImageFromProduct?productId=<%=offeredProducts.get(0).getProductId() %>" class="img-responsive center-block" alt="" />
 				</a>
+				</div>
 				<div class="special-info grid_1 simpleCart_shelfItem">
 					<h5 style="height: 65px;"> 
 						<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(0).getSubCategory() %>&productId=<%=offeredProducts.get(0).getProductId() %>"> <%=offeredProducts.get(0).getProductName() %>  (<%=offeredProducts.get(0).getCompanyName() %> )  </a> 
@@ -376,9 +386,11 @@
             </div>
             <div style="display: none;">
                <img src="images/offer.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    			<div style="height:200px">
     			<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(1).getSubCategory() %>&productId=<%=offeredProducts.get(1).getProductId() %>">
-							<img src="IconImageFromProduct?productId=<%=offeredProducts.get(1).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+							<img src="IconImageFromProduct?productId=<%=offeredProducts.get(1).getProductId() %>" class="img-responsive center-block" alt="" />
 						</a>
+						</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5 style="height: 65px;"> 
 								<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(1).getSubCategory() %>&productId=<%=offeredProducts.get(1).getProductId() %>"> <%=offeredProducts.get(1).getProductName() %>  (<%=offeredProducts.get(1).getCompanyName() %> )  </a> 
@@ -394,10 +406,13 @@
 						</div>
             </div>
             <div style="display: none;">
+           
                 <img src="images/offer.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    						 <div style="height:200px">
     						<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(2).getSubCategory() %>&productId=<%=offeredProducts.get(2).getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(2).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(2).getProductId() %>" class="img-responsive center-block" alt="" />
 							</a>
+							</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5 style="height: 65px;"> 
 								<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(2).getSubCategory() %>&productId=<%=offeredProducts.get(2).getProductId() %>"> <%=offeredProducts.get(2).getProductName() %>  (<%=offeredProducts.get(2).getCompanyName() %> )  </a> 
@@ -414,9 +429,11 @@
             </div>
             <div style="display: none;">
                 <img src="images/offer.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    						 <div style="height:200px">
     						<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(3).getSubCategory() %>&productId=<%=offeredProducts.get(3).getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(3).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(3).getProductId() %>" class="img-responsive center-block" alt="" />
 							</a>
+							</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5 style="height: 65px;"> 
 								<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(3).getSubCategory() %>&productId=<%=offeredProducts.get(3).getProductId() %>"> <%=offeredProducts.get(3).getProductName() %>  (<%=offeredProducts.get(3).getCompanyName() %> )  </a> 
@@ -433,9 +450,11 @@
             </div>
             <div style="display: none;">
                 <img src="images/offer.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    						 <div style="height:200px">
     						<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(4).getSubCategory() %>&productId=<%=offeredProducts.get(4).getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(4).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(4).getProductId() %>" class="img-responsive center-block" alt="" />
 							</a>
+							</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5 style="height: 65px;"> 
 								<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(4).getSubCategory() %>&productId=<%=offeredProducts.get(4).getProductId() %>"> <%=offeredProducts.get(4).getProductName() %>  (<%=offeredProducts.get(4).getCompanyName() %> )  </a> 
@@ -452,9 +471,11 @@
             </div>
             <div style="display: none;">
                <img src="images/offer.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    						 <div style="height:200px">
     						<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(5).getSubCategory() %>&productId=<%=offeredProducts.get(5).getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(5).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(5).getProductId() %>" class="img-responsive center-block" alt="" />
 							</a>
+							</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5 style="height: 65px;"> 
 								<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(5).getSubCategory() %>&productId=<%=offeredProducts.get(5).getProductId() %>"> <%=offeredProducts.get(5).getProductName() %>  (<%=offeredProducts.get(5).getCompanyName() %> )  </a> 
@@ -499,16 +520,19 @@
   <div class="col-md-2">
   
  
-  <ins class="adsbygoogle"
-         style="display:inline-block;width:300px;height:250px"
-         data-ad-client="ca-pub-3038271016444605"
-         data-ad-slot="9291379173"></ins>
-
-         
-
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
  
+
+<div class="" >
+    
+    
+ <a href="#" target="_blank">   <img src="images/ad18.jpg" style="width: 100%; margin-top:50px;">     </a>
+    
+    
+      
+
+    
+    </div>
+  
 
 </div>
   </div>
@@ -519,7 +543,6 @@
 			
 				
 <!-- ------------------------------------End Banner--------------------------------------------- -->
-				
 				
 						
 					
@@ -539,11 +562,11 @@
 <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad1.png" style="width: 100%; margin-top: 30%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad1.png" style="width: 100%; margin-top: 30%;height:400px;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
@@ -566,9 +589,11 @@
 						productBean = map.get("Mobile");
 					%>
 					<li>
+					<div style="height:200px;">
 						<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-							<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+							<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 						</a>
+						</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5> 
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -587,9 +612,11 @@
 						productBean = map.get("Laptop");
 					%>
 					<li>
+					<div style="height:200px;">
 						<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-							<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+							<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 						</a>
+						</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5> 
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -608,9 +635,11 @@
 						productBean = map.get("Tablet");
 					%>
 					<li>
+					<div style="height:200px;">
 						<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-							<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+							<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 						</a>
+						</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5> 
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -629,9 +658,11 @@
 						productBean = map.get("Camera");
 					%>
 					<li>
+					<div style="height:200px;">
 						<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-							<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+							<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 						</a>
+						</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5> 
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -650,9 +681,11 @@
 						productBean = map.get("Television");
 					%>
 					<li>
+					<div style="height:200px;">
 						<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-							<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+							<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 						</a>
+						</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5> 
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -676,7 +709,7 @@
 			
 			
   
-<a href="#" target="_blank">   <img src="images/ad9.png" style="width:100%;margin-top:30%; height: 370px;">    </a>
+<a href="#" target="_blank">   <img src="images/ad9.png" style="width:100%;margin-top:30%; height:400px;">    </a>
          
 
        
@@ -693,11 +726,11 @@
 <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad3.png" style="width: 101%; margin-top: 30%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad3.png" style="width: 101%; margin-top: 30%;height: 400px;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
@@ -721,9 +754,11 @@
 							productBean = map.get("MenTshirt");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5 style="font-size: 13px;"> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -742,9 +777,11 @@
 							productBean = map.get("MenShirt");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -763,9 +800,11 @@
 							productBean = map.get("MenJeans");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -784,9 +823,11 @@
 							productBean = map.get("MenTrouser");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -805,9 +846,11 @@
 							productBean = map.get("MenShoes");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -831,7 +874,7 @@
 				
 	 <div style="">
   
-<a href="#" target="_blank">   <img src="images/ad4.png" style=" margin-top: 30%;height: 370px;">    </a>
+<a href="#" target="_blank">   <img src="images/ad4.jpg" style=" margin-top: 30%;height: 400px;">    </a>
          
 
        
@@ -851,11 +894,11 @@
 <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad10.png" style="width:100%; margin-top: 30%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad10.jpg" style="width:100%; margin-top: 30%;height: 400px;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
@@ -878,9 +921,11 @@
 							productBean = map.get("WomenShoe");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -899,9 +944,11 @@
 							productBean = map.get("WomenKurta");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -920,9 +967,11 @@
 							productBean = map.get("WomenSharee");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -941,9 +990,11 @@
 							productBean = map.get("WomenSalwar");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -962,9 +1013,11 @@
 							productBean = map.get("WomenJeans");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -987,7 +1040,7 @@
 				<div class="col-md-2">
 			 <div style="">
   
-<a href="#" target="_blank">   <img src="images/ad1.png" style="width:100%; margin-top: 30%;height: 370px;">    </a>
+<a href="#" target="_blank">   <img src="images/ad19.jpg" style="width:100%; margin-top: 30%;height: 400px;">    </a>
          
 
        
@@ -1004,11 +1057,11 @@
 <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad8.png" style="width: 100%; margin-top: 30%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad8.jpg" style="width: 100%; margin-top: 30%;height: 400px;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
@@ -1028,9 +1081,11 @@
 							productBean = map.get("Bedsheets");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -1049,9 +1104,11 @@
 							productBean = map.get("Curtains");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -1070,9 +1127,11 @@
 							productBean = map.get("SofaCovers");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -1091,9 +1150,11 @@
 							productBean = map.get("PressureCookers");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -1112,9 +1173,11 @@
 							productBean = map.get("GasStoves");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive centr-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -1136,7 +1199,7 @@
 				<div class="col-md-2">
  <div style="">
   
-<a href="#" target="_blank">   <img src="images/ad6.png" style="width:100%; margin-top: 30%;height: 370px;">    </a>
+<a href="#" target="_blank">   <img src="images/ad6.jpg" style="width:100%; margin-top: 30%;height: 400px;">    </a>
          
 
        
@@ -1153,11 +1216,11 @@
 <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad5.png" style="width: 100%; margin-top: 30%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad5.jpg" style="width: 100%; margin-top: 30%;height: 400px;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
@@ -1178,9 +1241,11 @@
 							productBean = map.get("Baby_Diapers");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -1199,9 +1264,11 @@
 							productBean = map.get("Boys_Pant");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -1220,9 +1287,11 @@
 							productBean = map.get("Boys_Shirt");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -1241,9 +1310,11 @@
 							productBean = map.get("Girls_Top");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -1262,9 +1333,11 @@
 							productBean = map.get("Girls_Shorts");
 						%>
 						<li>
+						<div style="height:200px;">
 							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive" alt="">
+								<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
 							</a>
+							</div>
 							<div class="special-info grid_1 simpleCart_shelfItem">
 								<h5> 
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
@@ -1288,7 +1361,7 @@
 				
 			 <div style="">
   
-<a href="#" target="_blank">   <img src="images/ad2.png" style=" width:100%;margin-top: 30%;height: 370px;">    </a>
+<a href="#" target="_blank">   <img src="images/ad2.jpg" style=" width:100%;margin-top: 30%;height:400px;">    </a>
          
 
        
@@ -1304,11 +1377,11 @@
 <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad11.png" style="width: 100%; margin-top: 30%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad11.jpg" style="width: 100%; margin-top: 30%;height: 400px;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
@@ -1329,18 +1402,20 @@
 
 <%-- <%@ include file="SliderHot.jsp" %> --%>
 
-<div id="jssor_2" style="position: relative; margin: 0 auto; top: 0px; left: 0; width: 1070px; height: 500px; overflow: hidden; visibility: hidden;">
+<div id="jssor_2" style="position: relative; margin: 0 auto; top: 0px; left: 0%; width: 1188px; height: 500px; overflow: hidden; visibility: hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
-        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1000px; height: 500px; overflow: hidden;">
+        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 88px; width: 1013px; height: 500px; overflow: hidden;">
             <div style="display: none;">
                 <img src="images/hotdeal.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    			<div style="height:200px">
     			<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(0).getSubCategory() %>&productId=<%=offeredProducts.get(0).getProductId() %>">
-					<img src="IconImageFromProduct?productId=<%=offeredProducts.get(0).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+					<img src="IconImageFromProduct?productId=<%=offeredProducts.get(0).getProductId() %>" class="img-responsive center-block" alt="" />
 				</a>
+				</div>
 				<div class="special-info grid_1 simpleCart_shelfItem">
 					<h5 style="height: 65px;"> 
 						<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(0).getSubCategory() %>&productId=<%=offeredProducts.get(0).getProductId() %>"> <%=offeredProducts.get(0).getProductName() %>  (<%=offeredProducts.get(0).getCompanyName() %> )  </a> 
@@ -1357,9 +1432,11 @@
             </div>
             <div style="display: none;">
                <img src="images/hotdeal.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    			<div style="height:200px">
     			<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(1).getSubCategory() %>&productId=<%=offeredProducts.get(1).getProductId() %>">
-							<img src="IconImageFromProduct?productId=<%=offeredProducts.get(1).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+							<img src="IconImageFromProduct?productId=<%=offeredProducts.get(1).getProductId() %>" class="img-responsive center-block" alt="" />
 						</a>
+						</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5 style="height: 65px;"> 
 								<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(1).getSubCategory() %>&productId=<%=offeredProducts.get(1).getProductId() %>"> <%=offeredProducts.get(1).getProductName() %>  (<%=offeredProducts.get(1).getCompanyName() %> )  </a> 
@@ -1376,9 +1453,11 @@
             </div>
             <div style="display: none;">
                 <img src="images/hotdeal.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    						<div style="height:200px">
     						<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(2).getSubCategory() %>&productId=<%=offeredProducts.get(2).getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(2).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(2).getProductId() %>" class="img-responsive center-block" alt="" />
 							</a>
+							</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5 style="height: 65px;"> 
 								<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(2).getSubCategory() %>&productId=<%=offeredProducts.get(2).getProductId() %>"> <%=offeredProducts.get(2).getProductName() %>  (<%=offeredProducts.get(2).getCompanyName() %> )  </a> 
@@ -1395,9 +1474,11 @@
             </div>
             <div style="display: none;">
                 <img src="images/hotdeal.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    						<div style="height:200px">
     						<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(3).getSubCategory() %>&productId=<%=offeredProducts.get(3).getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(3).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(3).getProductId() %>" class="img-responsive center-block" alt=""/>
 							</a>
+							</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5 style="height: 65px;"> 
 								<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(3).getSubCategory() %>&productId=<%=offeredProducts.get(3).getProductId() %>"> <%=offeredProducts.get(3).getProductName() %>  (<%=offeredProducts.get(3).getCompanyName() %> )  </a> 
@@ -1414,9 +1495,11 @@
             </div>
             <div style="display: none;">
                 <img src="images/hotdeal.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    						<div style="height:200px">
     						<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(4).getSubCategory() %>&productId=<%=offeredProducts.get(4).getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(4).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(4).getProductId() %>" class="img-responsive center-block" alt="" />
 							</a>
+							</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5 style="height: 65px;"> 
 								<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(4).getSubCategory() %>&productId=<%=offeredProducts.get(4).getProductId() %>"> <%=offeredProducts.get(4).getProductName() %>  (<%=offeredProducts.get(4).getCompanyName() %> )  </a> 
@@ -1433,9 +1516,11 @@
             </div>
             <div style="display: none;">
                <img src="images/hotdeal.png" style="position:absolute;z-index:2;margin:auto;height:90px;margin-left: 2%;"/>
+    						<div style="height:200px">
     						<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(5).getSubCategory() %>&productId=<%=offeredProducts.get(5).getProductId() %>">
-								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(5).getProductId() %>" class="img-responsive" alt="" style="height: 300px;width: 320px;"/>
+								<img src="IconImageFromProduct?productId=<%=offeredProducts.get(5).getProductId() %>" class="img-responsive center-block" alt="" />
 							</a>
+							</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 							<h5 style="height: 65px;"> 
 								<a style="font-size: 14px;font-weight: bold;"  href="CompleteProductDetails?subCategory=<%=offeredProducts.get(5).getSubCategory() %>&productId=<%=offeredProducts.get(5).getProductId() %>"> <%=offeredProducts.get(5).getProductName() %>  (<%=offeredProducts.get(5).getCompanyName() %> )  </a> 
@@ -1480,7 +1565,7 @@
 
  <div style="">
   
-<a href="#" target="_blank">   <img src="images/ad7.png" style="width:100%; margin-top: 30%;height: 370px;">    </a>
+<a href="#" target="_blank">   <img src="images/ad7.jpg" style="width:100%; margin-top: 30%;height: 400px;">    </a>
          
 
        
