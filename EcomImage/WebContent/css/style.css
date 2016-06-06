@@ -486,9 +486,7 @@ border: none;
 }
 #loginContainer a span {
   display: block;
-  padding: 2px 14px;
-  border: 1px solid #555;
-  font-weight: 300;
+ font-size:16px;
 }
 /* Login Button */
 #loginButton { 
@@ -1076,16 +1074,20 @@ color: #333333;
 .block-slider .bx-prev{
 	left: 0px;
 	padding-right: 3px;
+	display: none;
 }
 .block-slider .bx-next{
 	right: 0px;
 	padding-left: 3px;
+	display: none;
 }
 .block-slider:hover .bx-prev{
 	left: 10px;
+	display: none;
 }
 .block-slider:hover .bx-next{
 	right: 10px;
+	display: none;
 }
 .block-slider .bx-prev:hover,
 .block-slider .bx-next:hover{

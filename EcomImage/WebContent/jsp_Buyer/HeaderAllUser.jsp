@@ -39,7 +39,7 @@
 					<div class="rgt-bottom">
 						<div class="log">
 							<div class="login" >
-								<div id="loginContainer"><a href="#"  data-toggle="modal" data-target="#myModal1"><span style="border-radius: 10px; background: #F57D51; color: white;">Login</span></a>
+								<div id="loginContainer"><a href="#"  data-toggle="modal" data-target="#myModal1"><span class="btn btn-success">Login</span></a>
 								    <div class="modal fade" id="myModal1">
     	<div class="modal-dialog" style="width:360px;">    
       		<!-- Modal content-->
@@ -75,7 +75,7 @@
 							<div id="loginContainer">
 								<!-- <a href="CustomerRegistrationPage"  id="loginButton" style="background-color: #099C0C;color: #fff;padding: 1px 0px;"> -->
 								<a href="#"  data-toggle="modal" data-target="#myModal2">
-									<span style="    border-radius: 6px;background: #099C0C; color: white;padding: 5px 1px;">REGISTER</span>
+									<span class="btn btn-warning">REGISTER</span>
 								</a>
 								
 								<div class="modal fade" id="myModal2">
@@ -109,7 +109,7 @@
 						</div>
 						<div class="cart box_1">
 							<h3><a href="#">
-								<span>CART INR 0.00</span> (<span id="" class="">0</span> items)<img src="images/bag.png" alt="">
+								<span style="font-family: monospace;font-size: 18px; font-weight: bold; color: #099C0C;">CART INR 0.00 <br/>(0 items)</span><i class="fa fa-shopping-cart fa-2x"></i>
 							</a></h3>	
 							
 							<div class="clearfix"> </div>

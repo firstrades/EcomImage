@@ -11,7 +11,8 @@
 <html>
 <head>
 	<title> Firstrades </title>
-	
+	<link href="font-awesome/css/font-awesome.css" rel='stylesheet' type='text/css' />
+	<link href="font-awesome/css/font-awesome.min.css" rel='stylesheet' type='text/css' />	
 	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />	
 	<link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="<%=FrequentUse.style %>" rel='stylesheet' type='text/css' />	
@@ -128,7 +129,7 @@
             //responsive code begin
             //you can remove responsive code if you don't want the slider scales while window resizing
             function ScaleSlider() {
-                var refSize = jssor_1_slider.$Elmt.parentNode.container;
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
                 if (refSize) {
                     refSize = Math.min(refSize, 809);
                     jssor_1_slider.$ScaleWidth(refSize);
@@ -171,7 +172,7 @@
             //responsive code begin
             //you can remove responsive code if you don't want the slider scales while window resizing
             function ScaleSlider() {
-                var refSize = jssor_2_slider.$Elmt.parentNode.container;
+                var refSize = jssor_2_slider.$Elmt.parentNode.clientWidth;
                 if (refSize) {
                     refSize = Math.min(refSize, 809);
                     jssor_2_slider.$ScaleWidth(refSize);
@@ -217,23 +218,31 @@
 
 <div class="row">
 	<div class="col-md-2">
-
-<div class="">
+    
+    <div class="">
+    
+    <div class="surakasha">
+ <a href="http://www.multisimrecharge.co.in/" target="_blank">   <img src="images/multisim.png" style="width: 100%;">  Multisim Recharge   </a>
+    
+    </div>
+     <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad12.jpg" style="width: 81%; margin-top: 4%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad12.jpg" style="width: 100%; margin-top: 17%;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
     
+    </div> 
+
+    
     </div>
     
-    
-</div>
+   </div>
     
     <!-- -------------------slider-------------------------------------------------- -->
     <div class="col-md-8">
@@ -242,16 +251,16 @@
        	<!-- Slider -->
 		<div class="block-slider block-slider4">
 			<ul class="" id="bxslider-home4">
-               <li>
-               <img src="images/baner5.png">
-               </li>
-               <li>  <img src="images/baner2.png">  </li>
-               <li> <img src="images/baner3.png"> </li>
-               <li> <img src="images/baner6.png"> </li>
-                <li> <img src="images/baner7.png"> </li>
-                 <li> <img src="images/baner9.png"> </li>
-                  <li> <img src="images/baner10.png"> </li>
-                   <li> <img src="images/baner11.png"> </li>
+			  <li><img src="images/baner5.jpg"></li>
+              
+               
+               <li> <img src="images/baner3.jpg"> </li>
+               <li> <img src="images/newbaner.jpg"> </li>
+               <li>  <img src="images/baner2.jpg">  </li>
+                <li> <img src="images/baner7.jpg"> </li>
+                 <li> <img src="images/baner9.jpg"> </li>
+                  <li> <img src="images/baner10.jpg"> </li>
+                   <li> <img src="images/baner11.jpg"> </li>
 				
 			</ul>
 		</div>
@@ -264,17 +273,17 @@
     <div class="">
     
     <div class="surakasha">
- <a href="http://www.surakshaecommerce.com/" target="_blank">   <img src="images/add_link.png" style="width: 100%;">  Suraksha travel portal   </a>
+ <a href="http://firstrades.com/a2z/" target="_blank">   <img src="images/add_link.png" style="width: 100%;">  Suraksha travel portal   </a>
     
     </div>
      <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad14.png" style="width: 81%; margin-top: 17%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad14.png" style="width: 100%; margin-top: 17%;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
@@ -297,22 +306,14 @@
 <div class="row">
 <div class="col-md-2">
 
-<div class="" style="height: 467px;">
+<div class="" >
     
     
- <a href="#" target="_blank">   <img src="images/ads2.png" style="width: 80%; margin-top:0px;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ads2.jpg" style="width: 100%; margin-top:50px;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- www.charge-it-up.com -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:200px;height:220px"
-     data-ad-client="ca-pub-3038271016444605"
-     data-ad-slot="9291379173"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
     
     </div>
   </div>
@@ -321,6 +322,9 @@
 <%-- <%@ include file="SliderOffer.jsp" %>  --%> 
 
 <div class="col-md-8">
+<div class="special">
+		<h3><a href="#" style="color: #FF8F00;">OFFER CATEGORY</a></h3>
+		</div>
 
 <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0%; width: 1188px; height: 500px; overflow: hidden; visibility: hidden;">
         <!-- Loading Screen -->
@@ -486,16 +490,19 @@
   <div class="col-md-2">
   
  
-  <ins class="adsbygoogle"
-         style="display:inline-block;width:300px;height:250px"
-         data-ad-client="ca-pub-3038271016444605"
-         data-ad-slot="9291379173"></ins>
-
-         
-
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
  
+
+<div class="" >
+    
+    
+ <a href="#" target="_blank">   <img src="images/ad18.jpg" style="width: 100%; margin-top:50px;">     </a>
+    
+    
+      
+
+    
+    </div>
+  
 
 </div>
   </div>
@@ -526,11 +533,11 @@
 <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad1.png" style="width: 100%; margin-top: 30%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad1.png" style="width: 100%; margin-top: 30%;height:400px;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
@@ -673,7 +680,7 @@
 			
 			
   
-<a href="#" target="_blank">   <img src="images/ad9.png" style="width:100%;margin-top:30%; height: 370px;">    </a>
+<a href="#" target="_blank">   <img src="images/ad9.png" style="width:100%;margin-top:30%; height:400px;">    </a>
          
 
        
@@ -690,11 +697,11 @@
 <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad3.png" style="width: 101%; margin-top: 30%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad3.png" style="width: 101%; margin-top: 30%;height: 400px;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
@@ -838,7 +845,7 @@
 				
 	 <div style="">
   
-<a href="#" target="_blank">   <img src="images/ad4.png" style=" margin-top: 30%;height: 370px;">    </a>
+<a href="#" target="_blank">   <img src="images/ad4.jpg" style=" margin-top: 30%;height: 400px;">    </a>
          
 
        
@@ -858,11 +865,11 @@
 <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad10.png" style="width:100%; margin-top: 30%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad10.jpg" style="width:100%; margin-top: 30%;height: 400px;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
@@ -1004,7 +1011,7 @@
 				<div class="col-md-2">
 			 <div style="">
   
-<a href="#" target="_blank">   <img src="images/ad1.png" style="width:100%; margin-top: 30%;height: 370px;">    </a>
+<a href="#" target="_blank">   <img src="images/ad19.jpg" style="width:100%; margin-top: 30%;height: 400px;">    </a>
          
 
        
@@ -1021,11 +1028,11 @@
 <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad8.png" style="width: 100%; margin-top: 30%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad8.jpg" style="width: 100%; margin-top: 30%;height: 400px;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
@@ -1163,7 +1170,7 @@
 				<div class="col-md-2">
  <div style="">
   
-<a href="#" target="_blank">   <img src="images/ad6.png" style="width:100%; margin-top: 30%;height: 370px;">    </a>
+<a href="#" target="_blank">   <img src="images/ad6.jpg" style="width:100%; margin-top: 30%;height: 400px;">    </a>
          
 
        
@@ -1180,11 +1187,11 @@
 <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad5.png" style="width: 100%; margin-top: 30%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad5.jpg" style="width: 100%; margin-top: 30%;height: 400px;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
@@ -1325,7 +1332,7 @@
 				
 			 <div style="">
   
-<a href="#" target="_blank">   <img src="images/ad2.png" style=" width:100%;margin-top: 30%;height: 370px;">    </a>
+<a href="#" target="_blank">   <img src="images/ad2.jpg" style=" width:100%;margin-top: 30%;height:400px;">    </a>
          
 
        
@@ -1341,11 +1348,11 @@
 <div class="">
     
     
- <a href="#" target="_blank">   <img src="images/ad11.png" style="width: 100%; margin-top: 30%;height: 370px;">     </a>
+ <a href="#" target="_blank">   <img src="images/ad11.jpg" style="width: 100%; margin-top: 30%;height: 400px;">     </a>
     
     
       
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 <!-- www.charge-it-up.com -->
 
 
@@ -1529,7 +1536,7 @@
 
  <div style="">
   
-<a href="#" target="_blank">   <img src="images/ad7.png" style="width:100%; margin-top: 30%;height: 370px;">    </a>
+<a href="#" target="_blank">   <img src="images/ad7.jpg" style="width:100%; margin-top: 30%;height: 400px;">    </a>
          
 
        
