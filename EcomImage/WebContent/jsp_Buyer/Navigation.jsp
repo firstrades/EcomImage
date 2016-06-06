@@ -7,7 +7,7 @@
     <div class="navigation" style="background-color: #F57D51;height: 39px;">
     	<div class="container">
 		<!-- start header menu -->
-			<ul class="megamenu skyblue" style="width: 107%;">
+			<ul class="megamenu skyblue" style="width: 109%;">
 			
 				<li class="active grid"><a class="color1" href="index.jsp">HOME</a>
 				
@@ -264,7 +264,40 @@
 	    				</div>
 				
 				</li>
-				<li><a class="color5" href="#">Herbal</a></li>
+				<li><a class="color5" href="#">Herbal</a>
+				<div class="megapanel">
+						<div class="row">
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Required</h4>
+									<ul>
+										<li><a href="SearchBySubCategory?subCategory=Bedsheets">Bedsheets</a></li>
+										<li><a href="SearchBySubCategory?subCategory=Curtains">Curtains</a></li>
+										<li><a href="SearchBySubCategory?subCategory=SofaCovers">Sofa Covers</a></li>
+										<li><a href="SearchBySubCategory?subCategory=PressureCookers">Pressure Cookers</a></li>
+										<li><a href="SearchBySubCategory?subCategory=GasStoves">Gas Stoves</a></li>
+									</ul>	
+								</div>							
+							</div>
+							
+
+							<div class="col_images">
+								<div class="h_nav">
+									<img src="images/herbal.jpg" alt="herbal">
+								</div>
+							</div>
+
+
+						</div>
+						<div class="row">
+							<div class="col2"></div>
+							<div class="col1"></div>
+							<div class="col1"></div>
+							<div class="col1"></div>
+							<div class="col1"></div>
+						</div>
+	    			</div>
+				</li>
 				<li><a class="color5" href="#">BOND &amp; MUTUAL FUND</a>	
 				<div class="megapanel">
 						<div class="row">
@@ -359,7 +392,40 @@
 						</div>
 	    				</div>
 				</li>	
-				<li><a class="color5" href="#">Hot</a></li>
+				<li><a class="color5" href="#">Hot</a>
+				<div class="megapanel">
+						<div class="row">
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Required</h4>
+									<ul>
+										<li><a href="SearchBySubCategory?subCategory=Bedsheets">Bedsheets</a></li>
+										<li><a href="SearchBySubCategory?subCategory=Curtains">Curtains</a></li>
+										<li><a href="SearchBySubCategory?subCategory=SofaCovers">Sofa Covers</a></li>
+										<li><a href="SearchBySubCategory?subCategory=PressureCookers">Pressure Cookers</a></li>
+										<li><a href="SearchBySubCategory?subCategory=GasStoves">Gas Stoves</a></li>
+									</ul>	
+								</div>							
+							</div>
+							
+
+							<div class="col_images">
+								<div class="h_nav">
+									<img src="images/herbal.jpg" alt="herbal">
+								</div>
+							</div>
+
+
+						</div>
+						<div class="row">
+							<div class="col2"></div>
+							<div class="col1"></div>
+							<div class="col1"></div>
+							<div class="col1"></div>
+							<div class="col1"></div>
+						</div>
+	    			</div>
+				</li>
 		 	</ul> 
 		</div>    
 	</div>

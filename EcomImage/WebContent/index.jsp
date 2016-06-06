@@ -243,10 +243,15 @@
 		<div class="block-slider block-slider4">
 			<ul class="" id="bxslider-home4">
                <li>
-               <img src="images/banner.jpg">
+               <img src="images/baner5.png">
                </li>
-               <li>  <img src="images/banner2.jpg">  </li>
-               <li> <img src="images/banner3.jpg"> </li>
+               <li>  <img src="images/baner2.png">  </li>
+               <li> <img src="images/baner3.png"> </li>
+               <li> <img src="images/baner6.png"> </li>
+                <li> <img src="images/baner7.png"> </li>
+                 <li> <img src="images/baner9.png"> </li>
+                  <li> <img src="images/baner10.png"> </li>
+                   <li> <img src="images/baner11.png"> </li>
 				
 			</ul>
 		</div>
