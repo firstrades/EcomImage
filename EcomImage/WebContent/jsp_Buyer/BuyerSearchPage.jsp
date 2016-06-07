@@ -475,87 +475,6 @@
 <!-- ------------------------------------End Navigation--------------------------------------------- -->
 
 
-<!-- ------------------------------------Banner----------------------------------------------------- -->
-
-<div class="arriv">
-	<div class="advertisment">
-      
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- www.charge-it-up.com -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:300px;height:400px"
-     data-ad-client="ca-pub-3038271016444605"
-     data-ad-slot="9291379173"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    
-    </div>
-    
-	<div class="slider-area">
-       	<!-- Slider -->
-		<div class="block-slider block-slider4">
-			<ul class="" id="bxslider-home4">
-               <li>
-               <img src="images/banner.jpg">
-               </li>
-               <li>  <img src="images/banner2.jpg">  </li>
-               <li> <img src="images/banner3.jpg"> </li>
-				
-			</ul>
-		</div>
-		<!-- ./Slider -->
-    </div> <!-- End slider area -->
-    
-    <div class="advertisment2">
-    
-    <div class="surakasha">
- <a href="http://www.surakshaecommerce.com/" target="_blank">   <img src="images/add_link.png" style="width: 100%;">  Suraksha travel portal   </a>
-    
-    </div>
-      
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- www.charge-it-up.com -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:200px;height:400px"
-     data-ad-client="ca-pub-3038271016444605"
-     data-ad-slot="9291379173"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    
-    </div>
-
-    <div class="clearfix"></div>
-        <div class="container">
-			<div class="arriv-las">
-				<div class="col-md-4 arriv-left2">
-					<img src="images/5.jpg" class="img-responsive" alt="">
-					<div class="arriv-info2">
-						<h3><a href="#">Casual Glasses<i class="ars"></i></a></h3>
-					</div>
-				</div>
-				<div class="col-md-4 arriv-middle">
-					<img src="images/6.jpg" class="img-responsive" alt="">
-					<div class="arriv-info3">
-						<h3>FRESH LOOK T-SHIRT</h3>
-						<div class="crt-btn">
-							<a href="#">SHOP NOW</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 arriv-right2">
-					<img src="images/7.jpg" class="img-responsive" alt="">
-					<div class="arriv-info2">
-						<h3><a href="#">Elegant Watches<i class="ars"></i></a></h3>
-					</div>
-				</div>
-            </div>
-			<div class="clearfix"> </div>
-		</div>
-</div>
-
-<!-- ------------------------------------End Banner--------------------------------------------- -->
 
 <!-- ----------------------------------------------------BODY-------------------------------------------------------- -->
 
@@ -577,9 +496,11 @@
 							
 				<% for (int j = 0; j < 5; j++) { %>
 					<li>
+					 <div style="height:200px">
 						<a href="CompleteProductDetails?subCategory=<%=productBeanList.get(k+j).getSubCategory() %>&productId=<%=productBeanList.get(k+j).getProductId() %>">
-							<img src="IconImageFromProduct?productId=<%=productBeanList.get(k+j).getProductId() %>" class="img-responsive" alt="">
+							<img src="IconImageFromProduct?productId=<%=productBeanList.get(k+j).getProductId() %>" class="img-responsive center-block" alt="">
 						</a>
+						</div>
 						<div class="special-info grid_1 simpleCart_shelfItem">
 						
 							<div class="all_pannel">
@@ -587,7 +508,7 @@
 								<h5>
 									<a href="CompleteProductDetails?subCategory=<%=productBeanList.get(k+j).getSubCategory() %>&productId=<%=productBeanList.get(k+j).getProductId() %>"> <%=productBeanList.get(k+j).getProductName() %>  (<%=productBeanList.get(k+j).getCompanyName() %>) </a>
 								</h5>                    				
-								<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBeanList.get(k+j).getPrice().getListPrice() %> </small> &nbsp; <small class="item_price"> (<%=productBeanList.get(k+j).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBeanList.get(k+j).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+								<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBeanList.get(k+j).getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBeanList.get(k+j).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBeanList.get(k+j).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBeanList.get(k+j).getSubCategory() %>&productId=<%=productBeanList.get(k+j).getProductId() %>">More Details</a>
