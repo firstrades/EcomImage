@@ -189,6 +189,17 @@
                                 <li><a href="ViewProductList?category=FoodAndGrocery&subCategory=Test" target="iframe">Test</a></li>                                  
                             </ul>                           
                         </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Herbal<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">                            	
+                                <li><a href="ViewProductList?category=Herbal&subCategory=Sampoo"  target="iframe">Sampoo</a></li>
+                                <li><a href="ViewProductList?category=Herbal&subCategory=Medicine"      target="iframe">Medicine</a></li> 
+                                <li><a href="ViewProductList?category=Herbal&subCategory=FatAnalyzer"   target="iframe">Fat Analyzer</a></li>
+                                <li><a href="ViewProductList?category=Herbal&subCategory=Soap" target="iframe">Soap</a></li> 
+                                <li><a href="ViewProductList?category=Herbal&subCategory=Moisturizer"   target="iframe">Moisturizer</a></li>
+                                                             
+                            </ul>                            
+                        </li>
                         
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>

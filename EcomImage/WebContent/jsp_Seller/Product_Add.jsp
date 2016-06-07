@@ -55,6 +55,7 @@ hr {
 						<option value="KIDS">KIDS</option>
 						<option value="HomeAndKitchen">HomeAndKitchen</option>
 						<option value="FoodAndGrocery">Food&Grocery</option>
+						<option value="Herbal">Herbal</option>
 					</select>
 				</div>				
 				<div class="col-md-3 col-sm-6 col-xs-12">

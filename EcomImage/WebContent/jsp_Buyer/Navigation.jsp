@@ -271,11 +271,11 @@
 								<div class="h_nav">
 									<h4>Required</h4>
 									<ul>
-										<li><a href="SearchBySubCategory?subCategory=Bedsheets">Bedsheets</a></li>
-										<li><a href="SearchBySubCategory?subCategory=Curtains">Curtains</a></li>
-										<li><a href="SearchBySubCategory?subCategory=SofaCovers">Sofa Covers</a></li>
-										<li><a href="SearchBySubCategory?subCategory=PressureCookers">Pressure Cookers</a></li>
-										<li><a href="SearchBySubCategory?subCategory=GasStoves">Gas Stoves</a></li>
+										<li><a href="SearchBySubCategory?subCategory=Sampoo">Sampoo</a></li>
+										<li><a href="SearchBySubCategory?subCategory=Medicine">Medicine</a></li>
+										<li><a href="SearchBySubCategory?subCategory=FatAnalyzer">Fat Analyzer</a></li>
+										<li><a href="SearchBySubCategory?subCategory=Soap">Soap</a></li>
+										<li><a href="SearchBySubCategory?subCategory=Moisturizer">Moisturizer</a></li>
 									</ul>	
 								</div>							
 							</div>

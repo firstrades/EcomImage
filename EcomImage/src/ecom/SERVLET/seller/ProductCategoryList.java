@@ -121,6 +121,15 @@ public class ProductCategoryList extends HttpServlet {
 					+"<option value=\"Test\">Test</option>"
 					+"";
 		}
+		else if (value.equals("Herbal")) {
+			
+			options = "<option value=\"Sampoo\">Sampoo</option>"
+					+"<option value=\"Medicine\">Medicine</option>"		
+					+"<option value=\"FatAnalyzer\">Fat Analyzer</option>"	
+					+"<option value=\"Soap\">Soap</option>"
+					+"<option value=\"Moisturizer\">Moisturizer</option>"
+					+"";
+		}
 		
 		return options;
 	}

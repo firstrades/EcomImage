@@ -371,7 +371,44 @@
 	    				</div>
 				
 				</li>
-				<li><a class="color5" href="#">Herbal</a></li>
+				<% if (productBeanList.get(0).getCategory().equals("FoodAndGrocery")) { %>
+				<li class="active grid"><a class="color1" href="#">Herbal</a>
+				<% } else { %> 
+				<li class="grid"><a class="color1" href="#">Herbal</a>
+				<% } %>				
+				<div class="megapanel">
+						<div class="row">
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Required</h4>
+									<ul>
+										<li><a href="SearchBySubCategory?subCategory=Sampoo">Sampoo</a></li>
+										<li><a href="SearchBySubCategory?subCategory=Medicine">Medicine</a></li>
+										<li><a href="SearchBySubCategory?subCategory=FatAnalyzer">Fat Analyzer</a></li>
+										<li><a href="SearchBySubCategory?subCategory=Soap">Soap</a></li>
+										<li><a href="SearchBySubCategory?subCategory=Moisturizer">Moisturizer</a></li>
+									</ul>	
+								</div>							
+							</div>
+							
+
+							<div class="col_images">
+								<div class="h_nav">
+									<img src="images/herbal.jpg" alt="herbal">
+								</div>
+							</div>
+
+
+						</div>
+						<div class="row">
+							<div class="col2"></div>
+							<div class="col1"></div>
+							<div class="col1"></div>
+							<div class="col1"></div>
+							<div class="col1"></div>
+						</div>
+	    			</div>
+				</li>
 				<li><a class="color5" href="#">BOND &amp; MUTUAL FUND</a>	
 				<div class="megapanel">
 						<div class="row">
