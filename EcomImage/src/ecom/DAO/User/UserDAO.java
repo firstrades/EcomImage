@@ -100,23 +100,9 @@ public class UserDAO {
 		}
 		finally {
 			user = null;
-			try {
-				resultSet.close();
-			} catch (SQLException e2) {			
-				e2.printStackTrace();
-			}
-			
-			try {
-				preparedStatement.close();
-			} catch (SQLException e1) {				
-				e1.printStackTrace();
-			}
-			
-			try {
-				connection.close();
-			} catch (SQLException e) {				
-				e.printStackTrace();
-			}
+			try { resultSet.close();         } catch (SQLException e) { e.printStackTrace(); }			
+			try { preparedStatement.close(); } catch (SQLException e) {	e.printStackTrace(); }			
+			try { connection.close();        } catch (SQLException e) { e.printStackTrace(); }
 			System.gc();
 		}
 		

@@ -32,7 +32,7 @@ CREATE TABLE `cart_wishlist` (
   `qty` int(11) DEFAULT NULL,
   `size` varchar(20) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `cart_wishlist` (
 
 LOCK TABLES `cart_wishlist` WRITE;
 /*!40000 ALTER TABLE `cart_wishlist` DISABLE KEYS */;
-INSERT INTO `cart_wishlist` VALUES (1,1,1,'cart',12,''),(4,11,1,'cart',3,'6');
+INSERT INTO `cart_wishlist` VALUES (1,1,1,'cart',9,''),(4,11,1,'cart',3,'6'),(5,10,1,'cart',1,'');
 /*!40000 ALTER TABLE `cart_wishlist` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -464,7 +464,7 @@ CREATE TABLE `user` (
   `pan` varchar(15) DEFAULT 'None',
   `voter_id` varchar(20) DEFAULT 'None',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1618,7 +1618,7 @@ DELIMITER ;
 /*!50003 SET sql_mode              = '' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `newDeliveryAddress`(
-INOUT userId INT,
+IN userId INT,
 INOUT fName varchar(50), 
 INOUT lName varchar(50), 
 INOUT contact1 varchar(50),
@@ -2754,4 +2754,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-03 18:25:45
+-- Dump completed on 2016-06-07 11:34:43

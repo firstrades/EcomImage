@@ -109,20 +109,19 @@ public class Controller extends HttpServlet {
 				User user = userDAO.getUser(userId, password);
 				
 				
-				/********** Next Page **************/
+				//Next Page
 				
 				if (user != null) {
 					
-					/******* Set Session **********/				
+					//Set Session				
 					session.setAttribute("user", user);
 					
-					/************** Next Page Selection *****************/				
-				
+					//Next Page Selection				
 					response.sendRedirect("BuyerMainPanel");
 				}
 				else {
 					
-					request.getRequestDispatcher("Login.html").forward(request, response);
+					request.getRequestDispatcher("index.jsp").forward(request, response);
 				}
 			
 		}
