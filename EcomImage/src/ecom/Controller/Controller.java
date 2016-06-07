@@ -440,10 +440,11 @@ public class Controller extends HttpServlet {
 			
 			/****** getRequest *****/
 			String userId = request.getParameter("userId").trim();
+			String name = request.getParameter("name");
 			String password = request.getParameter("password").trim();
 			
 			/********* Validation **********/
-			String[] requestParameters = new String[] { userId, password };  System.out.println("String: "+requestParameters[0]);
+			String[] requestParameters = new String[] { userId, password, name };  System.out.println("String: "+requestParameters[0]);
 			Validation validation = new CustomerRegistrationValidation();
 			validation.setRequestParameters(requestParameters);
 			nextPage = validation.validate(request);
@@ -453,6 +454,7 @@ public class Controller extends HttpServlet {
 			if (nextPage == null) {	// No Validation Error		
 				customerMinimumRegistration = new CustomerMinimumRegistration();
 				customerMinimumRegistration.setUserId(userId);
+				customerMinimumRegistration.setName(name);
 				customerMinimumRegistration.setPassword(password);			
 				nextPage = customerMinimumRegistration.execute(session, request);
 			}			

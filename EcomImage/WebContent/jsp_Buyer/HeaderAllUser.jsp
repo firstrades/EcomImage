@@ -49,8 +49,8 @@
 								        <form id="loginForm" action="CustomerLogin" method="post">
 								                <fieldset id="body">
 								                	<fieldset>
-								                          <label for="email">Mobile/Email Address</label>
-								                          <input type="text" name="userId" id="email" placeholder="Enter Mobile/Email" value="9007785663" />
+								                          <label for="email">Enter Registered Mobile</label>
+								                          <input type="text" name="userId" id="email" placeholder="Enter Mobile" value="9007785663" />
 								                    </fieldset>
 								                    <fieldset>
 								                            <label for="password">Password</label>
@@ -88,9 +88,13 @@
 								        <form id="loginForm" action="customerMinimumRegistration" method="post">
 								                <fieldset id="body">
 								                	<fieldset>
-								                          <label for="email">Mobile/Email Address</label>
-								                          <input type="text" name="userId" id="email" placeholder="Enter Mobile/Email"  />
+								                          <label for="email">Enter Mobile for Registration</label>
+								                          <input type="text" name="userId" id="email" placeholder="Enter Mobile"  />
 								                    </fieldset>
+								                    <fieldset>
+								                          <label for="email">Your Name</label>
+								                          <input type="text" name="name" id="name" placeholder="Your Name"  />
+								                    </fieldset>								                    
 								                    <fieldset>
 								                            <label for="password">Password</label>
 								                            <input type="password" name="password" id="password" placeholder="Enter Password"  />

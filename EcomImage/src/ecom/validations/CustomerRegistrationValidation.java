@@ -18,6 +18,7 @@ public class CustomerRegistrationValidation implements Validation {
 		
 		String userId = requestParameters[0];
 		String password = requestParameters[1];
+		String name = requestParameters[2];
 		
 		String errorMessage = null;
 		String nextPage = null;
@@ -29,9 +30,12 @@ public class CustomerRegistrationValidation implements Validation {
 		
 		boolean isUserExists = userId != null && userId != "";
 		boolean isPasswordExists = password != null && password != "";
+		boolean isNameExists = name != null && name != "";
 		
 		if (!isUserExists) {
 			errorMessage = "User cannot be empty";   System.out.println(errorMessage);
+		} else if (!isNameExists) {
+			errorMessage = "Name field cannot be empty";   System.out.println(errorMessage);
 		} else if (!isPasswordExists) {
 			errorMessage = "Password cannot be empty";    System.out.println(errorMessage);
 		}
@@ -44,6 +48,13 @@ public class CustomerRegistrationValidation implements Validation {
 					break;
 				}
 			}
+		}
+		
+		if (isUserExists && isNameExists) {
+			
+			String[] fullName = name.split(" ");
+			if (fullName.length > 2)
+				errorMessage = "Name format is : FirstName LastName";
 		}
 		
 		

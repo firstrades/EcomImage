@@ -276,7 +276,7 @@ float: left;
 								<a href="AddToCartOrWishlist?productId=<%=productBean.getProductId() %>&cartOrWishlist=wishlist&size={{size}}" style="background-color:#3c763d;" class="checkBeforeSubmit">ADD TO WISHLIST</a>
 							</div>		
 							<% } else { %>							
-								<div class="reg2"><a href="#" data-target="#myModal3" data-toggle="modal" style="text-decoration:none;"> Please Login Or Register As User</a></div>
+								<div class="reg2"><a href="#" data-target="#myModal3" data-toggle="modal" style="text-decoration:none;"> Buy Now</a></div>
 																
 							<% } %>			
 				   	 	</div>

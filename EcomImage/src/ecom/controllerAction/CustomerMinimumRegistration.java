@@ -12,6 +12,7 @@ public class CustomerMinimumRegistration {
 	//External
 	private String userId;
 	private String password;
+	private String name;
 	//Internal
 	private String errorMessage;
 	private UserDAO userDAO;
@@ -23,11 +24,12 @@ public class CustomerMinimumRegistration {
 		userDAO = UserDAO.getInstance();
 		errorMessage = null;
 		userIdNo = -1;
-		nextPage = null;
-		user = null;
+		nextPage = null;		
 	}
 
 	public String execute(HttpSession session, HttpServletRequest request) {
+		
+		String[] fullName = name.split(" ");
 		
 		try {
 			/********* Database ***********/				
@@ -88,6 +90,14 @@ public class CustomerMinimumRegistration {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	
