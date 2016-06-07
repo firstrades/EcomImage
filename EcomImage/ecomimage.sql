@@ -464,7 +464,7 @@ CREATE TABLE `user` (
   `pan` varchar(15) DEFAULT 'None',
   `voter_id` varchar(20) DEFAULT 'None',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -473,7 +473,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'9007785663','12345','customer','Dipankar','Das','Individual','623 (OLD-592)','Purba  Sinthee Road','700030','Kolkata','WB','IN','male','active','7890000443','7890000443','jewel.skypoint@gmail.com','',0,'16-11-2015 05:16 PM',NULL,NULL,NULL,NULL,NULL,NULL),(2,'seller1','12345','seller','Dipankar','Das','Surakha E Commerce Pvt Ltd','151 Dum Dum Road','LP 1/14','700074','Kolkata','WB','IN','male','active','7890000443','7890000443','jewel.skypoint@gmail.com',NULL,0,'18-11-2015 11:07 AM',NULL,NULL,NULL,NULL,NULL,NULL),(3,'admin','12345','admin',NULL,NULL,'Surakha Ecommerce Pvt Ltd',NULL,NULL,NULL,NULL,NULL,NULL,'male','active',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(15,'1','2','franchise','jjjjjj','sssss','DF I P V T','ewhfehfvhewfhew',NULL,'888484','kol','west',NULL,'male','active','900055564','8','9','10',34200,'2015-12-16 17:54:39.949','11','12','13','14','19','20'),(16,'f2','f2','franchise','Raja','Mukherjee','RM Software','Dharmatala',NULL,'700001','Kolkata','WB',NULL,'male','active','900088877','8','9','10',100,'2015-12-17 12:32:11.903','11','12','13','14','JHJFD7D0','JNDFNJFD77F'),(17,'2','2','distributor','Soumya','Pal','Skypoint','15',NULL,'18','16','17',NULL,'male','active','7','8','9','10',250,'2015-12-21 17:24:52','11','12','13','14','19','20'),(18,'3','2','distributor','Sourav','Sirkar','Skypoint','15',NULL,'18','16','17',NULL,'male','active','7','8','9','10',250,'2015-12-22 10:28:26','11','12','13','14','19','20'),(19,'seller19','1','seller','Ramesh','Devyani','FlyHigh Aviation Tech Pvt. Ltd.','Ga3/4 VF, Dover Lane','Gariahat Road','700056','Kolkata','WB','IN','male','active','999999999','38383838383','ramesh@gmail.com','None',0,'2016-03-04 17:00:43','033256789','None','033678965','None','BFD5674BG','None'),(20,'s2','1','seller','j','s','sd','ff',NULL,'77','kol','MH','IN','male','awaiting','777',NULL,'t@4',NULL,0,NULL,'444',NULL,NULL,NULL,NULL,NULL),(21,'s3','1','seller','j','s','sd','ff',NULL,'77','kol','WB','IN','male','awaiting','777',NULL,'t@4',NULL,0,NULL,'444',NULL,NULL,NULL,NULL,NULL),(27,'jewel','12345','customer','None','None','None','None','None','None','None','None',NULL,'male','active','None','None','None','None',0,'2016-5-28','None','None','None','None','None','None');
+INSERT INTO `user` VALUES (1,'9007785663','12345','customer','Dipankar','Das','Individual','623 (OLD-592)','Purba  Sinthee Road','700030','Kolkata','WB','IN','male','active','7890000443','7890000443','jewel.skypoint@gmail.com','',0,'16-11-2015 05:16 PM',NULL,NULL,NULL,NULL,NULL,NULL),(2,'seller1','12345','seller','Dipankar','Das','Surakha E Commerce Pvt Ltd','151 Dum Dum Road','LP 1/14','700074','Kolkata','WB','IN','male','active','7890000443','7890000443','jewel.skypoint@gmail.com',NULL,0,'18-11-2015 11:07 AM',NULL,NULL,NULL,NULL,NULL,NULL),(3,'admin','12345','admin',NULL,NULL,'Surakha Ecommerce Pvt Ltd',NULL,NULL,NULL,NULL,NULL,NULL,'male','active',NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(15,'1','2','franchise','jjjjjj','sssss','DF I P V T','ewhfehfvhewfhew',NULL,'888484','kol','west',NULL,'male','active','900055564','8','9','10',34200,'2015-12-16 17:54:39.949','11','12','13','14','19','20'),(16,'f2','f2','franchise','Raja','Mukherjee','RM Software','Dharmatala',NULL,'700001','Kolkata','WB',NULL,'male','active','900088877','8','9','10',100,'2015-12-17 12:32:11.903','11','12','13','14','JHJFD7D0','JNDFNJFD77F'),(17,'2','2','distributor','Soumya','Pal','Skypoint','15',NULL,'18','16','17',NULL,'male','active','7','8','9','10',250,'2015-12-21 17:24:52','11','12','13','14','19','20'),(18,'3','2','distributor','Sourav','Sirkar','Skypoint','15',NULL,'18','16','17',NULL,'male','active','7','8','9','10',250,'2015-12-22 10:28:26','11','12','13','14','19','20'),(19,'seller19','1','seller','Ramesh','Devyani','FlyHigh Aviation Tech Pvt. Ltd.','Ga3/4 VF, Dover Lane','Gariahat Road','700056','Kolkata','WB','IN','male','active','999999999','38383838383','ramesh@gmail.com','None',0,'2016-03-04 17:00:43','033256789','None','033678965','None','BFD5674BG','None'),(20,'s2','1','seller','j','s','sd','ff',NULL,'77','kol','MH','IN','male','awaiting','777',NULL,'t@4',NULL,0,NULL,'444',NULL,NULL,NULL,NULL,NULL),(21,'s3','1','seller','j','s','sd','ff',NULL,'77','kol','WB','IN','male','awaiting','777',NULL,'t@4',NULL,0,NULL,'444',NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -654,7 +654,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `createCustomer`(
 in userId varchar(50),
 in password2 varchar(25),
 out userIdNo int(12),
-in currentDate varchar(45)
+in currentDate varchar(45),
+in firstName varchar(50),
+in lastName varchar(50)
 )
 BEGIN
 
@@ -666,8 +668,15 @@ declare prevMaxId, generatedMaxId int(12);
 		set userIdNo = 0;
 	else
 		select max(id) into prevMaxId from user;
-        insert into user (user_id, password1, user_type, joining_date, status) 
-        values (userId, password2, 'customer', currentDate, 'active');
+        
+        if (lastName = "") then
+			insert into user (user_id, password1, user_type, joining_date, status, first_name) 
+			values (userId, password2, 'customer', currentDate, 'active', firstName);
+		else
+			insert into user (user_id, password1, user_type, joining_date, status, first_name, last_name) 
+			values (userId, password2, 'customer', currentDate, 'active', firstName, lastName);
+		end if;
+        
 		select max(id) into generatedMaxId from user;
         
         if (generatedMaxId > prevMaxId) then
@@ -2754,4 +2763,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-07 11:34:43
+-- Dump completed on 2016-06-07 12:48:45

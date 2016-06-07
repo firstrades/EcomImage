@@ -50,6 +50,13 @@ public class CustomerRegistrationValidation implements Validation {
 			}
 		}
 		
+		if (isUserExists) {
+			//Check validity of 10 digit mobile number
+			char[] chars = userId.toCharArray();
+			if (chars.length > 10 || chars.length < 10)
+				errorMessage = "The mobile should be exactly 10 digits.";
+		}
+		
 		if (isUserExists && isNameExists) {
 			
 			String[] fullName = name.split(" ");
