@@ -33,7 +33,7 @@ public class CustomerMinimumRegistration {
 		
 		try {
 			/********* Database ***********/				
-			userIdNo = CreateUserDAO.createCustomer(userId, password);
+			userIdNo = CreateUserDAO.createCustomer(userId, password, fullName);
 			
 			if (userIdNo > 0)
 				user = userDAO.getUser(userIdNo);

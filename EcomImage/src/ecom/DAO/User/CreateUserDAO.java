@@ -538,12 +538,22 @@ public class CreateUserDAO {
 	 }
 	
 
-	public synchronized static int createCustomer(String userId, String password) throws Exception {	
+	public synchronized static int createCustomer(String userId, String password, String[] fullName) throws Exception {	
+		
+		String firstName = "";
+		String lastName = "";
+		
+		if (fullName.length > 1) {
+			firstName = fullName[0];
+			lastName = fullName[1];
+		} else {
+			firstName = fullName[0];
+		}
 		
 		Connection connection = null;
 		CallableStatement callableStatement = null;
 	
-		String sql = "{call createCustomer(?,?,?,?)}";
+		String sql = "{call createCustomer(?,?,?,?,?,?)}";
 		int userIdNo = -1;  //'0' user exists, 'maxId > 0' user created, '-1' some error occurred
 		
 		Calendar calendar = new GregorianCalendar();
@@ -560,6 +570,8 @@ public class CreateUserDAO {
 			callableStatement.setString(2, password);	
 			callableStatement.registerOutParameter(3, Types.INTEGER);
 			callableStatement.setString(4, date);
+			callableStatement.setString(5, firstName);
+			callableStatement.setString(6, lastName);
 			
 			callableStatement.execute(); 
 			
