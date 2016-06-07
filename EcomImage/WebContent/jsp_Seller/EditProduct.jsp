@@ -151,8 +151,9 @@ hr {
 		<form method="post" id="form1"> 
 		
 			<input type="hidden" name="productId" value="<%=product.getProductId() %>" />
-		
-			<h3 style="font-size: 25px; color:#337AB7;">Edit Product</h3>  
+			
+			<h3 style="font-size: 25px; color:#337AB7;">Edit Product <span style="margin-left: 62%;font-size: 68%;color: blue;">Product Id: <%=product.getProductId() %></span></h3>  
+			
 			<div id="msg1" style="color:red;"></div>
 			<hr>
 			<!-- -------------------------------------------------- -->
