@@ -1,3 +1,5 @@
+
+<%@page import="ecom.model.WholeSaleOffer"%>
 <%@page import="java.util.List"%>
 <%@page import="ecom.model.Size"%>
 <%@page import="ecom.model.KeyFeature"%>
@@ -131,7 +133,7 @@ float: left;
 	BigDecimal rate        = (BigDecimal)   request.getAttribute("rate"         );
 	String delivery        = (String)       request.getAttribute("delivery"     );	
 	
-	
+	WholeSaleOffer wholeSaleOffer = WholeSaleOffer.getWholeSaleOffer(productBean.getProductId());
 
 %>
 
@@ -177,7 +179,11 @@ float: left;
 						 	<small class="details"> Seller : <%=productBean.getSellerCompany() %> </small> <br>
 						 	<span>Product ID: <%=productBean.getProductId() %></span>
 						 	<hr>
-						 	<small class="details"> - 1 Year Warranty </small> 	                      	
+						 	<small class="details"> - 1 Year Warranty </small> 
+						 	<!-- WholeSale Qty and Discount -->
+ 							<% if (wholeSaleOffer != null) { %>
+ 								<br><span class="fk-bold">WholeSale Discount <%=wholeSaleOffer.getDiscount() %>% on Qty  <%=wholeSaleOffer.getQty() %> or more.</span>
+ 							<% } %>	                      	
 	                     	<hr>
 							<div class="price">								
 	                            <span class="price-old">Rs <%=productBean.getPrice().getListPrice() %></span> <br>
