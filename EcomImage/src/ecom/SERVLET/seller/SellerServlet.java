@@ -40,6 +40,7 @@ import ecom.model.Product;
 import ecom.model.Size;
 import ecom.model.TwoObjects;
 import ecom.model.User;
+import ecom.model.WholeSaleOffer;
 
 
 @MultipartConfig
@@ -811,18 +812,54 @@ public class SellerServlet extends HttpServlet {
 			
 			//Database
 			Product product = productDAO.getProduct(productId);
-			
+			WholeSaleOffer wholeSaleOffer = WholeSaleOffer.getWholeSaleOffer(productId);
 			
 			
 			//Set Request
 			request.setAttribute("product", product);
+			request.setAttribute("wholeSaleOffer", wholeSaleOffer);
 			
 			//Next Page
 			request.getRequestDispatcher("jsp_Seller/ProductAdvanceFeatures.jsp").forward(request, response);
-		}
+		}//ProductAdvanceFeatures
+		
+		else if (servletPath.equals("/EditProductAdvanceFeatures")) {
+			
+			System.out.println("Entered EditProductAdvanceFeatures");
+			long insertedProductId = -1;
+			
+			//Get Request
+			long productId = Long.parseLong(request.getParameter("productId"));      System.out.println(productId);
+			int quantity = Integer.parseInt(request.getParameter("quantity"));       System.out.println(quantity);
+			double discount = Double.parseDouble(request.getParameter("discount"));  System.out.println(discount);
+			
+			//Database		
+			//if 0 - updated, else product offer inserted and if -1 then any error occurred
+			insertedProductId = WholeSaleOffer.setWholeSaleOffer(productId, quantity, discount);		
+			
+			//Json for Next Page
+			JSONObject jsonObject = new JSONObject();
+			
+			try {
+				if (insertedProductId == -1)
+					jsonObject.put("status", "Some error occurred! Please try again.");
+				else if (insertedProductId == 0)
+					jsonObject.put("status", "Offer is updated.");
+				else
+					jsonObject.put("status", "New offer inserted.");
+				
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			response.setContentType("application/json");
+			response.getWriter().write(jsonObject.toString());
+			
+		}//ProductAdvanceFeatures
 				
 		
-	}//ProductAdvanceFeatures
+	}
 	
 	
 	

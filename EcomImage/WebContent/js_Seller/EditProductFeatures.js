@@ -46,6 +46,49 @@ $(function() {
 		return false;
 	});
 	
+	/******** Product Advance Features ************/
+	
+	$('form#form2').submit(function(event) {
+		
+		event.preventDefault();
+		
+		$('#wholeSaleMessage').empty();
+		
+		var r = confirm("Alert: Do You Really Want To Add Whole Sale Offer for this Product!");
+		
+		if (r == true) {  
+		
+				var formData = new FormData($(this)[0]);
+				
+				$.ajax({
+					url: 'EditProductAdvanceFeatures',
+					type: 'POST',
+					data: formData,
+					async: false,
+				    cache: false,
+				    contentType: false,
+				    processData: false,
+				    dataType: 'json',
+				    success: function (data) {
+				    	
+				    	$('#wholeSaleMessage').empty();
+				    	
+				    	if (data.status)				    	
+				    		$('#wholeSaleMessage').append(data.status);			    	
+				    	
+				    },
+				    error: function() {
+				  		$('#wholeSaleMessage').empty();
+				  		$('#wholeSaleMessage').append('Some error occurred! Please try again.');
+				  	}
+				});
+		
+		} // if close
+		
+		
+		return false;
+	});
+	
 	
 	
 	

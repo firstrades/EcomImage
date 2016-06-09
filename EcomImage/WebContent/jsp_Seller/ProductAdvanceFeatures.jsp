@@ -1,3 +1,5 @@
+<%@page import="ecom.common.FrequentUse"%>
+<%@page import="ecom.model.WholeSaleOffer"%>
 <%@page import="ecom.model.Product"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -7,6 +9,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Product Advance Features</title>
 <link type="text/css" href="css/bootstrap.css" rel="stylesheet">
+<script type="text/javascript" src="<%=FrequentUse.jQuery %>"></script>
+<script type="text/javascript" src="js_Seller/EditProductFeatures.js"></script>
 <style type="text/css">
 
 .row {
@@ -30,6 +34,7 @@ hr {
 
 <%
 	Product product = (Product) request.getAttribute("product");
+	WholeSaleOffer wholeSaleOffer = (WholeSaleOffer) request.getAttribute("wholeSaleOffer");
 %>
 
 <hr>
@@ -80,13 +85,13 @@ hr {
 	
 	<!-- -------------------------------- Wholesale Offer -------------------------------------------- -->
 	
-	<form method="post" id="form1"> 
+	<form method="post" id="form2"> 
 		
 			<input type="hidden" name="productId" value="<%=product.getProductId() %>" />
 			
 			<h3 style="font-size: 25px; color:#337AB7;text-align:center;">Wholesale Offer </h3>  
 			
-			<div id="msg1" style="color:red;"></div>
+			<div id="wholeSaleMessage" style="color:red;"></div>
 			<hr>
 					<!-- -------------------------------------------------- -->
 					<div class="row">					
@@ -94,13 +99,21 @@ hr {
 							<label>	<span style="color:red;">*</span> Quantity </label>
 						</div>
 						<div class="col-md-3 col-sm-6 col-xs-12">
-							<input type="text" name="category" required class="form-control" value="<%=product.getCategory() %>" />
+						<% if (wholeSaleOffer != null) { %>
+							<input type="text" name="quantity" required class="form-control" value="<%=wholeSaleOffer.getQty() %>" />
+						<% } else { %>
+							<input type="text" name="quantity" required class="form-control"  value="" />
+						<% } %>
 						</div>						
 						<div class="col-md-3 col-sm-6 col-xs-12">
 							<label>	<span style="color:red;">*</span> Discount% </label>
 						</div>
 						<div class="col-md-3 col-sm-6 col-xs-12">
-							<input type="text" name="subCategory" class="form-control" required value="<%=product.getSubCategory() %>" />
+							<% if (wholeSaleOffer != null) { %>
+							<input type="text" name="discount" required class="form-control" value="<%=wholeSaleOffer.getDiscount() %>" />
+						<% } else { %>
+							<input type="text" name="discount" required class="form-control"  value="" />
+						<% } %>
 						</div>
 					</div>
 			
