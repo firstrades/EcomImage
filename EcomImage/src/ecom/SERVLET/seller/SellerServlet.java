@@ -801,9 +801,28 @@ public class SellerServlet extends HttpServlet {
 			request.getRequestDispatcher("jsp_Seller/EditProduct.jsp").forward(request, response);
 			
 		} //EditProduct
+		
+		else if (servletPath.equals("/ProductAdvanceFeatures")) {
+			
+			System.out.println("Entered ProductAdvanceFeatures");
+			
+			//Get Request
+			long productId = Integer.parseInt(request.getParameter("productId")); 
+			
+			//Database
+			Product product = productDAO.getProduct(productId);
+			
+			
+			
+			//Set Request
+			request.setAttribute("product", product);
+			
+			//Next Page
+			request.getRequestDispatcher("jsp_Seller/ProductAdvanceFeatures.jsp").forward(request, response);
+		}
 				
 		
-	}
+	}//ProductAdvanceFeatures
 	
 	
 	

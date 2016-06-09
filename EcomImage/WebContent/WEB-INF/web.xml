@@ -46,6 +46,7 @@
 		<url-pattern>/GeneratePDF</url-pattern>
 		<url-pattern>/GeneratePDFRet</url-pattern>
 		<url-pattern>/EditProduct</url-pattern>
+		<url-pattern>/ProductAdvanceFeatures</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>RetrieveImageServlet</servlet-name>

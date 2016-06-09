@@ -103,7 +103,7 @@ clear: both;
 				<div class="col-md-2" style="border: 1px solid #EAEAEA; box-shadow: 1px 1px 1px #e7e7e7; margin-top:10px; margin-bottom: 11px;">
 					<img alt="image" src="IconImageFromProduct?productId=<%=productList.get(i).getProductId() %>" width="150" height="150" />
 				</div>
-				<div class="col-md-8">
+				<div class="col-md-6">
 					<div class="col-md-6">
 						<h3 style="margin-bottom: 7px;margin-top: 8px;color: #337ab7;"><%=productList.get(i).getProductName() %></h3> <hr>
 						<span>  Product Id : <%=productList.get(i).getProductId() %>  </span>  <hr>
@@ -125,31 +125,43 @@ clear: both;
 					</div>	 --%>				
 				</div>
 				<!-- ---------------------------------------------------------- -->	
-				<div class="col-md-2" style="margin-top:100px;">
-					<span style="float: left;margin-top: 9px;">
+				<div class="col-md-4" style="margin-top:100px;">
+				<div class="row">
+				<div class="col-md-6">
+					<span style="margin-top: 9px;">
 						<a href="EditProduct?productId=<%=productList.get(i).getProductId()%>" 
-							style="width: 50% !important;  padding: 7px 14px;background:linear-gradient(#54b4eb, #2fa4e7 60%, #1d9ce5);
-							border: 1px solid #0098fe;color:#ffffff;">Edit</a>
-					</span>					
+							style="width: 50% !important;  padding:5px;background:linear-gradient(#54b4eb, #2fa4e7 60%, #1d9ce5);
+							border: 1px solid #0098fe;color:#ffffff;">Edit Product</a>
+					</span>	
+					</div>
+					<div class="col-md-6">
+					<span style="margin-top: 9px;">
+						<a href="ProductAdvanceFeatures?productId=<%=productList.get(i).getProductId()%>" 
+							style="width: 50% !important;  padding: 5px;background:linear-gradient(#54b4eb, #2fa4e7 60%, #1d9ce5);
+							border: 1px solid #0098fe;color:#ffffff;">Advance Features</a>
+					</span>	
+					</div>				
 					<input type="hidden" class="productId"   value="<%=productList.get(i).getProductId() %>"/>
 					<input type="hidden" class="category"    value="<%=productList.get(i).getCategory() %>"/>
-					<input type="hidden" class="subCategory" value="<%=productList.get(i).getSubCategory() %>"/>				
+					<input type="hidden" class="subCategory" value="<%=productList.get(i).getSubCategory() %>"/>
+					<div class="col-md-4">				
 					<span>		
 						<input type="submit" value="Delete" class="delete" onclick="deleteProduct(this)"
-							style="width: 36% !important;
+							style="width: 90% !important;
 							    padding: 5px 10px;
 							    background: linear-gradient(#5cb85c, #429C42 60%, #4D9C4D);
 							    border: 1px solid #53A253;
 							    color: #ffffff;
 							    float: left;
-							    margin-top: 3px;
-							    margin-left: 6px;"/>
-					</span>	                                                              
+							    margin-top: 52px;margin-left: 94px;"/>
+					</span>	
+					</div>                                                              
 				<!-- ---------------------------------------------------------- -->						
 					<br>
 					<% if (i > 2) { %>
 					<span style="float: right;padding-top: 37px;">  <a href="#top">Top</a> </span>
 					<% } %>
+				</div>
 				</div>
 			</div>
 		</div>

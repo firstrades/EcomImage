@@ -9,9 +9,7 @@
 <script type="text/javascript" src="<%=FrequentUse.jQuery %>"></script>
 <script type="text/javascript" src="js_Seller/Product_Add.js"></script>
 <link type="text/css" href="css/bootstrap.css" rel="stylesheet">
-<script type="text/javascript">
 
-</script>
 <style type="text/css">
 
 .row {
