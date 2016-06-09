@@ -42,7 +42,7 @@
 							<div class="login" >
 								<div id="loginContainer">
 								<ul class="menu">
-								   <li class="no-border greeting-link"><a class="no-border" href="#">My Account</a>
+								   <li class="no-border greeting-link"><a class="no-border" href="#">Hi <%=user1.getPerson().getFirstName() %>!</a>
 						             <ul class="dropdown">
 						                <li><a href="#">Account</a></li>
 						                <li><a href="AddToCartOrWishlist?cartOrWishlist=cart&size=0">Cart</a></li>
