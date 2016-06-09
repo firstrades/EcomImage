@@ -1049,6 +1049,10 @@
 </div>
 </div>
 
+
+<!-- ----------------------------------- Home & Kitchen ----------------------------------- -->
+
+
 <div class="row">
 <div class="col-md-2">
 				
@@ -1207,6 +1211,10 @@
 </div>
 </div>
 		</div>	
+		
+<!-- ----------------------------------- End Home & Kitchen ----------------------------------- -->
+
+<!-- ----------------------------------- Baby & Kids ----------------------------------- -->		
 		
 		<div class="row">
 		<div class="col-md-2">	
@@ -1369,6 +1377,308 @@
 </div>	
 </div>
 </div>
+<!-- ----------------------------------- End Baby & Kids ----------------------------------- -->
+
+<!-- ----------------------------------- Food & Grocery ----------------------------------- -->
+
+<div class="row">
+	<div class="col-md-2">					
+		<div style="">	
+			<div class="">	    
+	 			<a href="#" target="_blank">   
+	 				<img src="images/ad8.jpg" style="width: 100%; margin-top: 30%;height: 400px;">     
+	 			</a>
+	    	</div>    
+		</div>	
+	</div>
+	<div class="col-md-8">
+		<div class="special">
+			<h3><a href="#" style="color: #FF8F00;">FOOD &AMP; GROCERY</a></h3>
+		</div>
+		<div class="specia-top">
+			<ul class="grid_2">
+				<% 
+					productBean = map.get("Confectionery");
+				%>
+				<li>
+				<div style="height:200px;">
+					<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
+						<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
+					</a>
+					</div>
+					<div class="special-info grid_1 simpleCart_shelfItem">
+						<h5> 
+							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
+						</h5>
+					
+                    	
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+						<div class="item_add">
+							<span class="item_price">
+								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
+							</span>
+						</div>
+					</div>
+				</li>
+				<% 
+					productBean = map.get("PowderProduct");
+				%>
+				<li>
+				<div style="height:200px;">
+					<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
+						<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
+					</a>
+					</div>
+					<div class="special-info grid_1 simpleCart_shelfItem">
+						<h5> 
+							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
+						</h5>
+					
+                    	
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+						<div class="item_add">
+							<span class="item_price">
+								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
+							</span>
+						</div>
+					</div>
+				</li>
+				<% 
+					productBean = map.get("Cakes");
+				%>
+				<li>
+				<div style="height:200px;">
+					<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
+						<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
+					</a>
+					</div>
+					<div class="special-info grid_1 simpleCart_shelfItem">
+						<h5> 
+							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
+						</h5>
+					
+                    	
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+						<div class="item_add">
+							<span class="item_price">
+								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
+							</span>
+						</div>
+					</div>
+				</li>
+				<% 
+					productBean = map.get("Dairy");
+				%>
+				<li>
+				<div style="height:200px;">
+					<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
+						<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
+					</a>
+					</div>
+					<div class="special-info grid_1 simpleCart_shelfItem">
+						<h5> 
+							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
+						</h5>
+					
+                    	
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+						<div class="item_add">
+							<span class="item_price">
+								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
+							</span>
+						</div>
+					</div>
+				</li>
+				<% 
+					productBean = map.get("Rice");
+				%>
+				<li>
+				<div style="height:200px;">
+					<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
+						<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive centr-block" alt="">
+					</a>
+					</div>
+					<div class="special-info grid_1 simpleCart_shelfItem">
+						<h5> 
+							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
+						</h5>
+					
+                    	
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+						<div class="item_add">
+							<span class="item_price">
+								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
+							</span>
+						</div>
+					</div>
+				</li>	
+			</ul>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="col-md-2">
+			<div style="">  
+			<a href="#" target="_blank">   
+				<img src="images/ad6.jpg" style="width:100%; margin-top: 30%;height: 400px;">    
+			</a>   
+		</div>
+	</div>
+</div>	
+
+<!-- ----------------------------------- End Food & Grocery ----------------------------------- -->
+
+<!-- ----------------------------------- Herbal ----------------------------------- -->
+
+<div class="row">
+	<div class="col-md-2">					
+		<div style="">	
+			<div class="">	    
+	 			<a href="#" target="_blank">   
+	 				<img src="images/ad8.jpg" style="width: 100%; margin-top: 30%;height: 400px;">     
+	 			</a>
+	    	</div>    
+		</div>	
+	</div>
+	<div class="col-md-8">
+		<div class="special">
+			<h3><a href="#" style="color: #FF8F00;">HERBAL</a></h3>
+		</div>
+		<div class="specia-top">
+			<ul class="grid_2">
+				<% 
+					productBean = map.get("Sampoo");
+				%>
+				<li>
+				<div style="height:200px;">
+					<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
+						<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
+					</a>
+					</div>
+					<div class="special-info grid_1 simpleCart_shelfItem">
+						<h5> 
+							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
+						</h5>
+					
+                    	
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+						<div class="item_add">
+							<span class="item_price">
+								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
+							</span>
+						</div>
+					</div>
+				</li>
+				<% 
+					productBean = map.get("Medicine");
+				%>
+				<li>
+				<div style="height:200px;">
+					<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
+						<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
+					</a>
+					</div>
+					<div class="special-info grid_1 simpleCart_shelfItem">
+						<h5> 
+							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
+						</h5>
+					
+                    	
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+						<div class="item_add">
+							<span class="item_price">
+								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
+							</span>
+						</div>
+					</div>
+				</li>
+				<% 
+					productBean = map.get("FatAnalyzer");
+				%>
+				<li>
+				<div style="height:200px;">
+					<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
+						<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
+					</a>
+					</div>
+					<div class="special-info grid_1 simpleCart_shelfItem">
+						<h5> 
+							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
+						</h5>
+					
+                    	
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+						<div class="item_add">
+							<span class="item_price">
+								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
+							</span>
+						</div>
+					</div>
+				</li>
+				<% 
+					productBean = map.get("Soap");
+				%>
+				<li>
+				<div style="height:200px;">
+					<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
+						<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive center-block" alt="">
+					</a>
+					</div>
+					<div class="special-info grid_1 simpleCart_shelfItem">
+						<h5> 
+							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
+						</h5>
+					
+                    	
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+						<div class="item_add">
+							<span class="item_price">
+								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
+							</span>
+						</div>
+					</div>
+				</li>
+				<% 
+					productBean = map.get("Moisturizer");
+				%>
+				<li>
+				<div style="height:200px;">
+					<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">
+						<img src="IconImageFromProduct?productId=<%=productBean.getProductId() %>" class="img-responsive centr-block" alt="">
+					</a>
+					</div>
+					<div class="special-info grid_1 simpleCart_shelfItem">
+						<h5> 
+							<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>"> <%=productBean.getProductName() %>  (<%=productBean.getCompanyName() %>)  </a> 
+						</h5>
+					
+                    	
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+						<div class="item_add">
+							<span class="item_price">
+								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
+							</span>
+						</div>
+					</div>
+				</li>	
+			</ul>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="col-md-2">
+			<div style="">  
+			<a href="#" target="_blank">   
+				<img src="images/ad6.jpg" style="width:100%; margin-top: 30%;height: 400px;">    
+			</a>   
+		</div>
+	</div>
+</div>	
+
+<!-- ----------------------------------- End Herbal ----------------------------------- -->
+
+
+
+
+
 
              <div class="row">
              <div class="col-md-2">
