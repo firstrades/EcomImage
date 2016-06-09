@@ -91,7 +91,7 @@ public class ProductCategoryList extends HttpServlet {
 					+"<option value=\"WomenSharee\">Sharee</option>"
 					+"<option value=\"WomenSalwar\">Salwar</option>"
 					+"<option value=\"WomenJeans\">Jeans</option>"
-					//+"<option value=\"Wallets\">Wallets</option>"
+					+"<option value=\"WomenLeggings\">Leggings</option>"
 					//+"<option value=\"Sunglasses\">Sunglasses</option>"
 					+"";
 		}
@@ -118,7 +118,8 @@ public class ProductCategoryList extends HttpServlet {
 			options = "<option value=\"Confectionery\">Confectionery</option>"
 					+"<option value=\"PowderProduct\">Powder Product</option>"		
 					+"<option value=\"Cakes\">Cakes</option>"	
-					+"<option value=\"Test\">Test</option>"
+					+"<option value=\"Dairy\">Dairy</option>"
+					+"<option value=\"Rice\">Rice</option>"
 					+"";
 		}
 		else if (value.equals("Herbal")) {

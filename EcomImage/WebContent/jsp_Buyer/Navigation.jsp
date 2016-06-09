@@ -121,6 +121,7 @@
 										<li><a href="SearchBySubCategory?subCategory=WomenSharee">Sarees</a></li>
 										<li><a href="SearchBySubCategory?subCategory=WomenSalwar">Salwars</a></li>
 										<li><a href="SearchBySubCategory?subCategory=WomenJeans">Jeans</a></li>
+										<li><a href="SearchBySubCategory?subCategory=WomenLeggings">Leggings</a></li>
 										
 									</ul>	
 								</div>							
@@ -242,7 +243,9 @@
 									<ul>
 										<li><a href="SearchBySubCategory?subCategory=Confectionery">Confectionery</a></li>
 										<li><a href="SearchBySubCategory?subCategory=PowderProduct">PowderProduct</a></li>
-										<li><a href="SearchBySubCategory?subCategory=Cakes">Cakes</a></li>										
+										<li><a href="SearchBySubCategory?subCategory=Cakes">Cakes</a></li>
+										<li><a href="SearchBySubCategory?subCategory=Dairy">Dairy</a></li>
+										<li><a href="SearchBySubCategory?subCategory=Rice">Rice</a></li>											
 									</ul>	
 								</div>							
 							</div>

@@ -215,6 +215,7 @@
 										<li><a href="SearchBySubCategory?subCategory=WomenSharee">Sarees</a></li>
 										<li><a href="SearchBySubCategory?subCategory=WomenSalwar">Salwars</a></li>
 										<li><a href="SearchBySubCategory?subCategory=WomenJeans">Jeans</a></li>
+										<li><a href="SearchBySubCategory?subCategory=WomenLeggings">Leggings</a></li>
 										
 									</ul>	
 								</div>							
@@ -348,7 +349,9 @@
 									<ul>
 										<li><a href="SearchBySubCategory?subCategory=Confectionery">Confectionery</a></li>
 										<li><a href="SearchBySubCategory?subCategory=PowderProduct">PowderProduct</a></li>
-										<li><a href="SearchBySubCategory?subCategory=Cakes">Cakes</a></li>										
+										<li><a href="SearchBySubCategory?subCategory=Cakes">Cakes</a></li>	
+										<li><a href="SearchBySubCategory?subCategory=Dairy">Dairy</a></li>
+										<li><a href="SearchBySubCategory?subCategory=Rice">Rice</a></li>									
 									</ul>	
 								</div>							
 							</div>					
@@ -371,7 +374,7 @@
 	    				</div>
 				
 				</li>
-				<% if (productBeanList.get(0).getCategory().equals("FoodAndGrocery")) { %>
+				<% if (productBeanList.get(0).getCategory().equals("Herbal")) { %>
 				<li class="active grid"><a class="color1" href="#">Herbal</a>
 				<% } else { %> 
 				<li class="grid"><a class="color1" href="#">Herbal</a>

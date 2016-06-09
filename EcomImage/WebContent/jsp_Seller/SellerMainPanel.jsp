@@ -134,7 +134,8 @@
                                 <li><a href="ViewProductList?category=WOMEN&subCategory=WomenKurta" target="iframe">Kurta</a></li>  
                                 <li><a href="ViewProductList?category=WOMEN&subCategory=WomenSharee" target="iframe">Sharee</a></li>
                                 <li><a href="ViewProductList?category=WOMEN&subCategory=WomenSalwar" target="iframe">Salwar</a></li>
-                                <li><a href="ViewProductList?category=WOMEN&subCategory=WomenJeans" target="iframe">Jeans</a></li>                              
+                                <li><a href="ViewProductList?category=WOMEN&subCategory=WomenJeans" target="iframe">Jeans</a></li> 
+                                <li><a href="ViewProductList?category=WOMEN&subCategory=WomenLeggings" target="iframe">Leggings</a></li>                              
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -186,7 +187,8 @@
                             	<li><a href="ViewProductList?category=FoodAndGrocery&subCategory=Confectionery" target="iframe">Confectionery</a></li>
                                 <li><a href="ViewProductList?category=FoodAndGrocery&subCategory=PowderProduct" target="iframe">PowderProduct</a></li>
                                 <li><a href="ViewProductList?category=FoodAndGrocery&subCategory=Cakes" target="iframe">Cakes</a></li>                                     
-                                <li><a href="ViewProductList?category=FoodAndGrocery&subCategory=Test" target="iframe">Test</a></li>                                  
+                                <li><a href="ViewProductList?category=FoodAndGrocery&subCategory=Dairy" target="iframe">Dairy</a></li>    
+                                <li><a href="ViewProductList?category=FoodAndGrocery&subCategory=Rice" target="iframe">Rice</a></li>                                
                             </ul>                           
                         </li>
                         <li>
