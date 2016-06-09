@@ -112,7 +112,13 @@
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> ELECTRONICS<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">                            	
-                                <li><a href="ViewProductList?category=ELECTRONICS&subCategory=Mobile" target="iframe">Mobiles</a></li>
+                                <li>
+                                	<a href="#">Mobiles</a>
+                                	<ul class="nav nav-third-level">
+                                        <li><a href="ViewProductList?category=ELECTRONICS&subCategory=Mobile" target="iframe">List</a></li>
+                                        <li><a href="#">Advance Features</a></li>                                        
+                                    </ul>
+                                </li>
                                 <li><a href="ViewProductList?category=ELECTRONICS&subCategory=Laptop" target="iframe">Laptops</a></li> 
                                 <li><a href="ViewProductList?category=ELECTRONICS&subCategory=Tablet" target="iframe">Tablet</a></li>
                                 <li><a href="ViewProductList?category=ELECTRONICS&subCategory=Camera" target="iframe">Camera</a></li> 
@@ -123,7 +129,8 @@
                                 <li><a href="ViewProductList?category=ELECTRONICS&subCategory=MicrowaveOven" target="iframe">Microwave Oven</a></li>
                                 <li><a href="ViewProductList?category=ELECTRONICS&subCategory=VacuumCleaner" target="iframe">Vacuum Cleaner</a></li> 
                                 <li><a href="ViewProductList?category=ELECTRONICS&subCategory=Speaker" target="iframe">Speaker</a></li>
-                                <li><a href="ViewProductList?category=ELECTRONICS&subCategory=Geyser" target="iframe">Geyser</a></li>                                
+                                <li><a href="ViewProductList?category=ELECTRONICS&subCategory=Geyser" target="iframe">Geyser</a></li> 
+                                                            
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
