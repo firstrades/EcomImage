@@ -95,7 +95,7 @@ public class OrderServlet extends HttpServlet {
 						boolean isExecuted = OrderImpl.setOrderFailed(user, order, trnxId, paymentType);					
 						
 						//Bank Transaction
-						orderInterface.bankTransaction(user, order, request, response, trnxId);			
+						orderInterface.bankTransaction(user, order, request, response, trnxId/*orderId*/);			
 						
 						
 					} catch(Exception e) {

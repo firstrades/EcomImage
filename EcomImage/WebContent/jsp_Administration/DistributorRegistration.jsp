@@ -56,13 +56,13 @@
 
 			<div class="row">
 				<div class="col-md-3 col-sm-6 col-xs-12">
-					<label> User Id  </label>
+					<label> <span style="color:red;">*</span> User Id  </label>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<input type="text" class="form-control" required placeholder="User Id" data-ng-model="userId" />
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
-					<label>	Password </label>
+					<label>	<span style="color:red;">*</span> Password </label>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<input type="password" class="form-control" required data-ng-model="password" />
@@ -73,13 +73,13 @@
 			
 			<div class="row">
 				<div class="col-md-3 col-sm-6 col-xs-12">
-					<label> First name </label>
+					<label> <span style="color:red;">*</span> First name </label>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<input type="text" class="form-control" required placeholder="Enter First Name" data-ng-model="fName" />
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
-					<label>	Last Name </label>
+					<label>	<span style="color:red;">*</span> Last Name </label>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<input type="text" class="form-control" placeholder="Enter Last Name"  required data-ng-model="lName" />
@@ -99,7 +99,7 @@
 					</select>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
-					<label>	Company  </label>
+					<label>	<span style="color:red;">*</span> Company  </label>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<input type="text" class="form-control" placeholder="Enter Company Name"  required data-ng-model="company" />
@@ -109,7 +109,7 @@
 
 			<div class="row">
 				<div class="col-md-3 col-sm-6 col-xs-12">
-					<label> Mobile Number1 </label>
+					<label> <span style="color:red;">*</span> Mobile Number1 </label>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<input type="text" class="form-control" required placeholder="Enter Mobile Number" data-ng-model="mobile1" />
@@ -118,7 +118,7 @@
 					<label>	Mobile Number2 </label>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
-					<input type="text" class="form-control" placeholder="Enter Last Name"  data-ng-model="mobile2" />
+					<input type="text" class="form-control" placeholder="Enter Mobile Number"  data-ng-model="mobile2" />
 				</div>
 			</div>	
 
@@ -126,7 +126,7 @@
 
 			<div class="row">
 				<div class="col-md-3 col-sm-6 col-xs-12">
-					<label> E-mail Id1 </label>
+					<label> <span style="color:red;">*</span> E-mail Id1 </label>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<input type="text" class="form-control" required placeholder="Enter E-mail Id1" data-ng-model="email1" />
@@ -176,13 +176,13 @@
 			
 			<div class="row">
 				<div class="col-md-3 col-sm-6 col-xs-12">
-					<label>Address </label>
+					<label><span style="color:red;">*</span> Address </label>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<input type="text" class="form-control" required placeholder="Enter Address" data-ng-model="address" />
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
-					<label>	City</label>
+					<label>	<span style="color:red;">*</span> City</label>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<input type="text" class="form-control" placeholder="Enter City Name"  required data-ng-model="city" />
@@ -192,13 +192,13 @@
 			
 			<div class="row">
 				<div class="col-md-3 col-sm-6 col-xs-12">
-					<label>State </label>
+					<label><span style="color:red;">*</span> State </label>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<input type="text" class="form-control" required placeholder="Enter State" data-ng-model="state" />
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
-					<label>	Pin</label>
+					<label>	<span style="color:red;">*</span> Pin</label>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<input type="text" class="form-control" placeholder="Enter pin"  required data-ng-model="pin" />

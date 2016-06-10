@@ -566,13 +566,13 @@ a.tooltip span b {
 									</div>	
 									<div class="row" style="margin-bottom: 10px;">
 										<div class="col-md-12"> 
-											<span style="font-size: 12px; color: #d9534f;">  FranComm : <input type="text" data-ng-model="item.fCommissionPercentage" data-ng-keyup="fCommission = item.salePriceCustomer * item.fCommissionPercentage / 100" size="3" style="margin-left: 0px;padding: 3px 3px; width: 14%;"/>%
+											<span style="font-size: 12px; color: #d9534f;">  FranComm : <input type="text" data-ng-model="item.fCommissionPercentage" data-ng-keyup="fCommission = item.salePriceToAdmin * item.fCommissionPercentage / 100" size="3" style="margin-left: 0px;padding: 3px 3px; width: 14%;"/>%
 												<input type="text" data-ng-model="fCommission"  size="3" style="margin-left: 0px;" readonly style="padding: 3px 3px; width: 14%;"/>  </span>
 										</div>
 									</div>
 									<div class="row" style="margin-bottom: 10px;">
 										<div class="col-md-12"> 
-											<span style="font-size: 12px; color: #d9534f;">  DrisComm : <input type="text" data-ng-model="item.dCommissionPercentage" data-ng-keyup="dCommission = item.salePriceCustomer * item.dCommissionPercentage / 100" size="3" style="margin-left: 3px;padding: 3px 3px; width: 14%;"/>%
+											<span style="font-size: 12px; color: #d9534f;">  DrisComm : <input type="text" data-ng-model="item.dCommissionPercentage" data-ng-keyup="dCommission = item.salePriceToAdmin * item.dCommissionPercentage / 100" size="3" style="margin-left: 3px;padding: 3px 3px; width: 14%;"/>%
 												<input type="text" data-ng-model="dCommission"  size="3" style="margin-left: 3px;" readonly style="padding: 3px 3px; width: 14%;"/>  </span>
 										</div>
 									</div>									

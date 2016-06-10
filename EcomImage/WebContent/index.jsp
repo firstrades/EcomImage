@@ -197,7 +197,7 @@
 	Map<String,Product> map   = buyerSearchDAO.getFirstPageProducts();
 	Product productBean       = null;
 	
-	 AdminDAO adminDAO = AdminDAO.getInstance();
+	AdminDAO adminDAO = AdminDAO.getInstance();
 	List<Product> offeredProducts = adminDAO.getOfferedHot(OfferedHot.OFFERED);
 	List<Product> hotProducts     = adminDAO.getOfferedHot(OfferedHot.HOT); 
 %>
@@ -367,7 +367,7 @@
 							</h5>
 						
 	                    	
-	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(1).getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=offeredProducts.get(1).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(1).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(1).getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=offeredProducts.get(1).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(1).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 							<div class="item_add" style="height: 32px;">
 								<span class="item_price">
 									<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(1).getSubCategory() %>&productId=<%=offeredProducts.get(1).getProductId() %>">More Details</a>
@@ -389,7 +389,7 @@
 							</h5>
 						
 	                    	
-	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(2).getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=offeredProducts.get(2).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(2).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(2).getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=offeredProducts.get(2).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(2).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 							<div class="item_add" style="height: 32px;">
 								<span class="item_price">
 									<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(2).getSubCategory() %>&productId=<%=offeredProducts.get(2).getProductId() %>">More Details</a>
@@ -410,7 +410,7 @@
 							</h5>
 						
 	                    	
-	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(3).getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=offeredProducts.get(3).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(3).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(3).getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=offeredProducts.get(3).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(3).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 							<div class="item_add" style="height: 32px;">
 								<span class="item_price">
 									<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(3).getSubCategory() %>&productId=<%=offeredProducts.get(3).getProductId() %>">More Details</a>
@@ -431,7 +431,7 @@
 							</h5>
 						
 	                    	
-	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(4).getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=offeredProducts.get(4).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(4).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(4).getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=offeredProducts.get(4).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(4).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 							<div class="item_add" style="height: 32px;">
 								<span class="item_price">
 									<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(4).getSubCategory() %>&productId=<%=offeredProducts.get(4).getProductId() %>">More Details</a>
@@ -452,7 +452,7 @@
 							</h5>
 						
 	                    	
-	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(5).getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=offeredProducts.get(5).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(5).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(5).getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=offeredProducts.get(5).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(5).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 							<div class="item_add" style="height: 32px;">
 								<span class="item_price">
 									<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(5).getSubCategory() %>&productId=<%=offeredProducts.get(5).getProductId() %>">More Details</a>
@@ -571,7 +571,7 @@
 							</h5>
 						
 	                    	
-	                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+	                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 							<div class="item_add">
 								<span class="item_price">
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -594,7 +594,7 @@
 							</h5>
 						
 	                    	
-	                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+	                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 							<div class="item_add">
 								<span class="item_price">
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -617,7 +617,7 @@
 							</h5>
 						
 	                    	
-	                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+	                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 							<div class="item_add">
 								<span class="item_price">
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -640,7 +640,7 @@
 							</h5>
 						
 	                    	
-	                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+	                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 							<div class="item_add">
 								<span class="item_price">
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -663,7 +663,7 @@
 							</h5>
 						
 	                    	
-	                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+	                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 							<div class="item_add">
 								<span class="item_price">
 									<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -736,7 +736,7 @@
 								</h5>
 							
 		                    	
-		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -759,7 +759,7 @@
 								</h5>
 							
 		                    	
-		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -782,7 +782,7 @@
 								</h5>
 							
 		                    	
-		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -805,7 +805,7 @@
 								</h5>
 							
 		                    	
-		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -828,7 +828,7 @@
 								</h5>
 							
 		                    	
-		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -903,7 +903,7 @@
 								</h5>
 							
 		                    	
-		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -926,7 +926,7 @@
 								</h5>
 							
 		                    	
-		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -949,7 +949,7 @@
 								</h5>
 							
 		                    	
-		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -972,7 +972,7 @@
 								</h5>
 							
 		                    	
-		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -995,7 +995,7 @@
 								</h5>
 							
 		                    	
-		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1053,7 +1053,7 @@
 						</h5>
 					
                     	
-                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 						<div class="item_add">
 							<span class="item_price">
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1076,7 +1076,7 @@
 						</h5>
 					
                     	
-                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 						<div class="item_add">
 							<span class="item_price">
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1099,7 +1099,7 @@
 						</h5>
 					
                     	
-                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 						<div class="item_add">
 							<span class="item_price">
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1122,7 +1122,7 @@
 						</h5>
 					
                     	
-                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 						<div class="item_add">
 							<span class="item_price">
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1145,7 +1145,7 @@
 						</h5>
 					
                     	
-                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 						<div class="item_add">
 							<span class="item_price">
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1214,7 +1214,7 @@
 								</h5>
 							
 		                    	
-		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1237,7 +1237,7 @@
 								</h5>
 							
 		                    	
-		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1260,7 +1260,7 @@
 								</h5>
 							
 		                    	
-		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1283,7 +1283,7 @@
 								</h5>
 							
 		                    	
-		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1306,7 +1306,7 @@
 								</h5>
 							
 		                    	
-		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+		                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 								<div class="item_add">
 									<span class="item_price">
 										<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1348,7 +1348,7 @@
 	</div>
 	<div class="col-md-8">
 		<div class="special">
-			<h3><a href="#" style="color: #FF8F00;">FOOD &AMP; GROCERY</a></h3>
+			<h3><a href="#" style="color: #FF8F00;">FOOD &amp; GROCERY</a></h3>
 		</div>
 		<div class="specia-top">
 			<ul class="grid_2">
@@ -1367,7 +1367,7 @@
 						</h5>
 					
                     	
-                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 						<div class="item_add">
 							<span class="item_price">
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1390,7 +1390,7 @@
 						</h5>
 					
                     	
-                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 						<div class="item_add">
 							<span class="item_price">
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1413,7 +1413,7 @@
 						</h5>
 					
                     	
-                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 						<div class="item_add">
 							<span class="item_price">
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1436,7 +1436,7 @@
 						</h5>
 					
                     	
-                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 						<div class="item_add">
 							<span class="item_price">
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1459,7 +1459,7 @@
 						</h5>
 					
                     	
-                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 						<div class="item_add">
 							<span class="item_price">
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1515,7 +1515,7 @@
 						</h5>
 					
                     	
-                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 						<div class="item_add">
 							<span class="item_price">
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1538,7 +1538,7 @@
 						</h5>
 					
                     	
-                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 						<div class="item_add">
 							<span class="item_price">
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1561,7 +1561,7 @@
 						</h5>
 					
                     	
-                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 						<div class="item_add">
 							<span class="item_price">
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1584,7 +1584,7 @@
 						</h5>
 					
                     	
-                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 						<div class="item_add">
 							<span class="item_price">
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1607,7 +1607,7 @@
 						</h5>
 					
                     	
-                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+                    	<div class="item_add"><h6><span class="item_price"> <small class="over_flow"> Rs.<%=productBean.getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=productBean.getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=productBean.getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 						<div class="item_add">
 							<span class="item_price">
 								<a href="CompleteProductDetails?subCategory=<%=productBean.getSubCategory() %>&productId=<%=productBean.getProductId() %>">More Details</a>
@@ -1703,7 +1703,7 @@
 							</h5>
 						
 	                    	
-	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(1).getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=offeredProducts.get(1).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(1).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(1).getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=offeredProducts.get(1).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(1).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 							<div class="item_add" style="height: 32px;">
 								<span class="item_price">
 									<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(1).getSubCategory() %>&productId=<%=offeredProducts.get(1).getProductId() %>">More Details</a>
@@ -1724,7 +1724,7 @@
 							</h5>
 						
 	                    	
-	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(2).getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=offeredProducts.get(2).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(2).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(2).getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=offeredProducts.get(2).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(2).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 							<div class="item_add" style="height: 32px;">
 								<span class="item_price">
 									<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(2).getSubCategory() %>&productId=<%=offeredProducts.get(2).getProductId() %>">More Details</a>
@@ -1745,7 +1745,7 @@
 							</h5>
 						
 	                    	
-	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(3).getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=offeredProducts.get(3).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(3).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(3).getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=offeredProducts.get(3).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(3).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 							<div class="item_add" style="height: 32px;">
 								<span class="item_price">
 									<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(3).getSubCategory() %>&productId=<%=offeredProducts.get(3).getProductId() %>">More Details</a>
@@ -1766,7 +1766,7 @@
 							</h5>
 						
 	                    	
-	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(4).getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=offeredProducts.get(4).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(4).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(4).getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=offeredProducts.get(4).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(4).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 							<div class="item_add" style="height: 32px;">
 								<span class="item_price">
 									<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(4).getSubCategory() %>&productId=<%=offeredProducts.get(4).getProductId() %>">More Details</a>
@@ -1787,7 +1787,7 @@
 							</h5>
 						
 	                    	
-	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(5).getPrice().getListPrice() %> </small> </br> <small class="item_price"> (<%=offeredProducts.get(5).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(5).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
+	                    	<div class="item_add"><h6 style="height: 60px;"><span class="item_price"> <small class="over_flow"> Rs.<%=offeredProducts.get(5).getPrice().getListPrice() %> </small> <br> <small class="item_price"> (<%=offeredProducts.get(5).getPrice().getDiscount() %>% Off) </small> <br> <strong class="main_value">Rs <%=offeredProducts.get(5).getPrice().getSalePriceCustomer() %></strong> </span></h6></div>
 							<div class="item_add" style="height: 32px;">
 								<span class="item_price">
 									<a href="CompleteProductDetails?subCategory=<%=offeredProducts.get(5).getSubCategory() %>&productId=<%=offeredProducts.get(5).getProductId() %>">More Details</a>

@@ -82,7 +82,7 @@ public class CommissionDistributionDAO {
 		ResultSet resultSet = null;
 		String sql = "{call getFranchiseDeducedBalance(?)}";			
 		
-		double markup = 0;
+		double sellPriceToAdmin = 0;
 		double fCommission = 0;
 		double deducedBalance = 0;
 	
@@ -98,11 +98,11 @@ public class CommissionDistributionDAO {
 			
 			while (resultSet.next()) {
 				
-				markup      = resultSet.getDouble("markup"      );
+				sellPriceToAdmin      = resultSet.getDouble("sale_price"      );
 				fCommission = resultSet.getDouble("f_commission");
 			}
 			
-			deducedBalance = markup * ( fCommission / 100 );
+			deducedBalance = sellPriceToAdmin * ( fCommission / 100 );
 			
 			connection.commit();					
 			System.out.println("SQL - getFranchiseDeducedBalance executed");
@@ -321,7 +321,7 @@ public class CommissionDistributionDAO {
 		String sql = "{call getDistributorFranchiseDeducedBalance(?)}";			
 		
 		TwoObjects<Double, Double> twoObjects = new TwoObjects<>();
-		double markup = 0;
+		double salePriceToAdmin = 0;
 		double fCommission = 0;
 		double dCommission = 0;
 		double fDeducedBalance = 0;
@@ -339,13 +339,13 @@ public class CommissionDistributionDAO {
 			
 			while (resultSet.next()) {
 				
-				markup      = resultSet.getDouble("markup"      );
-				fCommission = resultSet.getDouble("f_commission");
-				dCommission = resultSet.getDouble("d_commission");
+				salePriceToAdmin = resultSet.getDouble("sale_price"      );
+				fCommission      = resultSet.getDouble("f_commission");
+				dCommission      = resultSet.getDouble("d_commission");
 			}
 			
-			fDeducedBalance = markup * ( fCommission / 100 );
-			dDeducedBalance = fDeducedBalance * ( dCommission / 100 );
+			fDeducedBalance = salePriceToAdmin * ( fCommission / 100 );
+			dDeducedBalance = salePriceToAdmin * ( dCommission / 100 );
 			
 			twoObjects.setObj1(fDeducedBalance);
 			twoObjects.setObj2(dDeducedBalance);
