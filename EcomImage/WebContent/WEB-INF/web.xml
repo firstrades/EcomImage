@@ -125,6 +125,7 @@
 		<url-pattern>/OfferedProductsSelected</url-pattern>
 		<url-pattern>/RetrieveCategoryList</url-pattern>
 		<url-pattern>/AddCategory</url-pattern>
+		<url-pattern>/deleteCategory</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>FranchiseServlet</servlet-name>

@@ -298,7 +298,7 @@ a.tooltip span b {
                                 <li>                                   
                                     <a href="#">Product Category</a>
                                 	<ul class="nav nav-third-level">
-                                        <li><a href="#" data-ng-click="addCategory()">Add Category</a></li>
+                                        <li><a href="#" data-ng-click="alterCategory()">Add Category</a></li>
                                         <li><a href="#">Add Sub-Category</a></li>                                        
                                     </ul>
                                 </li>
@@ -1012,20 +1012,23 @@ a.tooltip span b {
 			<form id="category" method="post" enctype="multipart/form-data">
 			
 				  <div style="padding: 20px;  font-size: 18px; font-family: vardana; border: 1px solid #ccc;">Add New Category:
-				  	<input type="text" name="category" required />
-				  	<span style="margin-left: 8px;"><input type="submit" class="btn-md" value="submit" /></span> 
-				  	<span style="margin-left: 226px;">
+				  	<input type="text" name="category" required data-ng-model="category"/>
+				  	<span style="margin-left: 8px;"><input type="submit" class="btn-md" value="submit" data-ng-click="addCategoryMethod()"/></span> 
+				  	<span style="margin-left: 120px;">
 				  		Category: 
-				  		<select style="width: 25%;height: 32px;">
-				  			<option class="categoryList">Jewel</option>
-				  			<option class="categoryList">Saibal</option>
+				  		<select data-ng-model="deleteCategory" style="width: 25%;height: 32px;" 
+				  			data-ng-options="item.category for item in categoryItems track by item.id">			  							  			
+				  			<option value="">--------- category ---------</option>
 				  		</select>
+				  		<span style="margin-left: 8px;"><input type="button" class="btn-md" value="delete" data-ng-click="deleteCategoryMethod()" /></span>
+				  		
 				  	</span>
 				  </div>
 		  
 			</form>
 			
-			<div id="categoryMessage" style="margin-left: 12px;margin-top: 5px;color:red;"><!-- Ajax Data --></div>
+			<div data-ng-bind="categoryMessage" style="margin-left: 12px;margin-top: 5px;color:red;"><!-- Ajax Data --></div>
+			<div data-ng-bind="deleteCategoryMessage" style="margin-left: 597px;margin-top: 5px;color:red;"><!-- Ajax Data  --></div>
 		
 		</div>
 		

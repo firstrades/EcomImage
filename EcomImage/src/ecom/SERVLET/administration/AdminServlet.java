@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -902,6 +903,31 @@ public class AdminServlet extends HttpServlet {
 				
 				System.out.println("Entered RetrieveCategoryList");	
 				
+				//Database
+				CategoryList categoryList = new CategoryList();
+				Map<Integer,String> categories = categoryList.getCategoryList();
+				
+				categoryList = null;
+				
+				//Json data for next page
+				JSONArray jsonArray = new JSONArray();
+				JSONObject jsonObject = null;			
+				
+				try {
+					
+					for (Map.Entry<Integer, String> entry : categories.entrySet()) {						
+						jsonObject = new JSONObject();
+						jsonObject.put("id", entry.getKey());
+						jsonObject.put("category", entry.getValue());
+						jsonArray.put(jsonObject);
+					}
+					
+				} catch (JSONException e) {					
+					e.printStackTrace();					
+				}
+				
+				response.setContentType("application/json");
+				response.getWriter().write(jsonArray.toString());
 				
 				
 			} // OfferedProductsSelected
@@ -910,41 +936,137 @@ public class AdminServlet extends HttpServlet {
 				
 				System.out.println("Entered AddCategory");					
 				
+				//get Request through json------------------------------------------------------------------------------
+				BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+			        
+		        String jsonData = null;
+		        
+		        if (br != null) {
+		        	
+		            jsonData = br.readLine();                               
+		        }			       
+		        	
+				JSONObject jsonObject;
+				String category = null; //----------------------request data
+				try {
 					
-				String category = request.getParameter("category").trim().toUpperCase();
+					jsonObject = new JSONObject(jsonData);
+					category = jsonObject.getString("category").trim().toUpperCase();
+					
+				} catch (JSONException e) {						
+					e.printStackTrace();
+				}
 				
 				//Database
 				int tableId = 0;						
 				tableId = CategoryList.addCategory(category);
+				CategoryList categoryList = new CategoryList();
+				Map<Integer,String> categories = categoryList.getCategoryList();
 				
-				
-				//Json for next page
-				JSONObject jsonObject = new JSONObject();
+				//Json data for next page
+				JSONObject data = new JSONObject();
+				JSONArray jsonArray = new JSONArray();
+				JSONObject categoryObject = null;
 				
 				try {
 					
-					if (tableId > 0)				
-						jsonObject.put("status", "New Category created with Id: " + tableId);
-					else 
-						jsonObject.put("status", "New Category not created due to some error!");
 					
+					//----------------------------------------------------------------------							
+					for (Map.Entry<Integer, String> entry : categories.entrySet()) {						
+						categoryObject = new JSONObject();
+						categoryObject.put("id", entry.getKey());
+						categoryObject.put("category", entry.getValue());
+						jsonArray.put(categoryObject);
+					}					
+					//----------------------------------------------------------------------
+				
+					if (tableId > 0) {
+						
+							data.put("message", "New Category created with Id: " + tableId);
+							data.put("array", jsonArray);
+										
+					} else {  //tableId == 0
+						data.put("message", "New Category not created due to some error!");						
+					}
 					
+				
 				} catch (JSONException e) {					
 					e.printStackTrace();
-					try {
-						jsonObject.put("status", "New Category not created due to some error!");
-					} catch (JSONException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				}
-				
+				}	
 				
 				response.setContentType("application/json");
-				response.getWriter().write(jsonObject.toString());
-				
+				response.getWriter().write(data.toString());
+					
+								
 				
 			} // AddCategory
+			
+			else if (servletPath.equals("/deleteCategory")) {
+				
+				System.out.println("Entered deleteCategory");	
+				
+				//get Request through json------------------------------------------------------------------------------
+				BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+			        
+		        String jsonData = null;
+		        
+		        if (br != null) {
+		        	
+		            jsonData = br.readLine();                               
+		        }			       
+		        	
+				JSONObject jsonObject;
+				int id = 0; //----------------------request data
+				try {
+					
+					jsonObject = new JSONObject(jsonData);
+					id = Integer.parseInt(jsonObject.getString("id"));
+					
+				} catch (JSONException e) {						
+					e.printStackTrace();
+				}
+				
+				//Database
+				int status = 0;  //'0' not executed and '1' executed
+				CategoryList categoryList = new CategoryList();
+				status = categoryList.deleteCategory(id);
+				Map<Integer,String> categories = categoryList.getCategoryList();
+				
+				//Json data for next page
+				JSONObject data = new JSONObject();
+				JSONArray jsonArray = new JSONArray();
+				JSONObject categoryObject = null;
+				
+				try {
+					
+					
+					//----------------------------------------------------------------------							
+					for (Map.Entry<Integer, String> entry : categories.entrySet()) {						
+						categoryObject = new JSONObject();
+						categoryObject.put("id", entry.getKey());
+						categoryObject.put("category", entry.getValue());
+						jsonArray.put(categoryObject);
+					}					
+					//----------------------------------------------------------------------
+				
+					if (status == 1) {
+						
+							data.put("message", "The category is deleted.");
+							data.put("array", jsonArray);
+										
+					} else {  //status == 0
+						data.put("message", "The category could not be deleted.");						
+					}
+					
+				
+				} catch (JSONException e) {					
+					e.printStackTrace();
+				}	
+				
+				response.setContentType("application/json");
+				response.getWriter().write(data.toString());
+				
+			}//deleteCategory
 			
 	}
 }

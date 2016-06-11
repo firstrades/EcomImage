@@ -32,7 +32,7 @@ CREATE TABLE `cart_wishlist` (
   `qty` int(11) DEFAULT NULL,
   `size` varchar(20) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +42,54 @@ CREATE TABLE `cart_wishlist` (
 LOCK TABLES `cart_wishlist` WRITE;
 /*!40000 ALTER TABLE `cart_wishlist` DISABLE KEYS */;
 /*!40000 ALTER TABLE `cart_wishlist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `category_list`
+--
+
+DROP TABLE IF EXISTS `category_list`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `category_list` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `category_list`
+--
+
+LOCK TABLES `category_list` WRITE;
+/*!40000 ALTER TABLE `category_list` DISABLE KEYS */;
+INSERT INTO `category_list` VALUES (1,'ELECTRONICS'),(2,'MEN'),(3,'WOMEN'),(4,'KIDS'),(5,'HomeAndKitchen'),(6,'FoodAndGrocery'),(7,'Herbal');
+/*!40000 ALTER TABLE `category_list` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `category_subcategory_mapping`
+--
+
+DROP TABLE IF EXISTS `category_subcategory_mapping`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `category_subcategory_mapping` (
+  `categoryList_id` int(11) NOT NULL,
+  `subCategory` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`categoryList_id`),
+  CONSTRAINT `categoryList_id` FOREIGN KEY (`categoryList_id`) REFERENCES `category_list` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `category_subcategory_mapping`
+--
+
+LOCK TABLES `category_subcategory_mapping` WRITE;
+/*!40000 ALTER TABLE `category_subcategory_mapping` DISABLE KEYS */;
+/*!40000 ALTER TABLE `category_subcategory_mapping` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -579,6 +627,40 @@ select min(salePriceCustomer) into  minPrice from product where sub_category = s
 select id into productId from product where sub_category = subCategory and salePriceCustomer = minPrice limit 1;
 
 RETURN productId;
+
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `addCategory` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `addCategory`(
+out tableId int,
+in productCategory varchar(60)
+)
+BEGIN
+
+	if exists(select * from category_list where category = productCategory) then
+    
+		set tableId = 0;
+
+	else
+		
+        insert into category_list (category) values (productCategory);
+        select max(id) into tableId from category_list;      
+
+	end if;
 
 
 END ;;
@@ -2828,4 +2910,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-10 13:52:12
+-- Dump completed on 2016-06-11 17:07:39

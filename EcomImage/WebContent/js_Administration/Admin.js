@@ -71,19 +71,65 @@ admin.controller('ViewController', function($scope, $http, $window) {
 		});
 	};
 	
-	$scope.addCategory = function() { //$window.alert('j');
+	$scope.alterCategory = function() { //$window.alert('j');
 		
 		$scope.hideAll();
 		$scope.addACategory = true;
 		
-		$http.post('RetrieveCategoryList', {}).success(function(data) {
+		$http.post('RetrieveCategoryList', {}).success(function(items) {
 			
-			
+			$scope.categoryItems = items;
 		});
 	};
 	
 	
+	$scope.deleteCategoryMethod = function() { 
+		
+		$scope.deleteCategoryMessage = null;
+		$scope.categoryMessage = null;
+		
+		//$window.alert($scope.deleteCategory.category);
+		
+		var r = $window.confirm("Alert: Do You Want To Delete this category!");
+		
+		if (r == true) { 
+		
+			var keyValue = JSON.stringify({id: $scope.deleteCategory.id});
+			
+			$http.post('deleteCategory', keyValue, {headers: {'Content-Type': 'application/json'} }).success( function(data) {			
+					
+				$scope.deleteCategoryMessage = data.message;	
+				
+				if (data.array)
+					$scope.categoryItems = data.array;
+				
+			});	
+		
+		}//if
+	};
 	
+	$scope.addCategoryMethod = function() { 
+		
+		$scope.deleteCategoryMessage = null;
+		$scope.categoryMessage = null;
+		
+		var r = $window.confirm("Alert: Do You Want To Add This Category!");
+		
+		if (r == true) { 
+		
+			var keyValue = JSON.stringify({category: $scope.category});
+			
+			$http.post('AddCategory', keyValue, {headers: {'Content-Type': 'application/json'} }).success( function(data) {			
+					
+				$scope.categoryMessage = data.message;	
+				
+				if (data.array)
+					$scope.categoryItems = data.array;
+				
+			});	
+		
+		}//if
+	};
 	
 	
 	
@@ -364,47 +410,6 @@ $(function() {
 
 	});
 	
-	
-	$("form#category").submit(function(event) { 
-		
-		//disable the default form submission
-	  	event.preventDefault();	  	
-	  	
-	  	//$('#categoryMessage').empty();
-	
-		var r = confirm("Alert: Do You Really Want To Add This Category !");
-		
-		if (r == true) {  
-	 
-			  //grab all form data  
-			  var formData = new FormData($(this)[0]);   
-			 
-			  $.ajax({
-			    url: 'AddCategory',
-			    type: 'POST',
-			    data: formData,
-			    async: false,
-			    cache: false,
-			    contentType: false,
-			    processData: false,
-			    success: function (data) {   
-			    	$('#categoryMessage').empty();
-			    	
-			    	if (data.status) { 
-			    		$('#categoryMessage').append(data.status);
-			    	}
-			    },
-			  	error: function() {
-			  		$('#categoryMessage').empty();
-			  		$('#categoryMessage').append("Some Error Occured!.");
-			  	}
-			  });
-		} 
-	 
-	  return false;
-	
-
-	});
 	
 	
 	

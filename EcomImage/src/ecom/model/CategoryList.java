@@ -4,9 +4,12 @@ import java.io.Serializable;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import ecom.common.ConnectionFactory;
 
@@ -93,7 +96,7 @@ public class CategoryList implements Serializable {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		String sql = null;	
-		int status = -1;
+		int status = 0;
 		
 		try {
 			connection = ConnectionFactory.getNewConnection();
@@ -115,7 +118,7 @@ public class CategoryList implements Serializable {
 				| ClassNotFoundException | SQLException e) {			
 			try { connection.rollback();     } catch (SQLException e1) { e1.printStackTrace(); }
 			e.printStackTrace();
-			return -1;
+			//return status;
 		} finally {				
 			try { preparedStatement.close(); } catch (SQLException e)  { e.printStackTrace();  }
 			try { connection.close();        } catch (SQLException e)  { e.printStackTrace();  }
@@ -124,6 +127,51 @@ public class CategoryList implements Serializable {
 		
 		return status;
 	}//deleteCategory
+	
+	
+	public Map<Integer,String> getCategoryList() {
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		String sql = null;	
+		Map<Integer,String> categories = new HashMap<Integer, String>();
+				
+		try {
+			connection = ConnectionFactory.getNewConnection();
+			connection.setAutoCommit(false);
+			
+			sql = "select id, category from category_list";
+				
+			preparedStatement = connection.prepareStatement(sql);			
+			 			
+			resultSet = preparedStatement.executeQuery();	
+			
+			while (resultSet.next()) {	
+				
+				int id = resultSet.getInt("id");
+				String category = resultSet.getString("category");
+				categories.put(id, category);
+			}
+			
+			connection.commit();
+			
+			System.out.println("SQL getCategoryList Executed");			
+						
+			
+		} catch (InstantiationException | IllegalAccessException
+				| ClassNotFoundException | SQLException e) {			
+			try { connection.rollback();     } catch (SQLException e1) { e1.printStackTrace(); }
+			e.printStackTrace();	
+			categories = null;  // in case any error occurrs inside try
+		} finally {				
+			try { preparedStatement.close(); } catch (SQLException e)  { e.printStackTrace();  }
+			try { connection.close();        } catch (SQLException e)  { e.printStackTrace();  }
+			System.gc();			
+		}		
+		
+		return categories;
+	}//getCategoryList
 	
 	
 	public static void main(String...args) {
