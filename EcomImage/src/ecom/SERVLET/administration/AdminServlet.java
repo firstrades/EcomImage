@@ -908,19 +908,40 @@ public class AdminServlet extends HttpServlet {
 			
 			else if (servletPath.equals("/AddCategory")) {
 				
-				System.out.println("Entered AddCategory");	
+				System.out.println("Entered AddCategory");					
 				
+					
 				String category = request.getParameter("category").trim().toUpperCase();
 				
 				//Database
-				int tableId = 0;				
-				if (category != null) {
-					tableId = CategoryList.addCategory(category);
-				} else {
-					// error
-				}
+				int tableId = 0;						
+				tableId = CategoryList.addCategory(category);
+				
 				
 				//Json for next page
+				JSONObject jsonObject = new JSONObject();
+				
+				try {
+					
+					if (tableId > 0)				
+						jsonObject.put("status", "New Category created with Id: " + tableId);
+					else 
+						jsonObject.put("status", "New Category not created due to some error!");
+					
+					
+				} catch (JSONException e) {					
+					e.printStackTrace();
+					try {
+						jsonObject.put("status", "New Category not created due to some error!");
+					} catch (JSONException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				
+				
+				response.setContentType("application/json");
+				response.getWriter().write(jsonObject.toString());
 				
 				
 			} // AddCategory

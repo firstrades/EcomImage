@@ -390,8 +390,9 @@ $(function() {
 			    success: function (data) {   
 			    	$('#categoryMessage').empty();
 			    	
-			    	if (data.status)
-			    		$('#categoryMessage').append("Seller Approved.");
+			    	if (data.status) { 
+			    		$('#categoryMessage').append(data.status);
+			    	}
 			    },
 			  	error: function() {
 			  		$('#categoryMessage').empty();

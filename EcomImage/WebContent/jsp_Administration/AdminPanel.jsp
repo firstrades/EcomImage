@@ -1014,7 +1014,7 @@ a.tooltip span b {
 				  <div style="padding: 20px;  font-size: 18px; font-family: vardana; border: 1px solid #ccc;">Add New Category:
 				  	<input type="text" name="category" required />
 				  	<span style="margin-left: 8px;"><input type="submit" class="btn-md" value="submit" /></span> 
-				  	<span style="margin-left: 150px;">
+				  	<span style="margin-left: 226px;">
 				  		Category: 
 				  		<select style="width: 25%;height: 32px;">
 				  			<option class="categoryList">Jewel</option>
@@ -1025,7 +1025,7 @@ a.tooltip span b {
 		  
 			</form>
 			
-			<div id="categoryMessage" style="margin-left: 12px;margin-top: 5px;">Jewel Saha</div>
+			<div id="categoryMessage" style="margin-left: 12px;margin-top: 5px;color:red;"><!-- Ajax Data --></div>
 		
 		</div>
 		

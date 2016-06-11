@@ -3,6 +3,7 @@ package ecom.model;
 import java.io.Serializable;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.List;
@@ -45,6 +46,7 @@ public class CategoryList implements Serializable {
 		CallableStatement callableStatement = null;
 		String sql = null;
 		int tableId = -1;
+		boolean executed = false;
 		
 		try {
 			connection = ConnectionFactory.getNewConnection();
@@ -63,37 +65,75 @@ public class CategoryList implements Serializable {
 			connection.commit();
 			
 			System.out.println("SQL addCategory Executed");			
-						
+					
 			
 		} catch (InstantiationException | IllegalAccessException
 				| ClassNotFoundException | SQLException e) {			
 			try { connection.rollback();     } catch (SQLException e1) { e1.printStackTrace(); }
 			e.printStackTrace();
+			if (tableId > 0)
+				executed = true;
 			
 		} finally {				
 			try { callableStatement.close(); } catch (SQLException e)  { e.printStackTrace();  }
 			try { connection.close();        } catch (SQLException e)  { e.printStackTrace();  }
 			System.gc();
+			if (executed == true) {
+				CategoryList categoryList = new CategoryList();
+				categoryList.deleteCategory(tableId);
+			}		
 		}	
 		
 		return tableId;
 	}//addCategory
 	
 	
-	public boolean deleteCategory(int tableId) {
+	public int deleteCategory(int tableId) {
 		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		String sql = null;	
+		int status = -1;
 		
+		try {
+			connection = ConnectionFactory.getNewConnection();
+			connection.setAutoCommit(false);
+			
+			sql = "delete from category_list where id = ?";
+				
+			preparedStatement = connection.prepareStatement(sql);			 
+			preparedStatement.setInt(1, tableId);
+			 			
+			status = preparedStatement.executeUpdate();		// 0 if not executed(may be row was not there), 1 if executed
+			
+			connection.commit();
+			
+			System.out.println("SQL deleteCategory Executed");			
+						
+			
+		} catch (InstantiationException | IllegalAccessException
+				| ClassNotFoundException | SQLException e) {			
+			try { connection.rollback();     } catch (SQLException e1) { e1.printStackTrace(); }
+			e.printStackTrace();
+			return -1;
+		} finally {				
+			try { preparedStatement.close(); } catch (SQLException e)  { e.printStackTrace();  }
+			try { connection.close();        } catch (SQLException e)  { e.printStackTrace();  }
+			System.gc();			
+		}		
 		
-		
-		return false;
-	}
+		return status;
+	}//deleteCategory
 	
 	
 	public static void main(String...args) {
 		
-		int tableId = addCategory("jewel3");
-		
+		int tableId = addCategory("jewel3");		
 		System.out.println(tableId);
+		
+		/*CategoryList categoryList = new CategoryList();		
+		int status = categoryList.deleteCategory(3);
+		System.out.println(status);*/
 	}
 	
 }
