@@ -29,9 +29,11 @@ public class ConnectionFactory {
 			Connection connection = null;
 			
 			try {
+					System.out.println("Remote");
 					connection = DriverManager.getConnection( PROTOCOL + RemoteDATABASE, RemoteUSER, RemotePASSWORD );
 			} catch (SQLException e) {			
-				try {System.out.println("Local");
+				try {
+					System.out.println("Local");
 					connection = DriverManager.getConnection( PROTOCOL + LocalDATABASE,  LocalUSER,  LocalPASSWORD  );
 				} catch (SQLException e1) {	e1.printStackTrace(); }
 			}			

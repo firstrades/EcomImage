@@ -2,7 +2,8 @@ var admin = angular.module('admin', []);
 
 /********************** AdminPanel.js *********************************/
 
-admin.controller('ViewController', function($scope, $http, $window) {   
+admin.controller('ViewController', function($scope, $http, $window) {  
+	
 	
 	$scope.dashboard = true;	
 	
@@ -70,7 +71,16 @@ admin.controller('ViewController', function($scope, $http, $window) {
 		});
 	};
 	
-	
+	$scope.addCategory = function() { //$window.alert('j');
+		
+		$scope.hideAll();
+		$scope.addACategory = true;
+		
+		$http.post('RetrieveCategoryList', {}).success(function(data) {
+			
+			
+		});
+	};
 	
 	
 	
@@ -87,6 +97,7 @@ admin.controller('ViewController', function($scope, $http, $window) {
 		$scope.editFranchise = false;
 		$scope.bookedProductsStatus = false;
 		$scope.approveSeller = false;
+		$scope.addACategory = false;
 	};
 	
 	$scope.redirectToUserRegistration = function() {
@@ -344,6 +355,47 @@ $(function() {
 			  	error: function() {
 			  		$('#message').empty();
 			  		$('#message').append("Seller Not Approved.");
+			  	}
+			  });
+		} 
+	 
+	  return false;
+	
+
+	});
+	
+	
+	$("form#category").submit(function(event) { 
+		
+		//disable the default form submission
+	  	event.preventDefault();	  	
+	  	
+	  	//$('#categoryMessage').empty();
+	
+		var r = confirm("Alert: Do You Really Want To Add This Category !");
+		
+		if (r == true) {  
+	 
+			  //grab all form data  
+			  var formData = new FormData($(this)[0]);   
+			 
+			  $.ajax({
+			    url: 'AddCategory',
+			    type: 'POST',
+			    data: formData,
+			    async: false,
+			    cache: false,
+			    contentType: false,
+			    processData: false,
+			    success: function (data) {   
+			    	$('#categoryMessage').empty();
+			    	
+			    	if (data.status)
+			    		$('#categoryMessage').append("Seller Approved.");
+			    },
+			  	error: function() {
+			  		$('#categoryMessage').empty();
+			  		$('#categoryMessage').append("Some Error Occured!.");
 			  	}
 			  });
 		} 

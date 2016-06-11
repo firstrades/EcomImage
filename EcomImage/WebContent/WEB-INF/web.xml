@@ -123,6 +123,8 @@
 		<url-pattern>/ApproveSeller</url-pattern>
 		<url-pattern>/OfferedProductsSelection</url-pattern>
 		<url-pattern>/OfferedProductsSelected</url-pattern>
+		<url-pattern>/RetrieveCategoryList</url-pattern>
+		<url-pattern>/AddCategory</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>FranchiseServlet</servlet-name>

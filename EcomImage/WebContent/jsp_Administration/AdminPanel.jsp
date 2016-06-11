@@ -20,6 +20,8 @@
 	    <script type="text/javascript" src="<%=FrequentUse.angular %>"></script>    
 	    <script type="text/javascript" src="js_Administration/Admin.js"></script>
 	    
+	    <link rel="stylesheet" type="text/css" href="<%=FrequentUse.style %>">
+	    
 	    <!-- Bootstrap Core JavaScript -->
 	    <script src="js/bootstrap.min.js"></script>	
 	    <!-- Metis Menu Plugin JavaScript -->
@@ -291,10 +293,14 @@ a.tooltip span b {
                        
                         
                         <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Accessories<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Blank Page</a>
+                                <li>                                   
+                                    <a href="#">Product Category</a>
+                                	<ul class="nav nav-third-level">
+                                        <li><a href="#" data-ng-click="addCategory()">Add Category</a></li>
+                                        <li><a href="#">Add Sub-Category</a></li>                                        
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="#">Login Page</a>
@@ -315,7 +321,7 @@ a.tooltip span b {
         
         <!-- -------------------------- Dashboard ------------------------------- -->
 
-       	<div class="right_pannel" style="position:absolute;top:13%;left:19%;width:81%; height:580px;border:none;" data-ng-show="dashboard">
+       	<div class="right_pannel" style="position:absolute;top:13%;left:19%;width:80%; height:580px;border:none;" data-ng-show="dashboard">
 			<div class="initional">
 				<div class="page-wrapper" >
             		<div class="row">
@@ -423,7 +429,7 @@ a.tooltip span b {
 		
 		<!-- -------------- Approve Product ---------------------- -->
 		
-		<div data-ng-show="productApproval" style="position:absolute;top:8%;left:16%;width:83%;max-height: 700px;border:1px solid #ccc; overflow: auto; overflow-x: none;">
+		<div data-ng-show="productApproval" style="position:absolute;top:8%;left:19%;width:80%;max-height: 700px;border:1px solid #ccc; overflow: auto; overflow-x: none;">
 		
 			<h1 style="margin-left: 1%;background-color: #eee;padding: 8px 14px; font-size: 23px;width: 98%;"> Products For Approval </h1>
 			
@@ -611,7 +617,7 @@ a.tooltip span b {
     
     	<!-- -------------- Edit Franchise ---------------------- -->
 		
-		<div data-ng-show="editFranchise" style="position:absolute;top:8%;left:16%;width:83%;max-height: 700px;border:1px solid #ccc; overflow: auto; overflow-x: none;">
+		<div data-ng-show="editFranchise" style="position:absolute;top:8%;left:19%;width:80%;max-height: 700px;border:1px solid #ccc; overflow: auto; overflow-x: none;">
 			
 			<h1 style="margin-left: 1%;background-color: #eee;padding: 8px 14px; font-size: 23px;width: 98%;"> Set Pin And Commission </h1>
 			
@@ -721,7 +727,7 @@ a.tooltip span b {
 		
 		<!-- -------------- Status for booked products ---------------------- -->
 		
-	<div data-ng-show="bookedProductsStatus" style="position:absolute;top:8%;left:16%;width:83%;max-height: 700px; border:1px solid #ccc; overflow: auto; overflow-x: hidden;">
+	<div data-ng-show="bookedProductsStatus" style="position:absolute;top:8%;left:19%;width:80%;max-height: 700px; border:1px solid #ccc; overflow: auto; overflow-x: hidden;">
 				
 		<div class="col-md-12"> <h1 style="margin-left: 1%;background-color: #eee;padding: 8px 14px; font-size: 23px;width: 98%;"> Status For Booked Products </h1>  </div>	
 		
@@ -908,7 +914,7 @@ a.tooltip span b {
 		
 		<!-- -------------- Approve Seller ---------------------- -->
 		
-		<div data-ng-show="approveSeller" style="position:absolute;top:8%;left:16%;width:83%;max-height: 700px;border:1px solid #ccc; overflow: auto; overflow-x: none;">
+		<div data-ng-show="approveSeller" style="position:absolute;top:8%;left:19%;width:80%;max-height: 700px;border:1px solid #ccc; overflow: auto; overflow-x: none;">
 		
 			<h1 style="margin-left: 1%;background-color: #eee;padding: 8px 14px; font-size: 23px;width: 98%;"> Approve Seller </h1>
 			
@@ -997,44 +1003,60 @@ a.tooltip span b {
 		<!-- -------------- End Approve Seller ---------------------- -->
 		
 		
+		<!-- -------------- Add Category  ---------------------- -->
+		
+		<div data-ng-show="addACategory" style="position:absolute;top:8%;left:19%;width:80%;max-height: 170px;border:1px solid #ccc; overflow: hidden; overflow-x: none;">
+		
+			<h1 style="margin-left: 1%;background-color: #eee;padding: 8px 14px; font-size: 23px;width: 98%;"> Add Category </h1>			
+			
+			<form id="category" method="post" enctype="multipart/form-data">
+			
+				  <div style="padding: 20px;  font-size: 18px; font-family: vardana; border: 1px solid #ccc;">Add New Category:
+				  	<input type="text" name="category" required />
+				  	<span style="margin-left: 8px;"><input type="submit" class="btn-md" value="submit" /></span> 
+				  	<span style="margin-left: 150px;">
+				  		Category: 
+				  		<select style="width: 25%;height: 32px;">
+				  			<option class="categoryList">Jewel</option>
+				  			<option class="categoryList">Saibal</option>
+				  		</select>
+				  	</span>
+				  </div>
+		  
+			</form>
+			
+			<div id="categoryMessage" style="margin-left: 12px;margin-top: 5px;">Jewel Saha</div>
+		
+		</div>
 		
 		
 		
+		<!-- -------------- End Spare ---------------------- -->
 		
-		
-		
-		<!-- -------------- Spare ---------------------- -->
-		
-		<!-- <div data-ng-show="editFranchise" style="position:absolute;top:8%;left:16%;width:83%;max-height: 700px;border:1px solid #ccc; overflow: auto; overflow-x: none;">
+		<!-- <div data-ng-show="editFranchise" style="position:absolute;top:8%;left:19%;width:83%;max-height: 700px;border:1px solid #ccc; overflow: auto; overflow-x: none;">
 		
 		sdkjfcscvjksdjds
 		</div> -->
 		<!-- -------------- End Spare ---------------------- -->
 		
-		<!-- <div data-ng-show="editFranchise" style="position:absolute;top:8%;left:16%;width:83%;max-height: 700px;border:1px solid #ccc; overflow: auto; overflow-x: none;">
+		<!-- <div data-ng-show="editFranchise" style="position:absolute;top:8%;left:19%;width:83%;max-height: 700px;border:1px solid #ccc; overflow: auto; overflow-x: none;">
 		
 		sdkjfcscvjksdjds
 		</div> -->
 		<!-- -------------- End Spare ---------------------- -->
 		
-		<!-- <div data-ng-show="editFranchise" style="position:absolute;top:8%;left:16%;width:83%;max-height: 700px;border:1px solid #ccc; overflow: auto; overflow-x: none;">
+		<!-- <div data-ng-show="editFranchise" style="position:absolute;top:8%;left:19%;width:83%;max-height: 700px;border:1px solid #ccc; overflow: auto; overflow-x: none;">
 		
 		sdkjfcscvjksdjds
 		</div> -->
 		<!-- -------------- End Spare ---------------------- -->
 		
-		<!-- <div data-ng-show="editFranchise" style="position:absolute;top:8%;left:16%;width:83%;max-height: 700px;border:1px solid #ccc; overflow: auto; overflow-x: none;">
+		<!-- <div data-ng-show="editFranchise" style="position:absolute;top:8%;left:19%;width:83%;max-height: 700px;border:1px solid #ccc; overflow: auto; overflow-x: none;">
 		
 		sdkjfcscvjksdjds
 		</div> -->
 		<!-- -------------- End Spare ---------------------- -->
-		
-		<!-- <div data-ng-show="editFranchise" style="position:absolute;top:8%;left:16%;width:83%;max-height: 700px;border:1px solid #ccc; overflow: auto; overflow-x: none;">
-		
-		sdkjfcscvjksdjds
-		</div> -->
-		<!-- -------------- End Spare ---------------------- -->
-    
+  
 </div> <!-- End Wrapper -->
 
 </div> <!-- End ViewController -->

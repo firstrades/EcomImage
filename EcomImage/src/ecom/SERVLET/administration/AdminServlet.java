@@ -19,6 +19,7 @@ import org.json.JSONObject;
 import ecom.DAO.Seller.ProductDAO;
 import ecom.DAO.User.CreateUserDAO;
 import ecom.DAO.administration.AdminDAO;
+import ecom.model.CategoryList;
 import ecom.model.ExtractFranchiseDetails;
 import ecom.model.OrderTable;
 import ecom.model.Product;
@@ -896,6 +897,33 @@ public class AdminServlet extends HttpServlet {
 				request.getRequestDispatcher("jsp_Administration/OfferedHotSelection.jsp").forward(request, response);
 				
 			} // OfferedProductsSelected
+			
+			else if (servletPath.equals("/RetrieveCategoryList")) {
+				
+				System.out.println("Entered RetrieveCategoryList");	
+				
+				
+				
+			} // OfferedProductsSelected
+			
+			else if (servletPath.equals("/AddCategory")) {
+				
+				System.out.println("Entered AddCategory");	
+				
+				String category = request.getParameter("category").trim().toUpperCase();
+				
+				//Database
+				int tableId = 0;				
+				if (category != null) {
+					tableId = CategoryList.addCategory(category);
+				} else {
+					// error
+				}
+				
+				//Json for next page
+				
+				
+			} // AddCategory
 			
 	}
 }

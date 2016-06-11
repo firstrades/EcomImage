@@ -179,7 +179,7 @@ float: left;
 						 	<small class="details"> Seller : <%=productBean.getSellerCompany() %> </small> <br>
 						 	<span>Product ID: <%=productBean.getProductId() %></span>
 						 	<hr>
-						 	<small class="details"> - 1 Year Warranty </small> 
+						 	<small class="details"> - <%=productBean.getWarranty() %> </small> 
 						 	<!-- WholeSale Qty and Discount -->
  							<% if (wholeSaleOffer != null) { %>
  								<br><span class="fk-bold">WholeSale Discount <%=wholeSaleOffer.getDiscount() %>% on Qty  <%=wholeSaleOffer.getQty() %> or more.</span>
