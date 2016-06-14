@@ -158,7 +158,7 @@ admin.controller('ViewController', function($scope, $http, $window) {
 		});
 	};
 	
-	$scope.deleteCategoryMethod = function() {
+	$scope.deleteSubCategoryMethod = function() {
 		
 		$scope.addSubCategoryMessage = null;
 		$scope.deleteSubCategoryMessage = null;
@@ -186,6 +186,23 @@ admin.controller('ViewController', function($scope, $http, $window) {
 	
 	$scope.addSubCategoryMethod = function() {
 		
+		$scope.addSubCategoryMessage = null;
+		$scope.deleteSubCategoryMessage = null;
+		
+		//$window.alert($scope.category1.id + ' ' + $scope.addASubCategory);	
+		
+		var r = $window.confirm("Alert: Do You Want To Add This SubCategory!");
+		
+		if (r == true) {
+		
+			var keyValue = JSON.stringify({categoryId: $scope.category1.id, subCategory: $scope.addASubCategory});
+			
+			$http.post('addASubCategory', keyValue, {headers: {'Content-Type': 'application/json'} }).success(function(data) {			
+				
+				$scope.addSubCategoryMessage = data.response;
+			});
+		
+		}//if
 		
 	};
 	

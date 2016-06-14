@@ -1047,7 +1047,7 @@ a.tooltip span b {
 			  		</select>				  	
 				  	<span style="margin-left: 119px;">
 				  		Add SubCategory: 
-				  		<input type="text" name="addSubCategory" required data-ng-model="addASubCategory" style="margin-left: 13px;width: 263px;"/>
+				  		<input type="text"  name="addASubCategory" data-ng-model="addASubCategory" required style="margin-left: 13px;width: 263px;"/>
 				  		<span style="margin-left: 8px;">
 				  			<input type="button" class="btn-md" value="add" data-ng-click="addSubCategoryMethod()" style="padding-right: 18px;padding-left: 18px;"/>
 				  		</span>				  		
@@ -1070,7 +1070,7 @@ a.tooltip span b {
 				  			<option value="">--------- sub category ---------</option>				  			
 				  		</select>
 				  		<span style="margin-left: 8px;">
-				  			<input type="button" class="btn-md" value="delete" data-ng-click="deleteCategoryMethod()" style="padding-left: 9px;padding-right: 9px;"/>
+				  			<input type="button" class="btn-md" value="delete" data-ng-click="deleteSubCategoryMethod()" style="padding-left: 9px;padding-right: 9px;"/>
 				  		</span>
 				  		
 				  	</span>

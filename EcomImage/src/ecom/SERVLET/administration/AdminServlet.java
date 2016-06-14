@@ -1021,7 +1021,7 @@ public class AdminServlet extends HttpServlet {
 				try {
 					
 					jsonObject = new JSONObject(jsonData);
-					id = Integer.parseInt(jsonObject.getString("id"));
+					id = Integer.parseInt(jsonObject.getString("id").trim());
 					
 				} catch (JSONException e) {						
 					e.printStackTrace();
@@ -1088,7 +1088,7 @@ public class AdminServlet extends HttpServlet {
 				try {
 					
 					jsonObject = new JSONObject(jsonData);
-					categoryId = Integer.parseInt(jsonObject.getString("categoryId")); System.out.println(categoryId);
+					categoryId = Integer.parseInt(jsonObject.getString("categoryId").trim()); System.out.println(categoryId);
 					
 				} catch (JSONException e) {						
 					e.printStackTrace();
@@ -1147,8 +1147,8 @@ public class AdminServlet extends HttpServlet {
 				try {
 					//get Request
 					jsonObject = new JSONObject(jsonData);
-					categoryId = Integer.parseInt(jsonObject.getString("categoryId")); System.out.println(categoryId);
-					subCategoryId = Integer.parseInt(jsonObject.getString("subCategoryId")); System.out.println(categoryId);
+					categoryId = Integer.parseInt(jsonObject.getString("categoryId").trim()); System.out.println(categoryId);
+					subCategoryId = Integer.parseInt(jsonObject.getString("subCategoryId").trim()); System.out.println(categoryId);
 					
 				} catch (JSONException e) {						
 					e.printStackTrace();
@@ -1191,6 +1191,54 @@ public class AdminServlet extends HttpServlet {
 				
 				
 			}//deleteASubCategory
+			
+			
+			else if (servletPath.equals("/addASubCategory")) {
+				
+				System.out.println("Entered addASubCategory");
+				
+				//get Request through json------------------------------------------------------------------------------
+				BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+			        
+		        String jsonData = null;
+		        
+		        if (br != null) {
+		        	
+		            jsonData = br.readLine();                               
+		        }			       
+		        	
+				JSONObject jsonObject;
+				int categoryId = 0; 
+				String subCategory = null;
+				try {
+					//get Request
+					jsonObject = new JSONObject(jsonData);
+					categoryId = Integer.parseInt(jsonObject.getString("categoryId").trim()); System.out.println(categoryId);
+					subCategory = jsonObject.getString("subCategory").trim(); System.out.println(subCategory);
+					
+				} catch (JSONException e) {						
+					e.printStackTrace();
+				}
+				
+				//Database
+				int tableId = 0;
+				tableId = SubCategory.addASubCategory(categoryId, subCategory);
+				
+				//Json data for next page				
+				JSONObject jsonObject2 = new JSONObject();
+				
+				try {
+					
+					jsonObject2.put("response", "The SubCategory Added at id " + tableId);				
+				
+				} catch (JSONException e) {					
+					e.printStackTrace();
+				}	
+				
+				response.setContentType("application/json");
+				response.getWriter().write(jsonObject2.toString());
+				
+			}//addASubCategory
 			
 	}
 }

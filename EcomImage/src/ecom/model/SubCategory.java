@@ -1,10 +1,12 @@
 package ecom.model;
 
 import java.io.Serializable;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -118,14 +120,57 @@ public class SubCategory implements Serializable {
 		return status;
 	}//deleteASubCategory
 	
+	
+	public synchronized static int addASubCategory(int categoryId, String subCategory) {
+		
+		Connection connection = null;
+		CallableStatement callableStatement = null;
+		String sql = null;
+		int tableId = -1;		
+		
+		try {
+			connection = ConnectionFactory.getNewConnection();
+			connection.setAutoCommit(false);
+			
+			sql = "{call addASubCategory(?,?,?)}";
+				
+			callableStatement = connection.prepareCall(sql);				
+			callableStatement.registerOutParameter(1, Types.INTEGER); 
+			callableStatement.setInt   (2, categoryId);
+			callableStatement.setString(3, subCategory);
+			 			
+			callableStatement.execute();	
+			 			
+			tableId = callableStatement.getInt(1);
+			
+			connection.commit();
+			
+			System.out.println("SQL addASubCategory Executed");			
+					
+			
+		} catch (InstantiationException | IllegalAccessException
+				| ClassNotFoundException | SQLException e) {			
+			try { connection.rollback();     } catch (SQLException e1) { e1.printStackTrace(); }
+			e.printStackTrace();
+			
+			
+		} finally {				
+			try { callableStatement.close(); } catch (SQLException e)  { e.printStackTrace();  }
+			try { connection.close();        } catch (SQLException e)  { e.printStackTrace();  }
+			System.gc();					
+		}	
+		
+		return tableId;
+	}//addASubCategory
+	
 	public static void main(String...args) {
 		
-		SubCategory subCategory = new SubCategory();
-		List<SubCategory> subCategories = subCategory.getSubCategorys(1);
 		
-		for (SubCategory subCategory2 : subCategories) {
+		int d = addASubCategory(1, "sdgsdfvb");
+		
+		
 			
-			System.out.println(subCategory2.getSubCategory());
-		}
+			System.out.println(d);
+		
 	}
 }
