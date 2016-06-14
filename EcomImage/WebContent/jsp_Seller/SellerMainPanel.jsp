@@ -3,7 +3,7 @@
     pageEncoding="ISO-8859-1"%>
     
 <!DOCTYPE html>
-<html lang="en">
+<html data-ng-app="ProductAdd">
 
 <head>
 
@@ -16,7 +16,9 @@
     <title>Stockist Main Panel</title>
     
 	    <!-- jQuery -->    
-	    <script type="text/javascript" src="<%=FrequentUse.jQuery %>"></script>	    
+	    <script type="text/javascript" src="<%=FrequentUse.jQuery %>"></script>	 
+	    <script type="text/javascript" src="<%=FrequentUse.angular %>"></script> 
+		<script type="text/javascript" src="js_Seller/Product_Add.js"></script>   
 	    <!-- Bootstrap Core JavaScript -->
 	    <script src="js/bootstrap.min.js"></script>	
 	    <!-- Metis Menu Plugin JavaScript -->
@@ -24,6 +26,7 @@
 	    <!-- Custom Theme JavaScript -->
 	    <script src="js/sb-admin-2.js"></script>
 
+	<link type="text/css" href="css/bootstrap.css" rel="stylesheet">
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- MetisMenu CSS -->
@@ -40,7 +43,7 @@
 
 </head>
 
-<body>
+<body data-ng-controller="ProductController">
 
 <%
 //SellerMainPanel-------------------
@@ -53,6 +56,8 @@
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="row">
+        <div class="col-md-2">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -64,10 +69,43 @@
     				font-family: monospace;
     				color: green;
    					margin-top: 4%;
-    				margin-left: 17%;">SELLER MAIN PANEL (<%=userId %>)</div>
+    				margin-left: 17%;">SELLER MAIN PANEL (<%=userId %>)
+    				
+    				
+    			</div>	
             </div>
+            </div>
+            
+            
+            <!-- --------------------------------------------------------------- -->
+    				 <div class="col-md-9">
+    				
+						<div class="col-md-2 col-sm-6 col-xs-12" style="margin-top:7px">
+							<label><span> <span style="color:red;">*</span> Category </span></label>
+					   	</div>
+					   	<div class="col-md-3 col-sm-6 col-xs-12" style="margin-top:5px">
+					   		<select name="category" id="category" class="form-control" data-ng-change="getSubCategories()" data-ng-model="category2"
+					  			data-ng-options="item.category for item in categoryItems track by item.category">			  							  			
+					  			<option value="">--------- category ---------</option>
+					  		</select>							
+						</div>				
+						<div class="col-md-2 col-sm-6 col-xs-12" style="margin-top:7px">
+							<label> <span style="color:red;">*</span> Sub Category </label>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12" style="margin-top:5px">
+							<select data-ng-model="deleteSubCategory" name="subCategory" id="subCategory" class="form-control"
+					  			data-ng-options="item.subSategory for item in subCategoryItems track by item.subSategory">
+					  			<option value="">--------- sub category ---------</option>				  			
+					  		</select>													
+						</div>
+						<div class="col-md-2">
+						<a href="#" class="btn btn-primary" style="padding: 4px 21px;margin-top: 5px;">Search</a>
+						</div>
+					</div>
+    			
+    				<!-- --------------------------------------------------------------- -->
           
-
+ <div class="col-md-1">
             <ul class="nav navbar-top-links navbar-right">                
                 
                 <li class="dropdown">
@@ -88,6 +126,8 @@
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
+            </div>
+            </div>
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
