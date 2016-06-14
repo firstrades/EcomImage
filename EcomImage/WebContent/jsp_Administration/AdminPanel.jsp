@@ -299,7 +299,7 @@ a.tooltip span b {
                                     <a href="#">Product Category</a>
                                 	<ul class="nav nav-third-level">
                                         <li><a href="#" data-ng-click="alterCategory()">Add Category</a></li>
-                                        <li><a href="#">Add Sub-Category</a></li>                                        
+                                        <li><a href="#" data-ng-click="alterSubCategory()">Add SubCategory</a></li>                                        
                                     </ul>
                                 </li>
                                 <li>
@@ -1029,6 +1029,57 @@ a.tooltip span b {
 			
 			<div data-ng-bind="categoryMessage" style="margin-left: 12px;margin-top: 5px;color:red;"><!-- Ajax Data --></div>
 			<div data-ng-bind="deleteCategoryMessage" style="margin-left: 597px;margin-top: 5px;color:red;"><!-- Ajax Data  --></div>
+		
+		</div>
+		
+		<!-- -------------- Add  Sub - Category  ---------------------- -->
+		
+		<div data-ng-show="addSubCategory" style="position:absolute;top:8%;left:19%;width:80%;max-height: 266px;border:1px solid #ccc; overflow: hidden; overflow-x: none;">
+		
+			<h1 style="margin-left: 1%;background-color: #eee;padding: 8px 14px; font-size: 23px;width: 98%;"> Add SubCategory </h1>			
+			
+			<form id="addSubCategory">
+			
+				  <div style="padding: 20px;  font-size: 18px; font-family: vardana; border: 1px solid #ccc;">Select Category:
+				  	<select data-ng-model="category1" style="width: 25%;height: 32px;" 
+			  			data-ng-options="item.category for item in categoryItems track by item.id">			  							  			
+			  			<option value="">--------- category ---------</option>
+			  		</select>				  	
+				  	<span style="margin-left: 119px;">
+				  		Add SubCategory: 
+				  		<input type="text" name="addSubCategory" required data-ng-model="addASubCategory" style="margin-left: 13px;width: 263px;"/>
+				  		<span style="margin-left: 8px;">
+				  			<input type="button" class="btn-md" value="add" data-ng-click="addSubCategoryMethod()" style="padding-right: 18px;padding-left: 18px;"/>
+				  		</span>				  		
+				  	</span>
+				  </div>
+		  
+			</form>
+			
+			<form id="deleteSubCategory">
+			
+				  <div style="padding: 20px;  font-size: 18px; font-family: vardana; border: 1px solid #ccc;">Select Category:
+				  	<select data-ng-model="category2" style="width: 25%;height: 32px;" data-ng-change="getSubCategories()"
+			  			data-ng-options="item.category for item in categoryItems track by item.id">			  							  			
+			  			<option value="">--------- category ---------</option>
+			  		</select>
+				  	<span style="margin-left: 120px;">
+				  		Select SubCategory: 
+				  		<select data-ng-model="deleteSubCategory" style="width: 25%;height: 32px;" 
+				  			data-ng-options="item.subSategory for item in subCategoryItems track by item.id">
+				  			<option value="">--------- sub category ---------</option>				  			
+				  		</select>
+				  		<span style="margin-left: 8px;">
+				  			<input type="button" class="btn-md" value="delete" data-ng-click="deleteCategoryMethod()" style="padding-left: 9px;padding-right: 9px;"/>
+				  		</span>
+				  		
+				  	</span>
+				  </div>
+		  
+			</form>
+			
+			<div data-ng-bind="addSubCategoryMessage" style="margin-left: 12px;margin-top: 5px;color:red;"><!-- Ajax Data --></div>
+			<div data-ng-bind="deleteSubCategoryMessage" style="margin-left: 597px;margin-top: 5px;color:red;"><!-- Ajax Data  --></div>
 		
 		</div>
 		

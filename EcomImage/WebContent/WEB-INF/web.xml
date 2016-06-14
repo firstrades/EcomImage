@@ -126,6 +126,8 @@
 		<url-pattern>/RetrieveCategoryList</url-pattern>
 		<url-pattern>/AddCategory</url-pattern>
 		<url-pattern>/deleteCategory</url-pattern>
+		<url-pattern>/RetrieveSubCategoryList</url-pattern>
+		<url-pattern>/deleteASubCategory</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>FranchiseServlet</servlet-name>

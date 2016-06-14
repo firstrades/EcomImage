@@ -131,6 +131,58 @@ admin.controller('ViewController', function($scope, $http, $window) {
 		}//if
 	};
 	
+	$scope.alterSubCategory = function() { 
+		
+		$scope.addSubCategoryMessage = null;
+		$scope.deleteSubCategoryMessage = null;
+		
+		$scope.hideAll();
+		$scope.addSubCategory = true;		
+		
+		$http.post('RetrieveCategoryList', {}).success(function(items) {			
+			$scope.categoryItems = items;
+		});
+	};
+	
+	$scope.getSubCategories = function() { 
+		
+		$scope.addSubCategoryMessage = null;
+		$scope.deleteSubCategoryMessage = null;
+		
+		//$window.alert($scope.category2.id);
+		
+		var keyValue = JSON.stringify({categoryId: $scope.category2.id});
+		
+		$http.post('RetrieveSubCategoryList', keyValue, {headers: {'Content-Type': 'application/json'} }).success(function(items) {			
+			$scope.subCategoryItems = items;
+		});
+	};
+	
+	$scope.deleteCategoryMethod = function() {
+		
+		$scope.addSubCategoryMessage = null;
+		$scope.deleteSubCategoryMessage = null;
+		
+		//$window.alert($scope.deleteSubCategory.id);
+		var r = $window.confirm("Alert: Do You Want To Delete This SubCategory!");
+		
+		if (r == true) {
+		
+			var keyValue = JSON.stringify({categoryId: $scope.category2.id, subCategoryId: $scope.deleteSubCategory.id});
+			
+			$http.post('deleteASubCategory', keyValue, {headers: {'Content-Type': 'application/json'} }).success(function(items) {			
+				$scope.subCategoryItems = items;
+				$scope.deleteSubCategoryMessage = 'Sub Category deleted.';
+			});
+		
+		}//if
+		
+	};
+	
+	$scope.addSubCategoryMethod = function() {
+		
+		
+	};
 	
 	
 	
@@ -144,6 +196,7 @@ admin.controller('ViewController', function($scope, $http, $window) {
 		$scope.bookedProductsStatus = false;
 		$scope.approveSeller = false;
 		$scope.addACategory = false;
+		$scope.addSubCategory = false;
 	};
 	
 	$scope.redirectToUserRegistration = function() {

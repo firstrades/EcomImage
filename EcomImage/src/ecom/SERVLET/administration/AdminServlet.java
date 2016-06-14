@@ -24,6 +24,7 @@ import ecom.model.CategoryList;
 import ecom.model.ExtractFranchiseDetails;
 import ecom.model.OrderTable;
 import ecom.model.Product;
+import ecom.model.SubCategory;
 import ecom.model.User;
 import ecom.model.UserAndPickupAddress;
 
@@ -1067,6 +1068,129 @@ public class AdminServlet extends HttpServlet {
 				response.getWriter().write(data.toString());
 				
 			}//deleteCategory
+			
+			else if (servletPath.equals("/RetrieveSubCategoryList")) {
+				
+				System.out.println("Entered RetrieveSubCategoryList");
+				
+				//get Request through json------------------------------------------------------------------------------
+				BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+			        
+		        String jsonData = null;
+		        
+		        if (br != null) {
+		        	
+		            jsonData = br.readLine();                               
+		        }			       
+		        	
+				JSONObject jsonObject;
+				int categoryId = 0; //----------------------request data
+				try {
+					
+					jsonObject = new JSONObject(jsonData);
+					categoryId = Integer.parseInt(jsonObject.getString("categoryId")); System.out.println(categoryId);
+					
+				} catch (JSONException e) {						
+					e.printStackTrace();
+				}
+				
+				//Database
+				SubCategory subCategory = new SubCategory();
+				List<SubCategory> subCategories = subCategory.getSubCategorys(categoryId);
+				
+				
+				//Json data for next page				
+				JSONArray jsonArray = new JSONArray();
+				JSONObject subCategoryObject = null;
+				
+				try {
+					
+					
+					//----------------------------------------------------------------------							
+					for (SubCategory subCategory2 : subCategories) {						
+						subCategoryObject = new JSONObject();
+						subCategoryObject.put("id", subCategory2.getId());
+						subCategoryObject.put("subSategory", subCategory2.getSubCategory());
+						jsonArray.put(subCategoryObject);
+					}					
+					//----------------------------------------------------------------------
+				
+					
+					
+				
+				} catch (JSONException e) {					
+					e.printStackTrace();
+				}	
+				
+				response.setContentType("application/json");
+				response.getWriter().write(jsonArray.toString());
+				
+			}//RetrieveSubCategoryList
+			
+			else if (servletPath.equals("/deleteASubCategory")) {
+				
+				System.out.println("Entered deleteASubCategory");
+				
+				//get Request through json------------------------------------------------------------------------------
+				BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+			        
+		        String jsonData = null;
+		        
+		        if (br != null) {
+		        	
+		            jsonData = br.readLine();                               
+		        }			       
+		        	
+				JSONObject jsonObject;
+				int categoryId = 0; 
+				int subCategoryId = 0;
+				try {
+					//get Request
+					jsonObject = new JSONObject(jsonData);
+					categoryId = Integer.parseInt(jsonObject.getString("categoryId")); System.out.println(categoryId);
+					subCategoryId = Integer.parseInt(jsonObject.getString("subCategoryId")); System.out.println(categoryId);
+					
+				} catch (JSONException e) {						
+					e.printStackTrace();
+				}
+				
+				//Database
+				int status = 0;
+				List<SubCategory> subCategories = null;
+				SubCategory subCategory = new SubCategory();
+				status = subCategory.deleteASubCategory(subCategoryId);
+				if (status > 0)
+					subCategories = subCategory.getSubCategorys(categoryId);
+				
+				
+				//Json data for next page				
+				JSONArray jsonArray = new JSONArray();
+				JSONObject subCategoryObject = null;
+				
+				try {
+					
+					
+					//----------------------------------------------------------------------							
+					for (SubCategory subCategory2 : subCategories) {						
+						subCategoryObject = new JSONObject();
+						subCategoryObject.put("id", subCategory2.getId());
+						subCategoryObject.put("subSategory", subCategory2.getSubCategory());
+						jsonArray.put(subCategoryObject);
+					}					
+					//----------------------------------------------------------------------
+				
+					
+					
+				
+				} catch (JSONException e) {					
+					e.printStackTrace();
+				}	
+				
+				response.setContentType("application/json");
+				response.getWriter().write(jsonArray.toString());	
+				
+				
+			}//deleteASubCategory
 			
 	}
 }
