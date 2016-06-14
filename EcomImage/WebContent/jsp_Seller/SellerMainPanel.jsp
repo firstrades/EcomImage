@@ -99,7 +99,8 @@
 					  		</select>													
 						</div>
 						<div class="col-md-2">
-						<a href="#" class="btn btn-primary" style="padding: 4px 21px;margin-top: 5px;">Search</a>
+							<a href="ViewProductList?category=ELECTRONICS&subCategory=Mobile" target="iframe" class="btn btn-primary" 
+								style="padding: 4px 21px;margin-top: 5px;">Search</a>
 						</div>
 					</div>
     			
