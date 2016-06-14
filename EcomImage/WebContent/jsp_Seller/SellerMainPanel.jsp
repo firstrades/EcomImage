@@ -84,8 +84,8 @@
 							<label><span> <span style="color:red;">*</span> Category </span></label>
 					   	</div>
 					   	<div class="col-md-3 col-sm-6 col-xs-12" style="margin-top:5px">
-					   		<select name="category" id="category" class="form-control" data-ng-change="getSubCategories()" data-ng-model="category2"
-					  			data-ng-options="item.category for item in categoryItems track by item.category">			  							  			
+					   		<select name="category" id="category" class="form-control" data-ng-change="getSubCategories(); writeCategory()" 
+					  			data-ng-model="category2" data-ng-options="item.category for item in categoryItems track by item.category">			  							  			
 					  			<option value="">--------- category ---------</option>
 					  		</select>							
 						</div>				
@@ -94,12 +94,12 @@
 						</div>
 						<div class="col-md-3 col-sm-6 col-xs-12" style="margin-top:5px">
 							<select data-ng-model="deleteSubCategory" name="subCategory" id="subCategory" class="form-control"
-					  			data-ng-options="item.subSategory for item in subCategoryItems track by item.subSategory">
+					  			data-ng-options="item.subSategory for item in subCategoryItems track by item.subSategory" data-ng-change="writeSubCategory()">
 					  			<option value="">--------- sub category ---------</option>				  			
 					  		</select>													
 						</div>
 						<div class="col-md-2">
-							<a href="ViewProductList?category=ELECTRONICS&subCategory=Mobile" target="iframe" class="btn btn-primary" 
+							<a href="ViewProductList?category={{categoryItem}}&subCategory={{subCategoryItem}}" target="iframe" class="btn btn-primary" 
 								style="padding: 4px 21px;margin-top: 5px;">Search</a>
 						</div>
 					</div>

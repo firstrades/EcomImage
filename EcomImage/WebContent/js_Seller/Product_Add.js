@@ -2,7 +2,7 @@ $(function() {
 	
 	/******************************* Select Category ******************************************************/
 	
-	$("#category").change(function() {
+	/*$("#category").change(function() {
 		var option = $(this).find('option:selected').val();		
 		$.ajax({
 				url: 'ProductCategoryList',
@@ -13,7 +13,7 @@ $(function() {
 					$('#subCategory').append(response);
 				}
 		});		
-	});
+	});*/
 	
 	
 	
@@ -241,6 +241,16 @@ admin.controller('ProductController', function($scope, $http, $window) {
 		$http.post('RetrieveSubCategoryList', keyValue, {headers: {'Content-Type': 'application/json'} }).success(function(items) {			
 			$scope.subCategoryItems = items;
 		});
+	};
+	
+	$scope.writeCategory = function() {		
+		
+		$scope.categoryItem = $scope.category2.category;
+	};
+	
+	$scope.writeSubCategory = function() {
+		//$window.alert();
+		$scope.subCategoryItem = $scope.deleteSubCategory.subSategory;
 	};
 	
 	
