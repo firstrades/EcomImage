@@ -2,11 +2,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html data-ng-app="ProductAdd">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Add Product</title>
 <script type="text/javascript" src="<%=FrequentUse.jQuery %>"></script>
+<script type="text/javascript" src="<%=FrequentUse.angular %>"></script> 
 <script type="text/javascript" src="js_Seller/Product_Add.js"></script>
 <link type="text/css" href="css/bootstrap.css" rel="stylesheet">
 
@@ -30,7 +31,7 @@ hr {
 </style>
 </head>
 
-<body>
+<body data-ng-controller="ProductController">
 <section>
  
     <div class="container">
@@ -45,7 +46,11 @@ hr {
 					<label><span> <span style="color:red;">*</span> Category </span></label>
 			   	</div>
 			   	<div class="col-md-3 col-sm-6 col-xs-12">
-					<select name="category" id="category" class="form-control">
+			   		<select name="category" id="category" class="form-control" data-ng-change="getSubCategories()" data-ng-model="category2"
+			  			data-ng-options="item.category for item in categoryItems track by item.category">			  							  			
+			  			<option value="">--------- category ---------</option>
+			  		</select>
+					<!-- <select name="category" id="category" class="form-control">
 						<option value="null">---category---</option>
 						<option value="ELECTRONICS">ELECTRONICS</option>
 						<option value="MEN">MEN</option>
@@ -54,15 +59,19 @@ hr {
 						<option value="HomeAndKitchen">HomeAndKitchen</option>
 						<option value="FoodAndGrocery">Food&Grocery</option>
 						<option value="Herbal">Herbal</option>
-					</select>
+					</select> -->
 				</div>				
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<label> <span style="color:red;">*</span> Sub Category </label>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
-					<select name="subCategory" id="subCategory" class="form-control">
+					<select data-ng-model="deleteSubCategory" name="subCategory" id="subCategory" class="form-control"
+			  			data-ng-options="item.subSategory for item in subCategoryItems track by item.subSategory">
+			  			<option value="">--------- sub category ---------</option>				  			
+			  		</select>
+					<!-- <select name="subCategory" id="subCategory" class="form-control">
 						<option value="null">--sub category--</option>								
-					</select>						
+					</select> -->						
 				</div>
 			</div>
 			<!-- -------------------------------------------------- -->

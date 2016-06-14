@@ -216,3 +216,33 @@ $(function() {
 	});
 	
 });
+
+
+/**********************************    Angular   *************************************/
+
+var admin = angular.module('ProductAdd', []);
+
+admin.controller('ProductController', function($scope, $http, $window) { 
+	
+	$http.post('RetrieveCategoryList', {}).success(function(items) {		
+		$scope.categoryItems = items;
+	});
+	
+	
+	$scope.getSubCategories = function() { 
+		
+		$scope.addSubCategoryMessage = null;
+		$scope.deleteSubCategoryMessage = null;
+		
+		//$window.alert($scope.category2.id);
+		
+		var keyValue = JSON.stringify({categoryId: $scope.category2.id});
+		
+		$http.post('RetrieveSubCategoryList', keyValue, {headers: {'Content-Type': 'application/json'} }).success(function(items) {			
+			$scope.subCategoryItems = items;
+		});
+	};
+	
+	
+});
+

@@ -55,7 +55,7 @@ CREATE TABLE `category_list` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,11 +76,13 @@ DROP TABLE IF EXISTS `category_subcategory_mapping`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `category_subcategory_mapping` (
-  `categoryList_id` int(11) NOT NULL,
+  `subCategory_id` int(11) NOT NULL AUTO_INCREMENT,
+  `categoryList_id` int(11) DEFAULT NULL,
   `subCategory` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`categoryList_id`),
+  PRIMARY KEY (`subCategory_id`),
+  KEY `categoryList_id` (`categoryList_id`),
   CONSTRAINT `categoryList_id` FOREIGN KEY (`categoryList_id`) REFERENCES `category_list` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -89,6 +91,7 @@ CREATE TABLE `category_subcategory_mapping` (
 
 LOCK TABLES `category_subcategory_mapping` WRITE;
 /*!40000 ALTER TABLE `category_subcategory_mapping` DISABLE KEYS */;
+INSERT INTO `category_subcategory_mapping` VALUES (1,1,'Mobile'),(2,1,'Laptop'),(3,1,'Tablet'),(4,1,'Camera'),(5,1,'Television'),(6,1,'AirCondition'),(7,1,'Refrigerator'),(8,1,'WashingMachine'),(9,1,'MicrowaveOven'),(10,1,'VacuumCleaner'),(11,1,'Speaker'),(12,1,'Geyser'),(13,2,'MenTshirt'),(14,2,'MenShirt'),(15,2,'MenKurta'),(16,2,'MenSherwani'),(17,2,'Jeans'),(18,2,'MenTrouser'),(19,2,'MenShoes'),(20,2,'MenWatch'),(21,2,'MenWallet'),(22,2,'MenBelt'),(23,2,'MenSunglasses'),(24,2,'MenDeodrants'),(25,2,'MenPerfumes'),(26,3,'WomenShoe'),(27,3,'WomenKurta'),(28,3,'WomenSharee'),(29,3,'WomenSalwar'),(30,3,'WomenJeans'),(31,3,'WomenLeggings'),(32,4,'Boys_Shirt'),(33,4,'Boys_Pant'),(34,4,'Girls_Top'),(35,4,'Girls_Shorts'),(36,4,'Baby_Diapers'),(37,5,'Bedsheets'),(38,5,'Curtains'),(39,5,'SofaCovers'),(40,5,'PressureCookers'),(41,5,'GasStoves'),(42,6,'Confectionery'),(43,6,'PowderProduct'),(44,6,'Cakes'),(45,6,'Dairy'),(46,6,'Rice'),(47,7,'Sampoo'),(48,7,'Medicine'),(49,7,'FatAnalyzer'),(50,7,'Soap'),(51,7,'Moisturizer');
 /*!40000 ALTER TABLE `category_subcategory_mapping` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -628,6 +631,33 @@ select id into productId from product where sub_category = subCategory and saleP
 
 RETURN productId;
 
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `addASubCategory` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `addASubCategory`(
+out tableId int,
+in categoryId int,
+in subCategory1 varchar(50)
+)
+BEGIN
+
+	insert into category_subcategory_mapping (categoryList_id, subCategory)
+    values (categoryId, subCategory1);
+    select max(subCategory_id) into tableId from category_subcategory_mapping;
 
 END ;;
 DELIMITER ;
@@ -2910,4 +2940,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-11 19:13:58
+-- Dump completed on 2016-06-14 16:10:05
