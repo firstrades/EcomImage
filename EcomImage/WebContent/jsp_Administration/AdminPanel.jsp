@@ -1041,7 +1041,7 @@ a.tooltip span b {
 			<form id="addSubCategory">
 			
 				  <div style="padding: 20px;  font-size: 18px; font-family: vardana; border: 1px solid #ccc;">Select Category:
-				  	<select data-ng-model="category1" style="width: 25%;height: 32px;" 
+				  	<select data-ng-model="category1" style="width: 25%;height: 32px;" data-ng-change="setNullToStrings()"
 			  			data-ng-options="item.category for item in categoryItems track by item.id">			  							  			
 			  			<option value="">--------- category ---------</option>
 			  		</select>				  	

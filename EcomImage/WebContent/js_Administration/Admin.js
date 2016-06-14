@@ -179,6 +179,11 @@ admin.controller('ViewController', function($scope, $http, $window) {
 		
 	};
 	
+	$scope.setNullToStrings = function() {
+		$scope.addSubCategoryMessage = null;
+		$scope.deleteSubCategoryMessage = null;
+	}
+	
 	$scope.addSubCategoryMethod = function() {
 		
 		
