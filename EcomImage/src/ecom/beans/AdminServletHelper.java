@@ -5,7 +5,7 @@ import java.util.Calendar;
 
 public class AdminServletHelper {
 
-	public String getDateIncremented(String date) {
+	public String getDateIncremented(String date) {  
 		
 		String formatted = null;
 		
