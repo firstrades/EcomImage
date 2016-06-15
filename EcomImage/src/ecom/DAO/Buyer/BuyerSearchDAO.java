@@ -97,14 +97,17 @@ public class BuyerSearchDAO {
 			
 			System.out.println("SQL getProducts Executed");
 			
-			return list;
+			if (list.size() > 0)			
+				return list;
+			else
+				return null;
 			
 			
 		} catch (InstantiationException | IllegalAccessException
 				| ClassNotFoundException | SQLException e) {			
 			try { connection.rollback();     } catch (SQLException e1) { e1.printStackTrace(); }
 			e.printStackTrace();
-			
+			return null;
 		} finally {		
 			if (resultSet != null)
 				try { resultSet.close();         } catch (SQLException e)  { e.printStackTrace();  }
@@ -116,7 +119,7 @@ public class BuyerSearchDAO {
 		}		
 		
 		
-		return list;		
+				
 		
 	}
 	

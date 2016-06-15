@@ -35,9 +35,16 @@ public class Handler {
 		
 		String[] twoKeys = null;
 		
-		String[] temp = keyWords.split(" ");
-		if (temp.length == 3)
-			twoKeys = new String[] { temp[0], temp[2] };			
+		String[] temp = keyWords.split(" in "); 
+		String[] otherPart = temp[1].trim().split(" ");    System.out.println("otherPart.length: "+otherPart.length);
+		
+		
+		if (temp.length == 2 && otherPart.length == 1)	{
+			twoKeys = new String[] { temp[0].trim(), temp[1].trim() };	
+			System.out.println(temp[0] + " " + temp[1]);
+		}
+		
+		System.out.println("twoKeys: " + twoKeys);
 		
 		return twoKeys;
 	}
@@ -46,9 +53,22 @@ public class Handler {
 		
 		String[] threeKeys = null;
 		
-		String[] temp = keyWords.split(" ");
-		if (temp.length == 5)
-			threeKeys = new String[] { temp[0], temp[2], temp[4] };			
+		String[] temp = keyWords.split(" in ");
+		
+		String[] temp1 = temp[1].trim().split(" ");     System.out.println("temp1.length: "+temp1.length);
+		
+		String[] otherPart = null;
+		if (temp1.length > 1) {
+			otherPart = temp[1].trim().split(" of ");
+			System.out.println("otherPart.length: "+otherPart.length);
+		}
+		
+		if (temp.length == 2 && temp1.length > 1)  {
+			threeKeys = new String[] { temp[0].trim(), otherPart[0].trim(), otherPart[1].trim() };		
+			System.out.println(temp[0] + " " + otherPart[0] + " " + otherPart[1]);
+		}
+		
+		System.out.println("threeKeys: " + threeKeys);
 		
 		return threeKeys;
 	}
@@ -95,13 +115,20 @@ public class Handler {
 		if (subCategory != null)
 			sql = "SELECT * FROM product WHERE sub_category = '"+subCategory+"' AND status = 'approved'";
 		
-		if (stringArray != null && stringArray.length == 2)
+		if (stringArray != null && stringArray.length == 2) {
 			sql = "SELECT * FROM product WHERE sub_category = '"+stringArray[0]+"' AND category = '"+stringArray[1]+"' AND status = 'approved'";
-		
-		if (stringArray != null && stringArray.length == 3 && search == null)
-			sql = "SELECT * FROM product WHERE company_name = '"+stringArray[0]+"' AND sub_category = '"+stringArray[1]+"' AND category = '"+stringArray[2]+"' AND status = 'approved'";		
-		else //if (stringArray != null && stringArray.length == 3 && search.equals(" "))
-			sql = null;
+		}
+		else if (stringArray != null && stringArray.length == 3 && search == null) {
+			sql = "SELECT * FROM product WHERE company_name = '"+stringArray[0]
+					+"' AND sub_category = '"+stringArray[1]+"' AND category = '"+stringArray[2]+"' AND status = 'approved'";	
+		}
+		else {
+			//if (stringArray != null && stringArray.length == 3 && search.equals(" "))
+			//MySql View
+			sql = "SELECT * FROM searchbyproductname " + 
+				  "WHERE searchKeyWord_forProduct = '"+stringArray[0]+"' AND sub_category = '"+stringArray[1]+"' AND category = '"+stringArray[2]+"'" +
+				  "AND status = 'approved'";
+		}
 		
 		System.out.println(sql);
 		

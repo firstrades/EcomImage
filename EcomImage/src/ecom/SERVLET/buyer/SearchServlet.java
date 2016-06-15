@@ -2,6 +2,7 @@ package ecom.SERVLET.buyer;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -74,15 +75,31 @@ public class SearchServlet extends HttpServlet {
 			String keyWords = request.getParameter("keyWords");
 			
 			//Database
-			String[] twoKeys = handler.getTwoKeys(keyWords);
-			String[] threeKeys = handler.getThreeKeys(keyWords);
+			String[] twoKeys = null;
+			String[] threeKeys = null;
+			
+			twoKeys = handler.getTwoKeys(keyWords);   		
+			threeKeys = handler.getThreeKeys(keyWords);
 			
 			BuyerSearchDAO buyerSearchDAO = BuyerSearchDAO.getInstance();
 			List<Product> productBeanList1 = null;
-			if (twoKeys != null) {
+			List<Product> productBeans = null;
+			
+			if (twoKeys != null) { System.out.println("Enter 2k");
 				productBeanList1 = buyerSearchDAO.searchBySubCategory(twoKeys, null);
-			} else {
+				
+			} else {  System.out.println("Enter 3k");
 				productBeanList1 = buyerSearchDAO.searchBySubCategory(threeKeys, null);
+				productBeans = buyerSearchDAO.searchBySubCategory(threeKeys, "productName"/*no use*/);
+				
+				if (productBeanList1 != null && productBeans != null) {
+					productBeanList1.addAll(productBeans);
+				}
+				
+				if (productBeanList1 == null && productBeans != null) {
+					productBeanList1 = new ArrayList<Product>();
+					productBeanList1.addAll(productBeans);
+				} 
 			}
 			
 			handler.searchBySubCategory_BuyerServlet(productBeanList1, session, null, request, FrequentUse.MAX, response);
