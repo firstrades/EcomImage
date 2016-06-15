@@ -99,10 +99,11 @@ public class Handler {
 			sql = "SELECT * FROM product WHERE sub_category = '"+stringArray[0]+"' AND category = '"+stringArray[1]+"' AND status = 'approved'";
 		
 		if (stringArray != null && stringArray.length == 3 && search == null)
+			sql = "SELECT * FROM product WHERE company_name = '"+stringArray[0]+"' AND sub_category = '"+stringArray[1]+"' AND category = '"+stringArray[2]+"' AND status = 'approved'";		
+		else //if (stringArray != null && stringArray.length == 3 && search.equals(" "))
 			sql = null;
 		
-		if (stringArray != null && stringArray.length == 3 && search.equals(""))
-			sql = null;
+		System.out.println(sql);
 		
 		return sql;
 	}

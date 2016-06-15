@@ -105,16 +105,18 @@ public class BuyerSearchDAO {
 			try { connection.rollback();     } catch (SQLException e1) { e1.printStackTrace(); }
 			e.printStackTrace();
 			
-		} finally {				
-			list = null;
-			try { resultSet.close();         } catch (SQLException e)  { e.printStackTrace();  }
-			try { statement.close();         } catch (SQLException e)  { e.printStackTrace();  }
-			try { connection.close();        } catch (SQLException e)  { e.printStackTrace();  }
+		} finally {		
+			if (resultSet != null)
+				try { resultSet.close();         } catch (SQLException e)  { e.printStackTrace();  }
+			if (statement != null)
+				try { statement.close();         } catch (SQLException e)  { e.printStackTrace();  }
+			if (connection != null)
+				try { connection.close();        } catch (SQLException e)  { e.printStackTrace();  }
 			System.gc();
 		}		
 		
 		
-		return null;		
+		return list;		
 		
 	}
 	
