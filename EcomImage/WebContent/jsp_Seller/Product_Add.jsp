@@ -77,7 +77,7 @@ hr {
 			<!-- -------------------------------------------------- -->
 			<div class="row">
 				<div class="col-md-3 col-sm-6 col-xs-12">
-					<label><span style="color:red;">*</span> Company Name </label>
+					<label><span style="color:red;">*</span> Brand </label>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<input type="text" name="company" class="form-control" required placeholder="Samsung" value="" />
