@@ -1,7 +1,6 @@
 package ecom.SERVLET.buyer;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -12,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.json.JSONArray;
 
 import ecom.DAO.Buyer.BuyerSearchDAO;
 import ecom.DAO.Buyer.SearchDAO;
@@ -59,12 +60,17 @@ public class SearchServlet extends HttpServlet {
 			searchDAO.searchKeyWordsFromSubCategory(keyWord, keyWordSet);
 			searchDAO.searchKeyWords(keyWord, keyWordSet);
 			
+			//Json for next page
 			
-			//------------------------------------------
-			PrintWriter out = response.getWriter();
+			JSONArray jsonArray = new JSONArray();
+			
 			for (String key : keyWordSet) {
-				out.println(key);
+				jsonArray.put(key);
 			}
+			
+			response.setContentType("application/json");
+			response.getWriter().write(jsonArray.toString());
+			
 		}//searchByKeyWord
 		
 		else if (servletPath.equals("/searchProductsWithKeyWords")) {

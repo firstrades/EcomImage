@@ -123,7 +123,7 @@
 					</div>
 					<div class="search">
 					    <form>
-					    	<input type="text" value="" placeholder="search...">
+					    	<input type="text" value="" placeholder="search..." id="tags">
 							<input type="submit" value="">
 						</form>
 					</div>
