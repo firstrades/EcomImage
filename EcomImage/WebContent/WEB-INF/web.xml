@@ -166,6 +166,7 @@
   <servlet-mapping>
     <servlet-name>SearchServlet</servlet-name>    
     <url-pattern>/searchByKeyWord</url-pattern>
+    <url-pattern>/searchProductsWithKeyWords</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>Test</servlet-name>

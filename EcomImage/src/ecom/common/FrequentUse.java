@@ -2,6 +2,9 @@ package ecom.common;
 
 public interface FrequentUse {
 	
+	/*********************** Constants *****************************/
+	public static final Integer MAX = 50;
+	
 	
 	/*********************** JavaScript ****************************/
 

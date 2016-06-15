@@ -33,8 +33,10 @@ import ecom.Interface.Courier.EstimatedRateAndDelivery;
 import ecom.Interface.Courier.SearchLocationByPostalInterface;
 import ecom.beans.BuyerServletHelper;
 import ecom.beans.CartAttributesBean;
+import ecom.beans.Handler;
 import ecom.beans.TransientData;
 import ecom.common.Conversions;
+import ecom.common.FrequentUse;
 import ecom.model.CartWishlist;
 import ecom.model.CustomerOrderHistroy;
 import ecom.model.DeliveryAddress;
@@ -48,11 +50,13 @@ public class BuyerServlet extends HttpServlet {
 	
 	private BuyerServletHelper helper;
 	private BuyerSearchDAO     buyerSearchDAO;
+	private Handler handler;
 	
 	@Override
 	public void init() {
 		this.helper         = BuyerServletHelper.getNewInstance();
 		this.buyerSearchDAO = BuyerSearchDAO.getInstance();
+		this.handler        = Handler.getInstance();
 	}
 	
 	@Override
@@ -80,7 +84,7 @@ public class BuyerServlet extends HttpServlet {
 		if (servletPath.equals("/SearchBySubCategory")) {
 			
 			System.out.println("Entered SearchBySubCategory");
-			Integer MAX = 50;
+			Integer MAX = FrequentUse.MAX;
 			
 			/******************************************
 			 			*  Get Request  *
@@ -89,7 +93,7 @@ public class BuyerServlet extends HttpServlet {
 			
 			String subCategory = request.getParameter("subCategory");         //System.out.println(subCategory);
 			
-			if	(request.getParameter("errorMsg") != null)	{ System.out.println("Jewel");
+			if	(request.getParameter("errorMsg") != null)	{ 
 				errorMsg = (String) request.getParameter("errorMsg");
 			}
 			
@@ -98,9 +102,11 @@ public class BuyerServlet extends HttpServlet {
 			 ******************************************/			
 			List<Product> productBeanList1 = buyerSearchDAO.searchBySubCategory(subCategory);	
 			
-			/*********************************************
+			handler.searchBySubCategory_BuyerServlet(productBeanList1, session, errorMsg, request, MAX, response);
+/*			
+			*//*********************************************
 			 				* Process *
-			 *********************************************/
+			 *********************************************//*
 			
 			List<Product> productBeanList = new ArrayList<>();
 			
@@ -117,25 +123,25 @@ public class BuyerServlet extends HttpServlet {
 			
 			//int productBeanList1_Size = productBeanList1.size();
 			
-			/******************************************
+			*//******************************************
 			 			* Set Session *
-			 ******************************************/			
+			 ******************************************//*			
 			session.setAttribute("productBeanList1", productBeanList1);			
 			
-			/******************************************
+			*//******************************************
 			 			* Set Request *
-			 ******************************************/
+			 ******************************************//*
 			if (errorMsg != null)
 				request.setAttribute("errorMsg", errorMsg);
 			
 			request.setAttribute("productBeanList", productBeanList);
 			request.setAttribute("MAX", MAX);
 			
-			/******************************************
+			*//******************************************
 			 			* Next Page *
-			 ******************************************/
+			 ******************************************//*
 			request.getRequestDispatcher("jsp_Buyer/BuyerSearchPage.jsp").forward(request, response);
-	
+*/	
 		} 
 		
 		else if (servletPath.equals("/SearchBySubCategory_Ajax")) {

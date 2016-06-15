@@ -5,12 +5,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import ecom.beans.Handler;
 import ecom.common.ConnectionFactory;
 import ecom.model.CartWishlist;
 import ecom.model.CustomerOrderHistroy;
@@ -40,31 +42,39 @@ public class BuyerSearchDAO {
 		
 		return buyerSearchDAO;
 	}
+	
+	//-------------------------------------------------------------------------------------------searchBySubCategory
+	
+	public List<Product> searchBySubCategory(String subCategory) { 		
+		return searchBySubCategory(subCategory, null, null);
+	}
+	
+	public List<Product> searchBySubCategory(String[] subCategory, String search) { 		
+		return searchBySubCategory(null, subCategory, search);
+	}
 
-	public List<Product> searchBySubCategory(String subCategory) {  		
+	public List<Product> searchBySubCategory(String subCategory, String[] stringArray, String search) {  		
 		
 		Connection connection = null;
-		PreparedStatement preparedStatement = null;
+		Statement statement = null;
 		String sql = null;
 		ResultSet resultSet = null;		
-		List<Product> list = new ArrayList<>();		
+		List<Product> list = new ArrayList<>();	
+		Handler handler = Handler.getInstance();
 		
 		try {
 			connection = ConnectionFactory.getNewConnection();
 			connection.setAutoCommit(false);
 			
-			sql = "SELECT * FROM product WHERE sub_category = ? AND status = 'approved'";
+			sql = handler.searchBySubCategory(subCategory, stringArray, search);
 				
-			preparedStatement = connection.prepareStatement(sql);				
-			preparedStatement.setString (1, subCategory);   
+			statement = connection.createStatement();	  
 			 			
-			resultSet = preparedStatement.executeQuery();	
+			resultSet = statement.executeQuery(sql);	
 			 			
 			while (resultSet.next()) {
 				
-				Product productBean = new Product();
-				//productBean.setKeyFeatures(new KeyFeatures());
-				//productBean.setPrice(new Price());
+				Product productBean = new Product();				
 				
 				productBean.setProductId                 (resultSet.getInt   ("id"));
 				productBean.setSellerId                  (resultSet.getLong  ("seller_id"));
@@ -78,8 +88,6 @@ public class BuyerSearchDAO {
 				productBean.getPrice().setDiscount       (resultSet.getDouble("discount"));
 				productBean.getPrice().setSalePriceCustomer(resultSet.getDouble("salePriceCustomer"));				
 				productBean.getPrice().setMarkup         (resultSet.getDouble("markup"));
-				
-				
 				
 				
 				list.add(productBean);
@@ -100,7 +108,7 @@ public class BuyerSearchDAO {
 		} finally {				
 			list = null;
 			try { resultSet.close();         } catch (SQLException e)  { e.printStackTrace();  }
-			try { preparedStatement.close(); } catch (SQLException e)  { e.printStackTrace();  }
+			try { statement.close();         } catch (SQLException e)  { e.printStackTrace();  }
 			try { connection.close();        } catch (SQLException e)  { e.printStackTrace();  }
 			System.gc();
 		}		
@@ -109,6 +117,8 @@ public class BuyerSearchDAO {
 		return null;		
 		
 	}
+	
+	//---------------------------------------------------------------------------------------------------------addToCartOrWishList
 	
 	public List<TwoObjects<Product, CartWishlist>> addToCartOrWishList(long productId, long userId, 
 			String cartOrWishlist, String size) {		
