@@ -32,6 +32,11 @@
 	</script>
 	<script src="js/menu_jquery.js"></script>
 	<script src="js/simpleCart.min.js"> </script>
+	
+	<!-- -------- Search -------------- -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">	  
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>  
+	<script type="text/javascript" src="js_Buyer/autocomplete.js"></script>
 
 
 

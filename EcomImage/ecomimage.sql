@@ -55,7 +55,7 @@ CREATE TABLE `category_list` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -82,7 +82,7 @@ CREATE TABLE `category_subcategory_mapping` (
   PRIMARY KEY (`subCategory_id`),
   KEY `categoryList_id` (`categoryList_id`),
   CONSTRAINT `categoryList_id` FOREIGN KEY (`categoryList_id`) REFERENCES `category_list` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -413,7 +413,7 @@ CREATE TABLE `product` (
   `d_commission` double DEFAULT NULL,
   `productAdditionDate` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=latin1 COMMENT='sale_price : sale price to customer';
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1 COMMENT='sale_price : sale price to customer';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -422,9 +422,69 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Mobile','LeEco Le 1S','LeEco',10000,6,10600,2,10812,10999,1,48,0.4,'1 year warranty is applicable',7,'approved',3,3,'2016-05-13 19:11:32'),(2,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Laptop','Acer Aspire E E5-573G-389U NX.MVMSI.036 Core i3','Acer',26000,10,28600,3,29458,34990,15,499,2.4,'1 year warranty is applicable',7,'approved',2,2,'2016-05-13 19:13:00'),(3,2,'Surakha E Commerce Pvt Ltd','MEN','MenTshirt','Royal Challengers Bangalore Solid Men\'s Round Neck Red T-Shirt','Royal Challengers',160,5,168,8,182,245,25,198,0.5,'1 year warranty is applicable',7,'approved',6,6,'2016-05-13 19:14:21'),(4,2,'Surakha E Commerce Pvt Ltd','MEN','MenShirt','Naughty Ninos Printed Boy\'s Polo Neck T-Shirt','Pantaloons',300,7,322,5,339,1099,69,58,0.3,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 11:59:15'),(5,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Tablet','Naughty Ninos Printed Boy\'s Polo Neck T-Shirt','Pantaloons',9000,6,9540,3,9827,12999,24,19,1,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 11:52:11'),(6,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Camera','Naughty Ninos Printed Boy\'s Polo Neck T-Shirt','Pantaloons',8000,6,8480,3,8735,9000,2,50,0.2,'2 Years Canon India Warranty and Free Transit Insurance',7,'approved',2,2,'2016-05-17 11:52:15'),(7,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Television','Naughty Ninos Printed Boy\'s Polo Neck T-Shirt','Pantaloons',18000,7,19261,5,20225,28000,31,7,4.5,'1 year warranty is applicable',7,'approved',3,3,'2016-05-17 11:52:19'),(8,2,'Surakha E Commerce Pvt Ltd','MEN','MenJeans','Naughty Ninos Printed Boy\'s Polo Neck T-Shirt','Pantaloons',500,6,530,5,557,999,44,120,0.7,'1 year warranty is applicable',7,'approved',1,1,'2016-05-17 11:53:45'),(9,2,'Surakha E Commerce Pvt Ltd','MEN','MenTrouser','Naughty Ninos Printed Boy\'s Polo Neck T-Shirt','Pantaloons',400,6,424,7,454,1249,63,110,0.3,'1 year warranty is applicable',7,'approved',1,1,'2016-05-17 11:59:23'),(10,2,'Surakha E Commerce Pvt Ltd','MEN','MenShoes','Best Walk Damian Outdoor Shoes','Woodland',400,5,420,4,437,1200,63,56,0.3,'1 year warranty is applicable',7,'approved',2,2,'2016-05-13 19:17:00'),(11,2,'Surakha E Commerce Pvt Ltd','WOMEN','WomenShoe','Supreme Leather Bellies','Denim',300,5,315,5,331,559,40,77,0.6,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:00'),(12,2,'Surakha E Commerce Pvt Ltd','WOMEN','WomenKurta','Prakhya Embroidered Women\'s Straight Kurta','Prakhya',600,5,630,5,662,1499,55,82,0.5,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:12'),(13,2,'Surakha E Commerce Pvt Ltd','WOMEN','WomenSharee','Parchayee Printed Fashion Raw Silk Sari','Parchayee',400,5,420,5,441,1099,59,20,0.5,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:06'),(14,2,'Surakha E Commerce Pvt Ltd','WOMEN','WomenSalwar','Maruticreation Embroidered Kurta & Churidar','Maruticreation',600,5,630,5,662,2999,77,80,0.3,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:17'),(15,2,'Surakha E Commerce Pvt Ltd','WOMEN','WomenJeans','Dassler Slim Fit Fit Women\'s White Jeans','Dassler',400,5,420,5,441,1299,66,125,0.6,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:23'),(20,2,'Surakha E Commerce Pvt Ltd','KIDS','Baby_Diapers','Mamy Poko Pants Diaper - XXL (24 Pieces)','Mamy Poko',400,5,420,5,441,500,11,200,0.6,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:28'),(21,2,'Surakha E Commerce Pvt Ltd','HomeAndKitchen','Bedsheets','IWS Cotton Abstract Double Bedsheet','IWS',500,5,525,5,552,1299,57,49,0.5,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:33'),(22,2,'Surakha E Commerce Pvt Ltd','HomeAndKitchen','Curtains','Just Linen Polyester Maroon Floral Eyelet Door Curtain','Just Linen',500,5,525,5,552,997,44,50,0.7,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:38'),(23,2,'Surakha E Commerce Pvt Ltd','HomeAndKitchen','SofaCovers','Griiham Cotton Sofa Cover','Griiham',700,6,742,5,780,1800,56,60,2,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:45'),(24,2,'Surakha E Commerce Pvt Ltd','HomeAndKitchen','PressureCookers','Prestige Nakshatra Plus HA Handi 3 L Pressure Cooker','Prestige',1200,5,1260,5,1323,1790,26,50,1.65,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:51'),(25,2,'Surakha E Commerce Pvt Ltd','HomeAndKitchen','GasStoves','Glen Stainless Steel Manual Gas Stove','Glen',2000,5,2100,5,2205,3500,37,50,4,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:56'),(27,2,'Surakha E Commerce Pvt Ltd','KIDS','Boys_Pant','UCB Boy\'s Trousers','UCB',700,5,735,5,772,1499,48,30,0.5,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 15:05:56'),(28,2,'Surakha E Commerce Pvt Ltd','KIDS','Boys_Shirt','UCB Boy\'s Shirt','UCB',700,5,735,5,772,1499,48,30,0.5,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 15:06:01'),(29,2,'Surakha E Commerce Pvt Ltd','KIDS','Girls_Top','UCB Girl\'s Top','UCB',700,5,735,5,772,1499,48,30,0.5,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 15:06:06'),(30,2,'Surakha E Commerce Pvt Ltd','KIDS','Girls_Shorts','UCB Girl\'s Short','UCB',700,5,735,5,772,1499,48,30,0.5,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 15:06:12'),(31,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Mobile','DEMO','DEMO',1000,5,1050,5,1103,2000,44,50,0.2,'1 year warranty is applicable',7,'approved',5,5,'2016-05-18 12:20:32'),(32,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Mobile','DEMO','DEMO',1000,5,1050,5,1103,2000,44,50,0.2,'1 year warranty is applicable',7,'approved',5,5,'2016-05-18 12:20:34'),(33,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Mobile','ssss','ssss',100,6,106,5,112,120,7,47,0.2,'1 year warranty is applicable',7,'approved',5,5,'2016-06-10 13:49:32'),(34,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Mobile','Naughty Ninos Printed Boy\'s Polo Neck T-Shirt','Pantaloons',100,5,105,5,111,136,18,50,0.4,'1 year warranty is applicable',7,'approved',4,4,'2016-05-30 17:36:27'),(35,2,'Surakha E Commerce Pvt Ltd','FoodAndGrocery','Confectionery','Ferrero Rocher 16 Pcs Chocolate Truffles','Ferrero Rocher',400,5,420,5,441,500,11,100,0.2,'6 month warranty is applicable',7,'approved',5,5,'2016-05-30 17:36:35'),(36,2,'Surakha E Commerce Pvt Ltd','FoodAndGrocery','PowderProduct','Optimum Nutrition Gold Standard 100% Whey Protein','Optimum',3000,5,3150,5,3308,3699,10,160,1.8,'1 months warranty is applicable',7,'approved',5,5,'2016-05-30 17:36:44'),(37,2,'Surakha E Commerce Pvt Ltd','FoodAndGrocery','Cakes','Alda Spring Form Cake Tin Set 3 - Cup Cake/Bread Mould','Alda',600,5,630,5,662,1190,44,50,0.3,'6 months warranty is applicable',7,'approved',5,5,'2016-05-30 17:36:52'),(38,2,'Surakha E Commerce Pvt Ltd','FoodAndGrocery','Test','dddd','dddd',100,5,105,5,111,130,15,50,1,'1 year warranty is applicable',7,'approved',3,3,'2016-06-01 12:15:23'),(39,2,'Surakha E Commerce Pvt Ltd','FoodAndGrocery','Test','sdfadsaf','asdsadf',12,1,12.12,100,130,34,64.70588235294117,44,1,'1 year warranty is applicable',7,'approved',0,0,'2016-06-01 12:15:23'),(40,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Mobile','G','S',100,5,105,5,111,130,15,50,1,'1 year warranty is applicable',7,'approved',5,5,'2016-06-01 15:49:39'),(41,2,'Surakha E Commerce Pvt Ltd','Herbal','Sampoo','Akshara Rushikesh Natural Wash','Akshara',70,5,73.5,5,78,110,29,60,0.1,'1 year warranty is applicable',7,'approved',5,5,'2016-06-07 15:56:07'),(42,2,'Surakha E Commerce Pvt Ltd','Herbal','Medicine','Herbalife WH-01 Medicine Dispenser','Herbalife',1100,10,1210,5,1271,1645,22,50,0.1,'1 year warranty is applicable',7,'approved',5,5,'2016-06-07 16:28:20'),(43,2,'Surakha E Commerce Pvt Ltd','Herbal','FatAnalyzer','Herbalife Personalized Protein Powder Body Fat Analyzer','Herbalife',600,5,630,5,662,1060,37,50,0.2,'1 year warranty is applicable',7,'approved',5,5,'2016-06-07 16:28:28'),(44,2,'Surakha E Commerce Pvt Ltd','Herbal','Soap','Khadi Mauri Papaya Soap - Pack of 6 - Premium Handcrafted Herbal','Khadi',350,5,367.5,5,386,450,14,50,0.2,'1 year warranty is applicable',7,'approved',5,5,'2016-06-07 16:28:35'),(45,2,'Surakha E Commerce Pvt Ltd','Herbal','Moisturizer','Hempz Pomegranate Herbal Moisturizer','Hempz',1000,5,1050,5,1103,1600,31,50,0.3,'1 year warranty is applicable',7,'approved',5,5,'2016-06-07 16:28:43'),(46,2,'Surakha E Commerce Pvt Ltd','WOMEN','WomenLeggings','FTCBAZAR Girl\'s White, Black Jeggings','FTCBAZAR',300,10,330,10,363,1500,75,100,0.6,'1 year warranty is applicable',7,'approved',3,3,'2016-06-09 11:37:58'),(47,2,'Surakha E Commerce Pvt Ltd','FoodAndGrocery','Dairy','Saint Pure Goat\'s Milk Dairy Spa Facial Scrub','Saint Pure',2300,5,2415,5,2536,2700,6,50,0.25,'1 year warranty is applicable',7,'approved',5,5,'2016-06-09 12:10:32'),(48,2,'Surakha E Commerce Pvt Ltd','FoodAndGrocery','Rice','Panasonic SR WA 10 Electric Rice Cooker','Panasonic',1200,5,1260,5,1323,1600,17,50,1.5,'1 year warranty is applicable',7,'approved',5,5,'2016-06-09 12:10:40');
+INSERT INTO `product` VALUES (1,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Mobile','LeEco Le 1S','LeEco',10000,6,10600,2,10812,10999,1,48,0.4,'1 year warranty is applicable',7,'approved',3,3,'2016-05-13 19:11:32'),(2,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Laptop','Acer Aspire E E5-573G-389U NX.MVMSI.036 Core i3','Acer',26000,10,28600,3,29458,34990,15,499,2.4,'1 year warranty is applicable',7,'approved',2,2,'2016-05-13 19:13:00'),(3,2,'Surakha E Commerce Pvt Ltd','MEN','MenTshirt','Royal Challengers Bangalore Solid Men\'s Round Neck Red T-Shirt','Royal',160,5,168,8,182,245,25,198,0.5,'1 year warranty is applicable',7,'approved',6,6,'2016-05-13 19:14:21'),(4,2,'Surakha E Commerce Pvt Ltd','MEN','MenShirt','Naughty Ninos Printed Boy\'s Polo Neck T-Shirt','Pantaloons',300,7,322,5,339,1099,69,58,0.3,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 11:59:15'),(5,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Tablet','Naughty Ninos Printed Boy\'s Polo Neck T-Shirt','Pantaloons',9000,6,9540,3,9827,12999,24,19,1,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 11:52:11'),(6,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Camera','Naughty Ninos Printed Boy\'s Polo Neck T-Shirt','Pantaloons',8000,6,8480,3,8735,9000,2,50,0.2,'2 Years Canon India Warranty and Free Transit Insurance',7,'approved',2,2,'2016-05-17 11:52:15'),(7,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Television','Naughty Ninos Printed Boy\'s Polo Neck T-Shirt','Pantaloons',18000,7,19261,5,20225,28000,31,7,4.5,'1 year warranty is applicable',7,'approved',3,3,'2016-05-17 11:52:19'),(8,2,'Surakha E Commerce Pvt Ltd','MEN','MenJeans','Naughty Ninos Printed Boy\'s Polo Neck T-Shirt','Pantaloons',500,6,530,5,557,999,44,120,0.7,'1 year warranty is applicable',7,'approved',1,1,'2016-05-17 11:53:45'),(9,2,'Surakha E Commerce Pvt Ltd','MEN','MenTrouser','Naughty Ninos Printed Boy\'s Polo Neck T-Shirt','Pantaloons',400,6,424,7,454,1249,63,110,0.3,'1 year warranty is applicable',7,'approved',1,1,'2016-05-17 11:59:23'),(10,2,'Surakha E Commerce Pvt Ltd','MEN','MenShoes','Best Walk Damian Outdoor Shoes','Woodland',400,5,420,4,437,1200,63,56,0.3,'1 year warranty is applicable',7,'approved',2,2,'2016-05-13 19:17:00'),(11,2,'Surakha E Commerce Pvt Ltd','WOMEN','WomenShoe','Supreme Leather Bellies','Denim',300,5,315,5,331,559,40,77,0.6,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:00'),(12,2,'Surakha E Commerce Pvt Ltd','WOMEN','WomenKurta','Prakhya Embroidered Women\'s Straight Kurta','Prakhya',600,5,630,5,662,1499,55,82,0.5,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:12'),(13,2,'Surakha E Commerce Pvt Ltd','WOMEN','WomenSharee','Parchayee Printed Fashion Raw Silk Sari','Parchayee',400,5,420,5,441,1099,59,20,0.5,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:06'),(14,2,'Surakha E Commerce Pvt Ltd','WOMEN','WomenSalwar','Maruticreation Embroidered Kurta & Churidar','Maruticreation',600,5,630,5,662,2999,77,80,0.3,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:17'),(15,2,'Surakha E Commerce Pvt Ltd','WOMEN','WomenJeans','Dassler Slim Fit Fit Women\'s White Jeans','Dassler',400,5,420,5,441,1299,66,125,0.6,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:23'),(20,2,'Surakha E Commerce Pvt Ltd','KIDS','Baby_Diapers','Mamy Poko Pants Diaper - XXL (24 Pieces)','Mamy Poko',400,5,420,5,441,500,11,200,0.6,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:28'),(21,2,'Surakha E Commerce Pvt Ltd','HomeAndKitchen','Bedsheets','IWS Cotton Abstract Double Bedsheet','IWS',500,5,525,5,552,1299,57,49,0.5,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:33'),(22,2,'Surakha E Commerce Pvt Ltd','HomeAndKitchen','Curtains','Just Linen Polyester Maroon Floral Eyelet Door Curtain','Just Linen',500,5,525,5,552,997,44,50,0.7,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:38'),(23,2,'Surakha E Commerce Pvt Ltd','HomeAndKitchen','SofaCovers','Griiham Cotton Sofa Cover','Griiham',700,6,742,5,780,1800,56,60,2,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:45'),(24,2,'Surakha E Commerce Pvt Ltd','HomeAndKitchen','PressureCookers','Prestige Nakshatra Plus HA Handi 3 L Pressure Cooker','Prestige',1200,5,1260,5,1323,1790,26,50,1.65,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:51'),(25,2,'Surakha E Commerce Pvt Ltd','HomeAndKitchen','GasStoves','Glen Stainless Steel Manual Gas Stove','Glen',2000,5,2100,5,2205,3500,37,50,4,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 13:53:56'),(27,2,'Surakha E Commerce Pvt Ltd','KIDS','Boys_Pant','UCB Boy\'s Trousers','UCB',700,5,735,5,772,1499,48,30,0.5,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 15:05:56'),(28,2,'Surakha E Commerce Pvt Ltd','KIDS','Boys_Shirt','UCB Boy\'s Shirt','UCB',700,5,735,5,772,1499,48,30,0.5,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 15:06:01'),(29,2,'Surakha E Commerce Pvt Ltd','KIDS','Girls_Top','UCB Girl\'s Top','UCB',700,5,735,5,772,1499,48,30,0.5,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 15:06:06'),(30,2,'Surakha E Commerce Pvt Ltd','KIDS','Girls_Shorts','UCB Girl\'s Short','UCB',700,5,735,5,772,1499,48,30,0.5,'1 year warranty is applicable',7,'approved',5,5,'2016-05-17 15:06:12'),(31,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Mobile','DEMO','DEMO',1000,5,1050,5,1103,2000,44,50,0.2,'1 year warranty is applicable',7,'approved',5,5,'2016-05-18 12:20:32'),(32,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Mobile','DEMO','DEMO',1000,5,1050,5,1103,2000,44,50,0.2,'1 year warranty is applicable',7,'approved',5,5,'2016-05-18 12:20:34'),(33,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Mobile','ssss','ssss',100,6,106,5,112,120,7,47,0.2,'1 year warranty is applicable',7,'approved',5,5,'2016-06-10 13:49:32'),(34,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Mobile','Naughty Ninos Printed Boy\'s Polo Neck T-Shirt','Pantaloons',100,5,105,5,111,136,18,50,0.4,'1 year warranty is applicable',7,'approved',4,4,'2016-05-30 17:36:27'),(35,2,'Surakha E Commerce Pvt Ltd','FoodAndGrocery','Confectionery','Ferrero Rocher 16 Pcs Chocolate Truffles','Ferrero Rocher',400,5,420,5,441,500,11,100,0.2,'6 month warranty is applicable',7,'approved',5,5,'2016-05-30 17:36:35'),(36,2,'Surakha E Commerce Pvt Ltd','FoodAndGrocery','PowderProduct','Optimum Nutrition Gold Standard 100% Whey Protein','Optimum',3000,5,3150,5,3308,3699,10,160,1.8,'1 months warranty is applicable',7,'approved',5,5,'2016-05-30 17:36:44'),(37,2,'Surakha E Commerce Pvt Ltd','FoodAndGrocery','Cakes','Alda Spring Form Cake Tin Set 3 - Cup Cake/Bread Mould','Alda',600,5,630,5,662,1190,44,50,0.3,'6 months warranty is applicable',7,'approved',5,5,'2016-05-30 17:36:52'),(38,2,'Surakha E Commerce Pvt Ltd','FoodAndGrocery','Test','dddd','dddd',100,5,105,5,111,130,15,50,1,'1 year warranty is applicable',7,'approved',3,3,'2016-06-01 12:15:23'),(39,2,'Surakha E Commerce Pvt Ltd','FoodAndGrocery','Test','sdfadsaf','asdsadf',12,1,12.12,100,130,34,64.70588235294117,44,1,'1 year warranty is applicable',7,'approved',0,0,'2016-06-01 12:15:23'),(40,2,'Surakha E Commerce Pvt Ltd','ELECTRONICS','Mobile','G','S',100,5,105,5,111,130,15,50,1,'1 year warranty is applicable',7,'approved',5,5,'2016-06-01 15:49:39'),(41,2,'Surakha E Commerce Pvt Ltd','Herbal','Sampoo','Akshara Rushikesh Natural Wash','Akshara',70,5,73.5,5,78,110,29,60,0.1,'1 year warranty is applicable',7,'approved',5,5,'2016-06-07 15:56:07'),(42,2,'Surakha E Commerce Pvt Ltd','Herbal','Medicine','Herbalife WH-01 Medicine Dispenser','Herbalife',1100,10,1210,5,1271,1645,22,50,0.1,'1 year warranty is applicable',7,'approved',5,5,'2016-06-07 16:28:20'),(43,2,'Surakha E Commerce Pvt Ltd','Herbal','FatAnalyzer','Herbalife Personalized Protein Powder Body Fat Analyzer','Herbalife',600,5,630,5,662,1060,37,50,0.2,'1 year warranty is applicable',7,'approved',5,5,'2016-06-07 16:28:28'),(44,2,'Surakha E Commerce Pvt Ltd','Herbal','Soap','Khadi Mauri Papaya Soap - Pack of 6 - Premium Handcrafted Herbal','Khadi',350,5,367.5,5,386,450,14,50,0.2,'1 year warranty is applicable',7,'approved',5,5,'2016-06-07 16:28:35'),(45,2,'Surakha E Commerce Pvt Ltd','Herbal','Moisturizer','Hempz Pomegranate Herbal Moisturizer','Hempz',1000,5,1050,5,1103,1600,31,50,0.3,'1 year warranty is applicable',7,'approved',5,5,'2016-06-07 16:28:43'),(46,2,'Surakha E Commerce Pvt Ltd','WOMEN','WomenLeggings','FTCBAZAR Girl\'s White, Black Jeggings','FTCBAZAR',300,10,330,10,363,1500,75,100,0.6,'1 year warranty is applicable',7,'approved',3,3,'2016-06-09 11:37:58'),(47,2,'Surakha E Commerce Pvt Ltd','FoodAndGrocery','Dairy','Saint Pure Goat\'s Milk Dairy Spa Facial Scrub','Saint Pure',2300,5,2415,5,2536,2700,6,50,0.25,'1 year warranty is applicable',7,'approved',5,5,'2016-06-09 12:10:32'),(48,2,'Surakha E Commerce Pvt Ltd','FoodAndGrocery','Rice','Panasonic SR WA 10 Electric Rice Cooker','Panasonic',1200,5,1260,5,1323,1600,17,50,1.5,'1 year warranty is applicable',7,'approved',5,5,'2016-06-09 12:10:40');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `search_key_word`
+--
+
+DROP TABLE IF EXISTS `search_key_word`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `search_key_word` (
+  `productId` int(11) NOT NULL AUTO_INCREMENT,
+  `searchKeyWord_forProduct` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`productId`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `search_key_word`
+--
+
+LOCK TABLES `search_key_word` WRITE;
+/*!40000 ALTER TABLE `search_key_word` DISABLE KEYS */;
+INSERT INTO `search_key_word` VALUES (1,'LeEco'),(2,'Acer'),(3,'Royal'),(4,'Naughty'),(5,'Naughty'),(6,'Naughty'),(7,'Naughty'),(8,'Naughty'),(9,'Naughty'),(10,'Best'),(11,'Supreme');
+/*!40000 ALTER TABLE `search_key_word` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `searchbyproductname`
+--
+
+DROP TABLE IF EXISTS `searchbyproductname`;
+/*!50001 DROP VIEW IF EXISTS `searchbyproductname`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `searchbyproductname` (
+  `id` tinyint NOT NULL,
+  `seller_id` tinyint NOT NULL,
+  `seller_company` tinyint NOT NULL,
+  `category` tinyint NOT NULL,
+  `sub_category` tinyint NOT NULL,
+  `product_name` tinyint NOT NULL,
+  `company_name` tinyint NOT NULL,
+  `manufacturingCost` tinyint NOT NULL,
+  `profitMarginPercentage` tinyint NOT NULL,
+  `sale_price` tinyint NOT NULL,
+  `markup` tinyint NOT NULL,
+  `salePriceCustomer` tinyint NOT NULL,
+  `list_price` tinyint NOT NULL,
+  `discount` tinyint NOT NULL,
+  `stock` tinyint NOT NULL,
+  `weight` tinyint NOT NULL,
+  `warranty` tinyint NOT NULL,
+  `calcellation_after_booked` tinyint NOT NULL,
+  `status` tinyint NOT NULL,
+  `f_commission` tinyint NOT NULL,
+  `d_commission` tinyint NOT NULL,
+  `productAdditionDate` tinyint NOT NULL,
+  `productId` tinyint NOT NULL,
+  `searchKeyWord_forProduct` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `shipping_delivery`
@@ -2027,6 +2087,79 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `searchKeyWords` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `searchKeyWords`(
+in keyWord varchar(50)
+)
+BEGIN
+
+	select concat(s.searchKeyWord_forProduct, ' in ', p.sub_category, ' of ', p.category) from search_key_word s 
+    join product p on s.productId = p.id
+    where s.searchKeyWord_forProduct LIKE concat('%',keyWord,'%') ;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `searchKeyWordsFromCompanyName` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `searchKeyWordsFromCompanyName`(
+in keyWord varchar(50)
+)
+BEGIN
+
+	select concat(company_name, ' in ', sub_category, ' of ', category) from product
+    where company_name LIKE concat('%',keyWord,'%') ;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `searchKeyWordsFromSubCategory` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `searchKeyWordsFromSubCategory`(
+in keyWord varchar(50)
+)
+BEGIN
+
+	select concat(sub_category, ' in ', category) from product
+    where sub_category LIKE concat('%',keyWord,'%') ;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `setAddtionalBalance` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -2930,6 +3063,25 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Final view structure for view `searchbyproductname`
+--
+
+/*!50001 DROP TABLE IF EXISTS `searchbyproductname`*/;
+/*!50001 DROP VIEW IF EXISTS `searchbyproductname`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `searchbyproductname` AS select `p`.`id` AS `id`,`p`.`seller_id` AS `seller_id`,`p`.`seller_company` AS `seller_company`,`p`.`category` AS `category`,`p`.`sub_category` AS `sub_category`,`p`.`product_name` AS `product_name`,`p`.`company_name` AS `company_name`,`p`.`manufacturingCost` AS `manufacturingCost`,`p`.`profitMarginPercentage` AS `profitMarginPercentage`,`p`.`sale_price` AS `sale_price`,`p`.`markup` AS `markup`,`p`.`salePriceCustomer` AS `salePriceCustomer`,`p`.`list_price` AS `list_price`,`p`.`discount` AS `discount`,`p`.`stock` AS `stock`,`p`.`weight` AS `weight`,`p`.`warranty` AS `warranty`,`p`.`calcellation_after_booked` AS `calcellation_after_booked`,`p`.`status` AS `status`,`p`.`f_commission` AS `f_commission`,`p`.`d_commission` AS `d_commission`,`p`.`productAdditionDate` AS `productAdditionDate`,`s`.`productId` AS `productId`,`s`.`searchKeyWord_forProduct` AS `searchKeyWord_forProduct` from (`product` `p` join `search_key_word` `s` on((`p`.`id` = `s`.`productId`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -2940,4 +3092,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-14 18:05:38
+-- Dump completed on 2016-06-16 11:11:26
