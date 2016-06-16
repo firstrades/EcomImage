@@ -122,8 +122,9 @@
 						<div class="clearfix"> </div>
 					</div>
 					<div class="search">
-					    <form>
-					    	<input type="text" value="" placeholder="search..." id="tags">
+					    <!-- <form id="autocomplete" method="post" enctype="multipart/form-data"> -->
+					    <form method="post" action="searchProductsWithKeyWords">
+					    	<input type="text" name="keyWords" placeholder="search..." id="tags">
 							<input type="submit" value="">
 						</form>
 					</div>

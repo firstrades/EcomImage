@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,6 +21,7 @@ import ecom.beans.Handler;
 import ecom.common.FrequentUse;
 import ecom.model.Product;
 
+@MultipartConfig
 public class SearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

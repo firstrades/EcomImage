@@ -28,6 +28,11 @@
 	<script src="js/bootstrap.min.js"></script>	
 	<script type="text/javascript" src="js_Buyer/BuyerProductSearchResult.js"></script>
 	
+	<!-- -------- Search -------------- -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">	  
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>  
+	<script type="text/javascript" src="js_Buyer/autocomplete.js"></script>
+	
 	<style type="text/css">
 	.clear_fix{
 		clear: both;
