@@ -2,6 +2,7 @@ package ecom.DAO.Seller;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
@@ -283,6 +284,96 @@ public class SellerDAO {
         
 		return null;
 	} //generatePDFRet
+	
+	
+	public String getSearchKeyword(long productId) {
+		
+		Connection connection = null; PreparedStatement preparedStatement = null; ResultSet resultSet = null;
+		
+		String sql = "select * from search_key_word where productId = ?";		
+		String searchKeyword = null;
+	
+		try {
+			
+			connection = ConnectionFactory.getNewConnection();
+			connection.setAutoCommit(false);
+			
+			preparedStatement = connection.prepareStatement(sql);				
+			
+			preparedStatement.setLong(1, productId);					
+			
+			resultSet = preparedStatement.executeQuery();  
+			
+			if (resultSet.next()) {
+				searchKeyword = resultSet.getString("searchKeyWord_forProduct");
+			}
+			
+			connection.commit();					
+			System.out.println("SQL - getSearchKeyword executed");				
+			
+		
+		} catch (InstantiationException | IllegalAccessException
+				| ClassNotFoundException | SQLException e) {
+			try { connection.rollback();     } catch (SQLException e1) { e1.printStackTrace(); }
+			e.printStackTrace();			
+			return null;
+		} finally {
+			if (resultSet != null)
+				try { resultSet.close();         } catch (SQLException e)  { e.printStackTrace();  }
+			if (preparedStatement != null)
+				try { preparedStatement.close(); } catch (SQLException e)  { e.printStackTrace();  }
+			if (connection != null)
+				try { connection.close();        } catch (SQLException e)  { e.printStackTrace();  }
+			System.gc();
+		}  
+		
+		
+		return searchKeyword;
+	}//getSearchKeyword
+	
+	public int setSearchKeyword(long productId, String searchKeyword) {
+		
+		Connection connection = null; CallableStatement callableStatement = null; 		
+		String sql = "{call setSearchKeyword(?,?,?)}";	
+		int insertedSearchKeyword = -1;	
+	
+		try {
+			
+			connection = ConnectionFactory.getNewConnection();
+			connection.setAutoCommit(false);
+			
+			callableStatement = connection.prepareCall(sql); 				
+					
+			callableStatement.registerOutParameter(1, Types.INTEGER);
+			
+			callableStatement.setLong  (2, productId);		
+			callableStatement.setString(3, searchKeyword);	
+			
+				
+			callableStatement.execute();
+			
+			insertedSearchKeyword = callableStatement.getInt(1);			
+			
+			connection.commit();					
+			System.out.println("SQL - setSearchKeyword executed");						
+			
+		} catch (InstantiationException | IllegalAccessException
+				| ClassNotFoundException | SQLException e) {
+			try { connection.rollback();     } catch (SQLException e1) { e1.printStackTrace(); }
+			e.printStackTrace();
+			
+			
+			return insertedSearchKeyword;
+			
+		} finally {			
+			try { callableStatement.close(); } catch (SQLException e)  { e.printStackTrace();  }
+			try { connection.close();        } catch (SQLException e)  { e.printStackTrace();  }		
+			System.gc();			
+		} 	
+		
+		return insertedSearchKeyword;	
+		
+	}//setSearchKeyword
 	
 
 }

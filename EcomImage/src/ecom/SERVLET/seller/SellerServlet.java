@@ -813,11 +813,12 @@ public class SellerServlet extends HttpServlet {
 			//Database
 			Product product = productDAO.getProduct(productId);
 			WholeSaleOffer wholeSaleOffer = WholeSaleOffer.getWholeSaleOffer(productId);
-			
+			String searchKeyword = sellerDAO.getSearchKeyword(productId);
 			
 			//Set Request
 			request.setAttribute("product", product);
 			request.setAttribute("wholeSaleOffer", wholeSaleOffer);
+			request.setAttribute("searchKeyword", searchKeyword);
 			
 			//Next Page
 			request.getRequestDispatcher("jsp_Seller/ProductAdvanceFeatures.jsp").forward(request, response);
@@ -856,7 +857,41 @@ public class SellerServlet extends HttpServlet {
 			response.setContentType("application/json");
 			response.getWriter().write(jsonObject.toString());
 			
-		}//ProductAdvanceFeatures
+		}//EditProductAdvanceFeatures
+		
+		
+else if (servletPath.equals("/EditProductSearchKeyword")) {
+			
+			System.out.println("Entered EditProductSearchKeyword");
+			long insertedSearchKey = -1;
+			
+			//Get Request
+			long productId = Long.parseLong(request.getParameter("productId"));      System.out.println(productId);
+			String searchKeyword = request.getParameter("searchKeyword").trim();       System.out.println(searchKeyword);			
+			
+			//Database		
+			//if 0 - updated, else product offer inserted and if -1 then any error occurred
+			insertedSearchKey = sellerDAO.setSearchKeyword(productId, searchKeyword);		
+			
+			//Json for Next Page
+			JSONObject jsonObject = new JSONObject();
+			
+			try {
+				if (insertedSearchKey == -1)
+					jsonObject.put("status", "Some error occurred! Please try again.");
+				else if (insertedSearchKey == 0)
+					jsonObject.put("status", "Search Keyword is updated.");
+				else
+					jsonObject.put("status", "New keyword inserted.");
+				
+			} catch (JSONException e) {				
+				e.printStackTrace();
+			}
+			
+			response.setContentType("application/json");
+			response.getWriter().write(jsonObject.toString());
+			
+		}//EditProductSearchKeyword
 				
 		
 	}

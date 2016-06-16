@@ -35,6 +35,7 @@ hr {
 <%
 	Product product = (Product) request.getAttribute("product");
 	WholeSaleOffer wholeSaleOffer = (WholeSaleOffer) request.getAttribute("wholeSaleOffer");
+	String searchKeyword = (String) request.getAttribute("searchKeyword");
 %>
 
 <hr>
@@ -120,6 +121,59 @@ hr {
 			
 					<!-- ---------------------- Submit ---------------------------- -->
 			
+			<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<input type="submit" value="Submit" 
+							style="width: 50% !important;  padding: 7px 1px;
+							background:linear-gradient(#54b4eb, #2fa4e7 60%, #1d9ce5);
+							border: 1px solid #0098fe;color:#ffffff;margin-top:18px;
+							margin-left: 385%; " />
+					</div>
+					</div>
+					
+			<div class="col-md-12">
+			<hr>
+			</div>	
+					<!-- ---------------------- End Submit ---------------------------- -->
+	</form>
+	
+	<!-- -------------------------------- End Wholesale Offer -------------------------------------------- -->
+	
+	<hr>
+	
+	<!-- --------------------------------  Search Key -------------------------------------------- -->
+	
+	<form method="post" id="form3"> 
+		
+			<input type="hidden" name="productId" value="<%=product.getProductId() %>" />
+			
+			<h3 style="font-size: 25px; color:#337AB7;text-align:center;">Product Search Key Word for easy searching </h3>  
+			
+			<div id="searchKeywordMessage" style="color:red;"></div>
+			<hr>
+					<!-- -------------------------------------------------- -->
+					<div class="row">					
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<label>	 Product Search Key </label>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12">
+						<% if (searchKeyword != null) { %>
+							<input type="text" name=searchKeyword required class="form-control" value="<%=searchKeyword %>" />
+						<% } else { %>
+							<input type="text" name="searchKeyword" required class="form-control"  value="" />
+						<% } %>
+						</div>						
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							<label>	Demo </label>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12">							
+							<input type="text" name=""  class="form-control"  value="" />						
+						</div>
+					</div>
+			
+			
+					<!-- ---------------------- Submit ---------------------------- -->
+			
 			
 					<div class="col-md-3 col-sm-6 col-xs-12">
 						<input type="submit" value="Submit" 
@@ -135,7 +189,10 @@ hr {
 					<!-- ---------------------- End Submit ---------------------------- -->
 	</form>
 	
-	<!-- -------------------------------- End Wholesale Offer -------------------------------------------- -->
+	<!-- --------------------------------  End Search Key -------------------------------------------- -->
+	
+	
+	
 	
 	
 	

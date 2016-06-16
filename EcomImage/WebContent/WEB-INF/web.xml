@@ -45,6 +45,7 @@
     <url-pattern>/EditProduct</url-pattern>
     <url-pattern>/ProductAdvanceFeatures</url-pattern>
     <url-pattern>/EditProductAdvanceFeatures</url-pattern>
+    <url-pattern>/EditProductSearchKeyword</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>RetrieveImageServlet</servlet-name>

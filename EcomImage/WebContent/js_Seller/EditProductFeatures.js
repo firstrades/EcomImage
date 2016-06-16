@@ -90,6 +90,48 @@ $(function() {
 	});
 	
 	
+	$('form#form3').submit(function(event) {
+		
+		event.preventDefault();
+		
+		$('#searchKeywordMessage').empty();
+		
+		var r = confirm("Alert: Do You Really Want To Add Product Search Keyword for this Product!");
+		
+		if (r == true) {  
+		
+				var formData = new FormData($(this)[0]);
+				
+				$.ajax({
+					url: 'EditProductSearchKeyword',
+					type: 'POST',
+					data: formData,
+					async: false,
+				    cache: false,
+				    contentType: false,
+				    processData: false,
+				    dataType: 'json',
+				    success: function (data) {
+				    	
+				    	$('#searchKeywordMessage').empty();
+				    	
+				    	if (data.status)				    	
+				    		$('#searchKeywordMessage').append(data.status);			    	
+				    	
+				    },
+				    error: function() {
+				  		$('#searchKeywordMessage').empty();
+				  		$('#searchKeywordMessage').append('Some error occurred! Please try again.');
+				  	}
+				});
+		
+		} // if close
+		
+		
+		return false;
+	});
+	
+	
 	
 	
 });
