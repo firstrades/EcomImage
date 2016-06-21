@@ -460,7 +460,7 @@ public class OrderImpl implements OrderInterface {
 			   callableStatement.setString(10, order.getDeliveryAddress().getPin());
 			   callableStatement.setString(11, order.getDeliveryAddress().getfName());
 			   callableStatement.setString(12, order.getDeliveryAddress().getlName());
-			   callableStatement.setString(13, order.getDeliveryAddress().getEmail());
+			   callableStatement.setString(13, order.getDeliveryAddress().getEmail()); //order.getDeliveryAddress().getEmail()
 			   callableStatement.setString(14, paymentType);
 			   callableStatement.setString(15, order.getDeliveryAddress().getAddress1());
 			   callableStatement.setString(16, order.getDeliveryAddress().getCompany());

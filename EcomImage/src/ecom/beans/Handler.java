@@ -112,10 +112,10 @@ public class Handler {
 		
 		String sql = null;
 		
-		if (subCategory != null)
+		if (subCategory != null && stringArray == null && search == null)
 			sql = "SELECT * FROM product WHERE sub_category = '"+subCategory+"' AND status = 'approved'";
 		
-		if (stringArray != null && stringArray.length == 2) {
+		else if (stringArray != null && stringArray.length == 2) {
 			sql = "SELECT * FROM product WHERE sub_category = '"+stringArray[0]+"' AND category = '"+stringArray[1]+"' AND status = 'approved'";
 		}
 		else if (stringArray != null && stringArray.length == 3 && search == null) {
